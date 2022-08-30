@@ -1,8 +1,5 @@
 ---
 title: "Session3"
-output:
-  html_document:
-    toc: yes
 ---
 <style>
 serif { font-family: serif }
