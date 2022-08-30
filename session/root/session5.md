@@ -8,9 +8,9 @@ serif { font-family: serif }
 | :---- | :---- | :---- |
 | internus | inside | [internist](https://chen172.github.io/session/session4.html) |
 | gyne | woman | [gynecologist](https://chen172.github.io/session/session4.html) |
-| obstetrix | midwife |
+| obstetrix | midwife | [obstetrician](https://chen172.github.io/session/session4.html) |
 | padios | child | [pediatrician](https://chen172.github.io/session/session4.html) |
-| pedis | foot |
+| pedis | foot | pedestal |
 | agogos | leading, leader | [pedagogy](https://chen172.github.io/session/session5_1.html)
 | demos | people | [demagogue](https://chen172.github.io/session/session5_1.html)
 | derma | skin | [dermatology](https://chen172.github.io/session/session5_2.html)
