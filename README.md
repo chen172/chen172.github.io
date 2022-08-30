@@ -3,4 +3,4 @@
 
 2. Run [`ruby pronunciation.rb`](https://github.com/chen172/Merriam-Webster-api-example/blob/main/pronunciation.rb) to get needed files, like, prs_session1.txt, [audio_session1.txt](https://github.com/chen172/Merriam-Webster-api-example/blob/main/Word%20Power%20Made%20Easy/txt/prs_session1.txt), and the [audio file](https://github.com/chen172/Merriam-Webster-api-example/tree/main/Word%20Power%20Made%20Easy/audio).
 
-3. Run [`ruby generate_webpage_audio.erb`](https://github.com/chen172/Merriam-Webster-api-example/blob/main/generate_webpage_audio.erb) to get the webpage. such as [session1.html](https://github.com/chen172/chen172.github.io/session/session1.html)
+3. Run [`ruby generate_webpage_audio.erb`](https://github.com/chen172/Merriam-Webster-api-example/blob/main/generate_webpage_audio.erb) to get the webpage. such as [session1.html](https://github.com/chen172/chen172.github.io/blob/main/session/session1.html)
