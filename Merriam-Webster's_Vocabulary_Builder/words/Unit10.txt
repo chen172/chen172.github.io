@@ -1,0 +1,49 @@
+# PUT
+reputed
+disrepute
+impute
+putative
+# LOG
+physiology
+methodology
+ideology
+cardiology
+#TERR
+parterre
+subterranean
+terrarium
+terrestrial
+# MAR
+marina
+aquamarine
+mariner
+maritime
+# PATH
+pathos
+apathetic
+empathy
+telepathic
+# PEN/PUN
+penal
+impunity
+penance
+punitive
+# MATR/MATER
+maternity
+matriarch
+matrilineal
+matrix
+# AQU
+aquaculture
+aquanaut
+aqueduct
+aquifer
+# Words from Mythology
+cereal
+Junoesque
+martial
+Promethean
+Sisyphean
+titanic
+Triton
+vulcanize
