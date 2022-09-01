@@ -4,7 +4,14 @@
 <br/>
 
 * An overly sensitive person may take umbrage at something as small as having his or her name pronounced wrong.
-* took umbrage at the speaker's remarks  
+* took umbrage at the speaker's remarks
+
+
+## Synonyms
+resentment
+
+## tag:
+feeling
 <br/>
 <br/>
 <br/>
@@ -15,5 +22,4 @@
 中文：不快
 </details>
 
-#### tag:
-feeling
+
