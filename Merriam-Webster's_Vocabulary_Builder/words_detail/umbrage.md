@@ -3,7 +3,8 @@
 <br/>
 <br/>
 
-* An overly sensitive person may take umbrage at something as small as having his or her name pronounced wrong.  
+* An overly sensitive person may take umbrage at something as small as having his or her name pronounced wrong.
+* took umbrage at the speaker's remarks  
 <br/>
 <br/>
 <br/>
