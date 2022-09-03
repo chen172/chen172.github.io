@@ -6,3 +6,6 @@
 
 ## roll of paper
 <img src="https://github.com/chen172/chen172.github.io/tree/main/misc/picture/roll_of_paper.jpg"></img>
+
+## parliament
+<img src="https://github.com/chen172/chen172.github.io/tree/main/misc/picture/Scottish_Parliament.jpg"></img>
