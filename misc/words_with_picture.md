@@ -1,8 +1,8 @@
 ## scroll
-![avatar](/misc/picture/scroll.jpg)
+<img src="https://github.com/chen172/chen172.github.io/tree/main/misc/picture/scroll.jpg"></img>
 
 ## roll of papyrus
-![avatar](/misc/picture/scroll.jpg)
+<img src="https://github.com/chen172/chen172.github.io/tree/main/misc/picture/scroll.jpg"></img>
 
 ## roll of paper
-![avatar](/misc/picture/roll_of_paper.jpg)
+<img src="https://github.com/chen172/chen172.github.io/tree/main/misc/picture/roll_of_paper.jpg"></img>
