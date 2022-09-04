@@ -14,3 +14,9 @@ Leslie [Jones] and I talk on the phone all the time, and most of our conversatio
 A refuge for women who had experienced domestic abuse.  
 A refuge for women who had experienced family abuse.
 ***
+<br/>
+
+***
+Religion may be a refuge from the woes of your life.  
+Religion may be a refuge from the pain of your life.
+***
