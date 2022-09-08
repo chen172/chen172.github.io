@@ -29,6 +29,8 @@ antith01
 contra04
 contra41
 contra68
+contra51
+inmemo01
 magnum02
 mement03
 habeas01
@@ -36,4 +38,3 @@ rigorm01
 sinequ01
 tabula02
 terrai02
-contra51

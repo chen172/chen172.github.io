@@ -29,6 +29,8 @@ antithesis
 contraband
 contraindication
 contravene
+contrarian
+in memoriam
 magnum opus
 memento mori
 habeas corpus
@@ -36,4 +38,4 @@ rigor mortis
 sine qua non
 tabula rasa
 terra incognita
-contrarian
+
