@@ -15,3 +15,6 @@
 
 ## cashew
 <img src="./picture/cashew.jpg"></img>
+
+## parallel lines
+<img src="./picture/parallel_lines.jpg"></img>
