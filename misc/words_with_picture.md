@@ -18,3 +18,9 @@
 
 ## parallel lines
 <img src="./picture/parallel_lines.jpg"></img>
+
+## carpal
+<img src="./picture/carpal.jpg"></img>
+
+## metacarpal
+<img src="./picture/metacarpal.jpg"></img>
