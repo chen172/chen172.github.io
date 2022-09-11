@@ -24,3 +24,6 @@
 
 ## metacarpal
 <img src="./picture/metacarpal.jpg"></img>
+
+## the inflation of a balloon
+<img src="./picture/inflation.jpg"></img>
