@@ -19,7 +19,7 @@
 ## parallel lines
 <img src="./picture/parallel_lines.jpg"></img>
 
-## carpal
+## carpal/wrist bones
 <img src="./picture/carpal.jpg"></img>
 
 ## metacarpal
