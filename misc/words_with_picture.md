@@ -27,3 +27,6 @@
 
 ## the inflation of a balloon
 <img src="./picture/inflation.jpg"></img>
+
+## bore
+<img src="./picture/bore.jpg"></img>
