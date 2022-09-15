@@ -33,3 +33,6 @@
 
 ## limes
 <img src="./picture/limes.jpg"></img>
+
+## textile/woven/knitted cloth
+<img src="./picture/textile.jpg"></img>
