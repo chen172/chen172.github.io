@@ -39,3 +39,6 @@
 
 ## punctured tire
 <img src="./picture/punctured_tire.jpg"></img>
+
+## staggering
+<img src="./picture/staggering.jpg"></img>
