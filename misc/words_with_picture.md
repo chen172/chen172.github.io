@@ -36,3 +36,6 @@
 
 ## textile/woven/knitted cloth
 <img src="./picture/textile.jpg"></img>
+
+## punctured tire
+<img src="./picture/punctured_tire.jpg"></img>
