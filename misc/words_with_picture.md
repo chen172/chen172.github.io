@@ -51,3 +51,12 @@
 
 ## solemn ritual
 <img src="./picture/solemn_ritual.jpg"></img>
+
+## fume
+<img src="./picture/fume.jpg"></img>
+
+## dummy
+<img src="./picture/dummy.jpg"></img>
+
+## ventriloquist
+<img src="./picture/ventriloquist.jpg"></img>
