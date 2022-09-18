@@ -48,3 +48,6 @@
 
 ## priest
 <img src="./picture/priest.jpg"></img>
+
+## solemn ritual
+<img src="./picture/solemn_ritual.jpg"></img>
