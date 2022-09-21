@@ -60,3 +60,9 @@
 
 ## ventriloquist
 <img src="./picture/ventriloquist.jpg"></img>
+
+## fuse
+<img src="./picture/fuse.jpg"></img>
+
+## nuclear fusion
+<img src="./picture/nuclear_fusion.jpg"></img>
