@@ -69,3 +69,6 @@
 
 ## fax
 <img src="./picture/fax.jpg"></img>
+
+## staircase
+<img src="./picture/staircase.jpg"></img>
