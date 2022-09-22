@@ -66,3 +66,6 @@
 
 ## nuclear fusion
 <img src="./picture/nuclear_fusion.jpg"></img>
+
+## fax
+<img src="./picture/fax.jpg"></img>
