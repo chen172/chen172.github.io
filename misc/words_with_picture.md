@@ -78,3 +78,6 @@
 
 ## water vessel
 <img src="./picture/water_vessel.jpg"></img>
+
+## seed capsules
+<img src="./picture/seed_capsules.jpg"></img>
