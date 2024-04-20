@@ -1,0 +1,11 @@
+BIO
+GEN
+FUNCT
+MUT
+FRACT
+TELE
+PHIL
+NEG
+Number Words
+DEC
+CENT

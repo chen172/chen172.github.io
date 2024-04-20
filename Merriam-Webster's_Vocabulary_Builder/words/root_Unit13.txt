@@ -1,0 +1,9 @@
+CORD
+CULP
+DICT
+GNI/GNO
+GRAPH
+ART
+PORT
+CIS
+Animal Words
