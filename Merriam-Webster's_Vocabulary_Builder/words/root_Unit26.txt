@@ -6,5 +6,6 @@ MICRO
 MULTI
 PAR
 PHOB
+Medical Words
 HEM/HEMO
 ITIS
