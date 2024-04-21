@@ -35,5 +35,6 @@ gastre02
 tonsil03
 mastec01
 iatrog01
+baria01m
 geriat01
 podiat03

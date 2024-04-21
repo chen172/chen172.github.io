@@ -35,5 +35,6 @@ gastrectomy
 tonsillectomy
 mastectomy
 iatrogenic
+bariatric
 geriatric
 podiatrist
