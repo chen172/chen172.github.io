@@ -13,6 +13,7 @@ hypothetical
 thermal
 thermodynamics
 thermonuclear
+British thermal unit
 polyp
 polyglot
 polymer
