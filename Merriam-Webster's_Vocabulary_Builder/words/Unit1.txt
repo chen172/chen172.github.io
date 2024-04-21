@@ -33,6 +33,7 @@ levity
 cicerone
 hector
 hedonism
+nestor
 spartan
 stentorian
 stoic

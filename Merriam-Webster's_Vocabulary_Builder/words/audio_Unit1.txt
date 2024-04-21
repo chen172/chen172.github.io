@@ -33,6 +33,7 @@ levity01
 cicero02
 hector01
 hedoni03
+nestor01
 sparta02
 stento02
 stoic101
