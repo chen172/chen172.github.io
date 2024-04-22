@@ -30,6 +30,7 @@ atroph01
 hypert11
 dystro02
 eutrop03
+aeolian_harp
 cynosu02
 laconi01
 mnemon01
