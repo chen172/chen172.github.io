@@ -37,3 +37,4 @@ cyclop03
 dracon01
 myrmid01
 nemesi01
+trojan_horse_1_us_1
