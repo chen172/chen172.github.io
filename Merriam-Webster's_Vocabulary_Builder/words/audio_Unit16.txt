@@ -22,6 +22,7 @@ retroa02
 retrof02
 retrog03
 retros03
+tempor01
 contem10
 extemp04
 tempor06

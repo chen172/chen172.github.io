@@ -22,6 +22,7 @@ retroactive
 retrofit
 retrogress
 retrospective
+temporal
 contemporary
 extemporaneous
 temporize
