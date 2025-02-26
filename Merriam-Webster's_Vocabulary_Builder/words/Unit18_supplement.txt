@@ -30,3 +30,8 @@ emblem
 royalty
 luster
 coronation
+crusader
+stake
+solemn
+legislative
+outlet
