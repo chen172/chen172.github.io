@@ -23,6 +23,7 @@ vigor
 manned
 sleek
 levee
+amputate
 regime
 vacant
 constitution
