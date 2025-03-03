@@ -21,3 +21,4 @@ sonata
 tobacco
 carcinogen
 asbestos
+insecticide
