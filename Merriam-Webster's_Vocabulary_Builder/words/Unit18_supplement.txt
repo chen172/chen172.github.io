@@ -43,6 +43,8 @@ reflex
 feat
 resurrection
 apostle
+descend
 congregation
+denomination
 surpass
 evangelical
