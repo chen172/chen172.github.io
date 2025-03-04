@@ -22,3 +22,7 @@ tobacco
 carcinogen
 asbestos
 insecticide
+illiterate
+bureaucrat
+wreck
+valve
