@@ -8,3 +8,4 @@ TEMPOR
 CHRON
 Number Words
 TRI
+TRI
