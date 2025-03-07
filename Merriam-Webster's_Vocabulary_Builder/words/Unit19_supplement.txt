@@ -40,6 +40,7 @@ tyrant
 dashing
 defiant
 stadium
+shatter
 apt
 unruly
 stirring
@@ -57,3 +58,10 @@ deflect
 mirage
 patch
 asphalt
+photogenic
+supreme
+altitude
+shuttle
+respiration
+regulate
+irrigation
