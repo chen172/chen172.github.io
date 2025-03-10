@@ -52,7 +52,7 @@ broccoli
 bud
 coastline
 treaty
-misdemeanour
+misdemeanor
 infringement
 deflect
 mirage
@@ -75,6 +75,19 @@ imitate
 homegrown
 malpractice
 garment
-negligée
+negligee
 fast
 blizzard
+adultery
+hurdle
+shot put
+finest
+all-around
+rustling
+artillery
+mutiny
+club
+gruesome
+poach
+bombardment
+crucifixion
