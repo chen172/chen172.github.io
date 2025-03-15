@@ -40,3 +40,11 @@ mend
 tarnish
 varnish
 mournful
+flume
+gorge
+metropolitan
+discharge
+foul
+sewer
+clog
+drainage
