@@ -3,7 +3,7 @@ spade
 banter
 hackneyed
 dire
-stolidly
+stolid
 asylum
 slum
 arid
@@ -48,3 +48,12 @@ discordant
 squeak
 blare
 tingle
+subsist
+spinach
+wheat
+spice
+shroud
+narcotic
+vulgar
+frivolity
+spectator
