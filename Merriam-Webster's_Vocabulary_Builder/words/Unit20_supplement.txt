@@ -48,6 +48,15 @@ foul
 sewer
 clog
 drainage
+squid
+prey
+howl
+lob
+nab
+dread
+etiquette
+stern
+restrain
 dilute
 appetite
 passion
@@ -98,3 +107,10 @@ hop
 scuttle
 dash
 sluggish
+vandal
+clot
+hypertrophy
+atrophy
+insulate
+lethal
+cripple
