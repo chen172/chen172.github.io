@@ -9,7 +9,7 @@ compliance
 pallor
 menial
 inferior
-endeavour
+endeavor
 obliging
 subservient
 cortege
@@ -36,4 +36,4 @@ demoralize
 dismal
 dreary
 sustain
-teetotaller
+teetotaler
