@@ -21,3 +21,16 @@ battle-ax
 shrewish
 stevedore
 fishwife
+mileage
+affiliation
+fanatic
+zeal
+distraction
+revere
+superstition
+ethic
+budge
+wanton
+imminent
+efface
+scoff
