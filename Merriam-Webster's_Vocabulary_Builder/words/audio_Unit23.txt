@@ -6,7 +6,7 @@ placat02
 placeb02
 placid02
 implac02
-automa09
+usautoc009
 autoim01
 autono05
 autism01
