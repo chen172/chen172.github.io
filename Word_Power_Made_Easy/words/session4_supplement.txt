@@ -1,6 +1,6 @@
 whoop
 inoculation
-gamut4
+gamut
 acne
 eczema
 impetigo
@@ -9,7 +9,6 @@ myopia
 astigmatism
 cataract
 glaucoma
-disc
 brace
 appliance
 pitter-patter
