@@ -32,3 +32,10 @@ iguana
 ranch
 brawny
 rodeo
+staple
+pottery
+outbuilding
+avalanche
+disfigure
+warehouse
+dosage
