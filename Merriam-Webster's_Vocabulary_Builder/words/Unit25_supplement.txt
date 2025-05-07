@@ -33,3 +33,6 @@ pocket
 chisel
 principal
 dedication
+ad hominem
+testimony
+roulette
