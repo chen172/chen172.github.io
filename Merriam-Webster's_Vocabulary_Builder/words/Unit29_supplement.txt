@@ -16,3 +16,8 @@ pollen
 amphibian
 frostbite
 detour
+bog
+piglet
+dinette
+diskette
+roll
