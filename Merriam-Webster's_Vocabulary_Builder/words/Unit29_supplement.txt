@@ -30,3 +30,7 @@ crevice
 cement
 hamper
 tamper
+embargo
+strew
+potluck
+cruise
