@@ -1,285 +1,728 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Power Made Easy Audio</title>
+  <link rel="icon" href="img/word_power_made_easy.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/software-page-style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      margin: 0;
+      padding: 2rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-<html>
-  <head>
-    <link rel="icon" href="img/word_power_made_easy.ico" type="image/x-icon">
-    <meta charset="utf-8">
-    <title>Word Power Made Easy Audio
-    </title>
-  </head>
+    h1 {
+      text-align: center;
+      color: #1e40af;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 3rem 0 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
 
-  <body>
-	<h1 style="text-align: center;">GETTING ORIENTED</h1>
+    h2 {
+      font-size: 1.2rem;
+      color: #374151;
+      margin-top: 1.8rem;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 0.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+    }
 
-<h2 >How to Use This Book for Maximum Benefit<a href="Word_Power_Made_Easy/chapter_0.txt.html">[supplement]</a></h2>
-<h2 >How to Start Building Your Vocabulary<a href="Word_Power_Made_Easy/chapter_3.txt.html">[supplement]</a></h2>
-	<h1 style="text-align: center;">GET OFF TO A GOOD START</h1>
+    .chapter {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border-left: 6px solid #1e3a8a;
+      background: #e0f2fe;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
 
-<h2 >How to Talk About Personality Types</h2>
-    <p>
-      <a href="Word_Power_Made_Easy/session1.html">Session 1</a>
-      <a href="Word_Power_Made_Easy/session1_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>
-      <a href="Word_Power_Made_Easy/session2.html">Session 2</a>
-      <a href="Word_Power_Made_Easy/session2_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>Session 3
-      <a href="Word_Power_Made_Easy/session3_supplement.txt.html">[supplement]</a>  
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session3_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session3_2.html">Part 2</a>
-    </p>
-    <p>Test Your Grammar
-      <a href="Word_Power_Made_Easy/intermission_1.txt.html">[supplement]</a>
-    </p>
+      /* Animation initial state */
+      opacity: 0;
+      transform: translateY(20px);
+      animation-name: fadeSlideUp;
+      animation-duration: 0.6s;
+      animation-fill-mode: forwards;
+    }
 
-<h2 >How to Talk About Doctors</h2>
-    <p>
-      <a href="Word_Power_Made_Easy/session4.html">Session 4</a>
-      <a href="Word_Power_Made_Easy/session4_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>Session 5  
-      <a href="Word_Power_Made_Easy/session5_supplement.txt.html">[supplement]</a>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session5_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session5_2.html">Part 2</a>
-    </p>
-    <p>Session 6  
-      <a href="Word_Power_Made_Easy/session6_supplement.txt.html">[supplement]</a>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session6_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session6_2.html">Part 2</a>
-    </p>
-    <p>Random Notes on Mordern Usage
-      <a href="Word_Power_Made_Easy/intermission_2.txt.html">[supplement]</a>
-    </p>
+    /* Animation keyframes */
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-<h2 >How to Talk About Various Practitioners</h2>
-    <p>
-      <a href="Word_Power_Made_Easy/session7.html">Session 7</a>
-      <a href="Word_Power_Made_Easy/session7_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>
-      <a href="Word_Power_Made_Easy/session8.html">Session 8</a>
-      <a href="Word_Power_Made_Easy/session8_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>Session 9  
-      <a href="Word_Power_Made_Easy/session9_supplement.txt.html">[supplement]</a>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session9_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session9_2.html">Part 2</a>
-    </p>
-    <p>
-      <a href="Word_Power_Made_Easy/session10.html">Session 10</a>
-      <a href="Word_Power_Made_Easy/session10_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>How Grammar Changes
-      <a href="Word_Power_Made_Easy/intermission_3.txt.html">[supplement]</a>
-    </p>
+    /* Stagger animation delays for chapters */
+    .chapter:nth-of-type(1) { animation-delay: 0.1s; }
+    .chapter:nth-of-type(2) { animation-delay: 0.2s; }
+    .chapter:nth-of-type(3) { animation-delay: 0.3s; }
+    .chapter:nth-of-type(4) { animation-delay: 0.4s; }
+    .chapter:nth-of-type(5) { animation-delay: 0.5s; }
+    .chapter:nth-of-type(6) { animation-delay: 0.6s; }
 
-<h2 >How to Talk About Science and Scientists</h2>
-    <p>
-      <a href="Word_Power_Made_Easy/session11.html">Session 11</a>
-      <a href="Word_Power_Made_Easy/session11_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>Session 12
-      <a href="Word_Power_Made_Easy/session12_supplement.txt.html">[supplement]</a>  
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session12_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session12_2.html">Part 2</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session12_3.html">Part 3</a>
-    </p>
-    <p>Session 13
-      <a href="Word_Power_Made_Easy/session13_supplement.txt.html">[supplement]</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session13_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session13_2.html">Part 2</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session13_3.html">Part 3</a>
-    </p>
-    <p>How to Avoid Being a Purist
-      <a href="Word_Power_Made_Easy/intermission_4.txt.html">[supplement]</a>
-    </p>
+    .chapter-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #374151; /* Match h2 color */
+    }
 
-<h2 >How to Talk About Liars and Lying</h2>
-    <p>
-      <a href="Word_Power_Made_Easy/session14.html">Session 14</a>
-      <a href="Word_Power_Made_Easy/session14_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>
-      <a href="Word_Power_Made_Easy/session15.html">Session 15</a>
-      <a href="Word_Power_Made_Easy/session15_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>Session 16  
-      <a href="Word_Power_Made_Easy/session16_supplement.txt.html">[supplement]</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session16_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session16_2.html">Part 2</a>
-    </p>
-    <p>
-      <a href="Word_Power_Made_Easy/session17.html">Session 17</a>
-      <a href="Word_Power_Made_Easy/session17_supplement.txt.html">[supplement]</a>
-    </p>
-	  
-	  
-	<h1 style="text-align: center;">GAINING INCREASED MOMENTUM</h1>
+    .chapter-links {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
 
-<h2 >How to Talk About Actions</h2>
-    <p>
-      <a href="Word_Power_Made_Easy/session19.html">Session 19</a>
-      <a href="Word_Power_Made_Easy/session19_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>
-      <a href="Word_Power_Made_Easy/session20.html">Session 20</a>
-      <a href="Word_Power_Made_Easy/session20_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>Session 21
-      <a href="Word_Power_Made_Easy/session21_supplement.txt.html">[supplement]</a>  
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session21_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session21_2.html">Part 2</a>
-    </p>
-    <p>Session 22
-      <a href="Word_Power_Made_Easy/session22_supplement.txt.html">[supplement]</a>  
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session22_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session22_2.html">Part 2</a>
-    </p>
-    <p>Session 23
-      <a href="Word_Power_Made_Easy/session23_supplement.txt.html">[supplement]</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session23_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session23_2.html">Part 2</a>
-    </p>
-    <p>How to Speak Naturally
-      <a href="Word_Power_Made_Easy/intermission_5.txt.html">[supplement]</a>
-    </p>
+    .chapter-left {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
 
-<h2 >How to Talk About Various Speech Habits</h2>
-    <p>
-      <a href="Word_Power_Made_Easy/session24.html">Session 24</a>
-      <a href="Word_Power_Made_Easy/session24_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>
-      <a href="Word_Power_Made_Easy/session25.html">Session 25</a>
-      <a href="Word_Power_Made_Easy/session25_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>Session 26  
-      <a href="Word_Power_Made_Easy/session26_supplement.txt.html">[supplement]</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session26_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session26_2.html">Part 2</a>
-    </p>
-    <p>Session 27  
-      <a href="Word_Power_Made_Easy/session27_supplement.txt.html">[supplement]</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session27_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session27_2.html">Part 2</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session27_3.html">Part 3</a>
-    </p>
-    <p>How to Always Use the Proper Word
-      <a href="Word_Power_Made_Easy/intermission_6.txt.html">[supplement]</a>
-    </p>
+    .chapter-right {
+      margin-left: auto;
+      white-space: nowrap;
+    }
 
-<h2 >How to Insult Your Enemies</h2>
-    <p>
-      <a href="Word_Power_Made_Easy/session28.html">Session 28</a>
-      <a href="Word_Power_Made_Easy/session28_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>Session 29  
-      <a href="Word_Power_Made_Easy/session29_supplement.txt.html">[supplement]</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session29_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session29_2.html">Part 2</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session29_3.html">Part 3</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session29_4.html">Part 4</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session29_5.html">Part 5</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session29_6.html">Part 6</a>
-    </p>
-    <p>Session 30
-      <a href="Word_Power_Made_Easy/session30_supplement.txt.html">[supplement]</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session30_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session30_2.html">Part 2</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session30_3.html">Part 3</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session30_4.html">Part 4</a>
-    </p>
-    <p>Session 31  
-      <a href="Word_Power_Made_Easy/session31_supplement.txt.html">[supplement]</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session31_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session31_2.html">Part 2</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session31_3.html">Part 3</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session31_4.html">Part 4</a>
-    </p>
-    <p>Some Interesting Derivations
-      <a href="Word_Power_Made_Easy/intermission_7.txt.html">[supplement]</a>
-    </p>
+    .chapter a {
+      color: #1d4ed8; /* Distinct link color */
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-<h2 >How to Flatter Your Friends</h2>
-    <p>
-      <a href="Word_Power_Made_Easy/session32.html">Session 32</a>
-      <a href="Word_Power_Made_Easy/session32_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>Session 33  
-      <a href="Word_Power_Made_Easy/session33_supplement.txt.html">[supplement]</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session33_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session33_2.html">Part 2</a>
-    </p>
-    <p>
-      <a href="Word_Power_Made_Easy/session34.html">Session 34</a>
-      <a href="Word_Power_Made_Easy/session34_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>Session 35  
-      <a href="Word_Power_Made_Easy/session35_supplement.txt.html">[supplement]</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session35_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session35_2.html">Part 2</a>
-    </p>
-    <p>Session 36  
-      <a href="Word_Power_Made_Easy/session36_supplement.txt.html">[supplement]</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session36_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session36_2.html">Part 2</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session36_3.html">Part 3</a>
-    </p>
+    .chapter a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>GETTING ORIENTED</h1>
 
-	<h1 style="text-align: center;">FINISHING WITH A FEELING OF COMPLETE SUCCESS</h1>
+  <h2>How to Use This Book for Maximum Benefit <a href="Word_Power_Made_Easy/chapter_0.txt.html">[supplement]</a></h2>
+  <h2>How to Start Building Your Vocabulary <a href="Word_Power_Made_Easy/chapter_3.txt.html">[supplement]</a></h2>
 
-<h2 >How to Talk About Common Phenomena and Occurrence</h2>
-    <p>
-      <a href="Word_Power_Made_Easy/session39.html">Session 39</a>
-      <a href="Word_Power_Made_Easy/session39_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>Session 40  
-      <a href="Word_Power_Made_Easy/session40_supplement.txt.html">[supplement]</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session40_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session40_2.html">Part 2</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session40_3.html">Part 3</a>
-    </p>	  
-    <p>Session 41  
-      <a href="Word_Power_Made_Easy/session41_supplement.txt.html">[supplement]</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session41_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session41_2.html">Part 2</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session41_3.html">Part 3</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session41_4.html">Part 4</a>	    
-    </p>
-    <p>How to Spell a Word
-      <a href="Word_Power_Made_Easy/intermission_8.txt.html">[supplement]</a>
-    </p>
+  <h1>GET OFF TO A GOOD START</h1>
 
-<h2 >How to Talk About What Goes on</h2>
-    <p>
-      <a href="Word_Power_Made_Easy/session42.html">Session 42</a>
-      <a href="Word_Power_Made_Easy/session42_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>
-      <a href="Word_Power_Made_Easy/session43.html">Session 43</a>
-      <a href="Word_Power_Made_Easy/session43_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>
-      <a href="Word_Power_Made_Easy/session44.html">Session 44</a>
-      <a href="Word_Power_Made_Easy/session44_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>Take This Spelling Test
-      <a href="Word_Power_Made_Easy/intermission_9.txt.html">[supplement]</a>
-    </p>
+  <h2>How to Talk About Personality Types</h2>
+  <div class="chapter">
+    <div class="chapter-title">Session 1</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session1.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session1_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 2</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session2.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session2_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 3</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session3_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session3_2.html">Part 2</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session3_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Test Your Grammar</div>
+    <div class="chapter-links">
+      <div class="chapter-left"></div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/intermission_1.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
 
-<h2 >How to Talk About a Variety of Personal Characteristics</h2>
-    <p>
-      <a href="Word_Power_Made_Easy/session45.html">Session 45</a>
-      <a href="Word_Power_Made_Easy/session45_supplement.txt.html">[supplement]</a>
-    </p>
-    <p>Session 46  
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session46_1.html">Part 1</a>
-      &nbsp;&nbsp;&nbsp;<a href="Word_Power_Made_Easy/session46_2.html">Part 2</a>
-    </p>
-    <p>Another Check on Your Spelling
-      <a href="Word_Power_Made_Easy/intermission_10.txt.html">[supplement]</a>
-    </p>
-	  
-  </body>
+  <h2>How to Talk About Doctors</h2>
+  <div class="chapter">
+    <div class="chapter-title">Session 4</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session4.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session4_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 5</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session5_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session5_2.html">Part 2</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session5_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 6</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session6_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session6_2.html">Part 2</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session6_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Random Notes on Modern Usage</div>
+    <div class="chapter-links">
+      <div class="chapter-left"></div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/intermission_2.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>How to Talk About Various Practitioners</h2>
+  <div class="chapter">
+    <div class="chapter-title">Session 7</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session7.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session7_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 8</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session8.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session8_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 9</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session9_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session9_2.html">Part 2</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session9_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>How to Talk About Science and Scientists</h2>
+  <div class="chapter">
+    <div class="chapter-title">Session 11</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session11.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session11_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 12</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session12_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session12_2.html">Part 2</a>
+        <a href="Word_Power_Made_Easy/session12_3.html">Part 3</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session12_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 13</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session13_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session13_2.html">Part 2</a>
+        <a href="Word_Power_Made_Easy/session13_3.html">Part 3</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session13_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">How to Avoid Being a Purist</div>
+    <div class="chapter-links">
+      <div class="chapter-left"></div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/intermission_4.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>How to Talk About Liars and Lying</h2>
+  <div class="chapter">
+    <div class="chapter-title">Session 14</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session14.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session14_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 15</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session15.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session15_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 16</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session16_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session16_2.html">Part 2</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session16_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 17</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session17.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session17_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+
+  <h1>GAINING INCREASED MOMENTUM</h1>
+  
+  <h2>How to Talk About Actions</h2>
+  <div class="chapter">
+    <div class="chapter-title">Session 19</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session19.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session19_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 20</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session20.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session20_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 21</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session21_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session21_2.html">Part 2</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session21_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 22</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session22_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session22_2.html">Part 2</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session22_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 23</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session23_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session23_2.html">Part 2</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session23_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">How to Speak Naturally</div>
+    <div class="chapter-links">
+      <div class="chapter-left"></div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/intermission_5.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>How to Talk About Various Speech Habits</h2>
+  <div class="chapter">
+    <div class="chapter-title">Session 24</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session24.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session24_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 25</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session25.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session25_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 26</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session26_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session26_2.html">Part 2</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session26_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 27</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session27_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session27_2.html">Part 2</a>
+        <a href="Word_Power_Made_Easy/session27_3.html">Part 3</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session27_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">How to Always Use the Proper Word</div>
+    <div class="chapter-links">
+      <div class="chapter-left"></div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/intermission_6.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>How to Insult Your Enemies</h2>
+  <div class="chapter">
+    <div class="chapter-title">Session 28</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session28.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session28_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 29</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session29_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session29_2.html">Part 2</a>
+        <a href="Word_Power_Made_Easy/session29_3.html">Part 3</a>
+        <a href="Word_Power_Made_Easy/session29_4.html">Part 4</a>
+        <a href="Word_Power_Made_Easy/session29_5.html">Part 5</a>
+        <a href="Word_Power_Made_Easy/session29_6.html">Part 6</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session29_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 30</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session30_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session30_2.html">Part 2</a>
+        <a href="Word_Power_Made_Easy/session30_3.html">Part 3</a>
+        <a href="Word_Power_Made_Easy/session30_4.html">Part 4</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session30_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 31</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session31_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session31_2.html">Part 2</a>
+        <a href="Word_Power_Made_Easy/session31_3.html">Part 3</a>
+        <a href="Word_Power_Made_Easy/session31_4.html">Part 4</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session31_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Some Interesting Derivations</div>
+    <div class="chapter-links">
+      <div class="chapter-left"></div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/intermission_7.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>How to Flatter Your Friends</h2>
+  <div class="chapter">
+    <div class="chapter-title">Session 32</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session32.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session32_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 33</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session33_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session33_2.html">Part 2</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session33_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 34</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session34.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session34_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 35</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session35_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session35_2.html">Part 2</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session35_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 36</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session36_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session36_2.html">Part 2</a>
+        <a href="Word_Power_Made_Easy/session36_3.html">Part 3</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session36_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+
+  <h1>FINISHING WITH A FEELING OF COMPLETE SUCCESS</h1>
+
+  <h2>How to Talk About Common Phenomena and Occurrence</h2>
+  <div class="chapter">
+    <div class="chapter-title">Session 39</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session39.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session39_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 40</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session40_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session40_2.html">Part 2</a>
+        <a href="Word_Power_Made_Easy/session40_3.html">Part 3</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session40_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 41</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session41_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session41_2.html">Part 2</a>
+        <a href="Word_Power_Made_Easy/session41_3.html">Part 3</a>
+        <a href="Word_Power_Made_Easy/session41_4.html">Part 4</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session41_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">How to Spell a Word</div>
+    <div class="chapter-links">
+      <div class="chapter-left"></div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/intermission_8.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>How to Talk About What Goes on</h2>
+  <div class="chapter">
+    <div class="chapter-title">Session 42</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session42.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session42_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 43</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session43.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session43_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 44</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session44.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session44_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Take This Spelling Test</div>
+    <div class="chapter-links">
+      <div class="chapter-left"></div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/intermission_9.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>How to Talk About a Variety of Personal Characteristics</h2>
+  <div class="chapter">
+    <div class="chapter-title">Session 45</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session45.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session45_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 46</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session46_1.html">Part 1</a>
+        <a href="Word_Power_Made_Easy/session46_2.html">Part 2</a>
+      </div>
+    </div>
+  </div>
+  <div class="chapter">
+    <div class="chapter-title">Another Check on Your Spelling</div>
+    <div class="chapter-links">
+      <div class="chapter-left"></div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/intermission_10.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
