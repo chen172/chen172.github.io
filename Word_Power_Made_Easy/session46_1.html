@@ -1,125 +1,53 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session46_1</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">obsequies</td>
-				<td>[ˈɒbsəkwiz]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ld41obsequies.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">subsequent</td>
-				<td>[ˈsəb-si-kwənt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/subseq03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">sequel</td>
-				<td>[ˈsē-kwəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/sequel01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">sequence</td>
-				<td>[ˈsē-kwən(t)s]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/sequen01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">pecuniary</td>
-				<td>[pi-ˈkyü-nē-ˌer-ē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/pecuni01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">noxious</td>
-				<td>[ˈnäk-shəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/noxiou01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">imbibe</td>
-				<td>[im-ˈbīb]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/imbibe01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">dolor</td>
-				<td>[ˈdō-lər]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/dolor001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">doleful</td>
-				<td>[ˈdōl-fəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/dolefu01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">cavalcade</td>
-				<td>[ˌka-vəl-ˈkād]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/cavalc01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">cavalier</td>
-				<td>[ˌka-və-ˈlir]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/cavali01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'obsequy', phonetic: '[ˈäb-sə-kwē]', audio: 'audio/obsequ02.mp3' },
+  { word: 'subsequent', phonetic: '[ˈsəb-si-kwənt]', audio: 'audio/subseq03.mp3' },
+  { word: 'sequel', phonetic: '[ˈsē-kwəl]', audio: 'audio/sequel01.mp3' },
+  { word: 'sequence', phonetic: '[ˈsē-kwən(t)s]', audio: 'audio/sequen01.mp3' },
+  { word: 'pecuniary', phonetic: '[pi-ˈkyü-nē-ˌer-ē]', audio: 'audio/pecuni01.mp3' },
+  { word: 'noxious', phonetic: '[ˈnäk-shəs]', audio: 'audio/noxiou01.mp3' },
+  { word: 'imbibe', phonetic: '[im-ˈbīb]', audio: 'audio/imbibe01.mp3' },
+  { word: 'dolor', phonetic: '[ˈdō-lər]', audio: 'audio/dolor001.mp3' },
+  { word: 'doleful', phonetic: '[ˈdōl-fəl]', audio: 'audio/dolefu01.mp3' },
+  { word: 'cavalcade', phonetic: '[ˌka-vəl-ˈkād]', audio: 'audio/cavalc01.mp3' },
+  { word: 'cavalier', phonetic: '[ˌka-və-ˈlir]', audio: 'audio/cavali01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

@@ -1,195 +1,57 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session44</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">simulation</td>
-				<td>[ˌsim-yə-ˈlā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/simula07.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">dissimulate</td>
-				<td>[(ˌ)di-ˈsim-yə-ˌlāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/dissim05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">dissimulation</td>
-				<td>[(ˌ)di-ˌsim-yə-ˈlā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/dissim09.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">dissemble</td>
-				<td>[di-ˈsem-bəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/dissem01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-			
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">dissemblance</td>
-				<td>[dɪˈsɛm bləns]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/dissemblance.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-			
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">intimation</td>
-				<td>[ˌin-tə-ˈmā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/intima06.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">alleviation</td>
-				<td>[ə-ˌlē-vē-ˈā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/allevi02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-			
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">alleviative</td>
-				<td>[əˈli viˌeɪ tɪv, -ə tɪv]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/alleviative.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>			
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">levitate</td>
-				<td>[ˈle-və-ˌtāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/levita01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">levitation</td>
-				<td>[ˌle-və-ˈtā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/levita02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">levity</td>
-				<td>[ˈle-və-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/levity01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">commiseration</td>
-				<td>[kə-ˌmi-zə-ˈrā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/commis02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">vacillation</td>
-				<td>[ˌva-sə-ˈlā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vacill04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-			
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">vacillatory</td>
-				<td>[ˈvæs ə ləˌtɔr i, -ˌtoʊr i ]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vacillatory.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>			
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">ambivalent</td>
-				<td>[am-ˈbi-və-lənt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ambiva02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">ambivalence</td>
-				<td>[am-ˈbi-və-lən(t)s]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ambiva01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">oscillate</td>
-				<td>[ˈä-sə-ˌlāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/oscill01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">oscillation</td>
-				<td>[ˌä-sə-ˈlā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/oscill03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'simulation', phonetic: '[ˌsim-yə-ˈlā-shən]', audio: 'audio/simula07.mp3' },
+  { word: 'dissimulate', phonetic: '[(ˌ)di-ˈsim-yə-ˌlāt]', audio: 'audio/dissim05.mp3' },
+  { word: 'dissimulation', phonetic: '[(ˌ)di-ˌsim-yə-ˈlā-shən]', audio: 'audio/dissim09.mp3' },
+  { word: 'dissemble', phonetic: '[di-ˈsem-bəl]', audio: 'audio/dissem01.mp3' },
+  { word: 'intimation', phonetic: '[ˌin-tə-ˈmā-shən]', audio: 'audio/intima06.mp3' },
+  { word: 'alleviation', phonetic: '[ə-ˌlē-vē-ˈā-shən]', audio: 'audio/allevi02.mp3' },
+  { word: 'levitate', phonetic: '[ˈle-və-ˌtāt]', audio: 'audio/levita01.mp3' },
+  { word: 'levitation', phonetic: '[ˌle-və-ˈtā-shən]', audio: 'audio/levita02.mp3' },
+  { word: 'levity', phonetic: '[ˈle-və-tē]', audio: 'audio/levity01.mp3' },
+  { word: 'commiseration', phonetic: '[kə-ˌmi-zə-ˈrā-shən]', audio: 'audio/commis02.mp3' },
+  { word: 'vacillation', phonetic: '[ˌva-sə-ˈlā-shən]', audio: 'audio/vacill04.mp3' },
+  { word: 'ambivalent', phonetic: '[am-ˈbi-və-lənt]', audio: 'audio/ambiva02.mp3' },
+  { word: 'ambivalence', phonetic: '[am-ˈbi-və-lən(t)s]', audio: 'audio/ambiva01.mp3' },
+  { word: 'oscillate', phonetic: '[ˈä-sə-ˌlāt]', audio: 'audio/oscill01.mp3' },
+  { word: 'oscillation', phonetic: '[ˌä-sə-ˈlā-shən]', audio: 'audio/oscill03.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

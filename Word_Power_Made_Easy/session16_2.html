@@ -1,175 +1,58 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session16_2</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">pathology</td>
-				<td>[pə-ˈthä-lə-jē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/pathol05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">pathologist</td>
-				<td>[pə-ˈthä-lə-jist]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/pathol04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">sympathy</td>
-				<td>[ˈsim-pə-thē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/sympat09.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">sympathetic</td>
-				<td>[ˌsim-pə-ˈthe-tik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/sympat03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">sympathize</td>
-				<td>[ˈsim-pə-ˌthīz]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/sympat06.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">antipathy</td>
-				<td>[an-ˈti-pə-thē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/antipa09.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">antipathetic</td>
-				<td>[ˌan-ti-pə-ˈthe-tik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/antipa07.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">apathy</td>
-				<td>[ˈa-pə-thē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/apathy01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">apathetic</td>
-				<td>[ˌa-pə-ˈthe-tik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/apathe01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">empathy</td>
-				<td>[ˈem-pə-thē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/empath06.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">empathize</td>
-				<td>[ˈem-pə-ˌthīz]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/empath05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">empathetic</td>
-				<td>[ˌem-pə-ˈthe-tik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/empath01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">empathic</td>
-				<td>[em-ˈpa-thik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/empath03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">pathetic</td>
-				<td>[pə-ˈthe-tik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/pathet01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">telepathy</td>
-				<td>[tə-ˈle-pə-thē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/telepa02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">telepathic</td>
-				<td>[ˌte-lə-ˈpa-thik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/telepa03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'pathology', phonetic: '[pə-ˈthä-lə-jē]', audio: 'audio/pathol05.mp3' },
+  { word: 'pathologist', phonetic: '[pə-ˈthä-lə-jist]', audio: 'audio/pathol04.mp3' },
+  { word: 'sympathy', phonetic: '[ˈsim-pə-thē]', audio: 'audio/sympat09.mp3' },
+  { word: 'sympathetic', phonetic: '[ˌsim-pə-ˈthe-tik]', audio: 'audio/sympat03.mp3' },
+  { word: 'sympathize', phonetic: '[ˈsim-pə-ˌthīz]', audio: 'audio/sympat06.mp3' },
+  { word: 'antipathy', phonetic: '[an-ˈti-pə-thē]', audio: 'audio/antipa09.mp3' },
+  { word: 'antipathetic', phonetic: '[ˌan-ti-pə-ˈthe-tik]', audio: 'audio/antipa07.mp3' },
+  { word: 'apathy', phonetic: '[ˈa-pə-thē]', audio: 'audio/apathy01.mp3' },
+  { word: 'apathetic', phonetic: '[ˌa-pə-ˈthe-tik]', audio: 'audio/apathe01.mp3' },
+  { word: 'empathy', phonetic: '[ˈem-pə-thē]', audio: 'audio/empath06.mp3' },
+  { word: 'empathize', phonetic: '[ˈem-pə-ˌthīz]', audio: 'audio/empath05.mp3' },
+  { word: 'empathetic', phonetic: '[ˌem-pə-ˈthe-tik]', audio: 'audio/empath01.mp3' },
+  { word: 'empathic', phonetic: '[em-ˈpa-thik]', audio: 'audio/empath03.mp3' },
+  { word: 'pathetic', phonetic: '[pə-ˈthe-tik]', audio: 'audio/pathet01.mp3' },
+  { word: 'telepathy', phonetic: '[tə-ˈle-pə-thē]', audio: 'audio/telepa02.mp3' },
+  { word: 'telepathic', phonetic: '[ˌte-lə-ˈpa-thik]', audio: 'audio/telepa03.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

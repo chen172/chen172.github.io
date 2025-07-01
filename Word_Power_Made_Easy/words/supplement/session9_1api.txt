@@ -1,12 +1,9 @@
 periodontist
-periodontia
-periodontic
+periodontics
 endodontist
-endodontia
 endodontic
 exodontist
 exodontia
-exodontic
 thermometer
 barometer
 barometric

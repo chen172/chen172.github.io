@@ -1,125 +1,53 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session13_3</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">philter</td>
-				<td>[ˈfil-tər]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/philte01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">aphrodisiac</td>
-				<td>[ˌa-frə-ˈdē-zē-ˌak]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/aphrod02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">aphrodisiacal</td>
-				<td>[ˌa-frə-di-ˈsī-ə-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/aphrod03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">bibliophile</td>
-				<td>[ˈbi-blē-ə-ˌfī(-ə)l]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/biblio16.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">Anglophile</td>
-				<td>[ˈaŋ-glə-ˌfī(-ə)l]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/anglop01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">semantics</td>
-				<td>[si-ˈman-tiks]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/semant05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">semantic</td>
-				<td>[si-ˈman-tik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/semant01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">semantical</td>
-				<td>[si-ˈman-ti-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/semant02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">sociology</td>
-				<td>[ˌsō-sē-ˈä-lə-jē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/sociol08.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">sociological</td>
-				<td>[ˌsō-sē-ə-ˈlä-ji-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/sociol05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">asocial</td>
-				<td>[(ˌ)ā-ˈsō-shəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/asocia01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'philter', phonetic: '[ˈfil-tər]', audio: 'audio/philte01.mp3' },
+  { word: 'aphrodisiac', phonetic: '[ˌa-frə-ˈdē-zē-ˌak]', audio: 'audio/aphrod02.mp3' },
+  { word: 'aphrodisiacal', phonetic: '[ˌa-frə-di-ˈsī-ə-kəl]', audio: 'audio/aphrod03.mp3' },
+  { word: 'bibliophile', phonetic: '[ˈbi-blē-ə-ˌfī(-ə)l]', audio: 'audio/biblio16.mp3' },
+  { word: 'Anglophile', phonetic: '[ˈaŋ-glə-ˌfī(-ə)l]', audio: 'audio/anglop01.mp3' },
+  { word: 'semantics', phonetic: '[si-ˈman-tiks]', audio: 'audio/semant05.mp3' },
+  { word: 'semantic', phonetic: '[si-ˈman-tik]', audio: 'audio/semant01.mp3' },
+  { word: 'semantical', phonetic: '[si-ˈman-ti-kəl]', audio: 'audio/semant02.mp3' },
+  { word: 'sociology', phonetic: '[ˌsō-sē-ˈä-lə-jē]', audio: 'audio/sociol08.mp3' },
+  { word: 'sociological', phonetic: '[ˌsō-sē-ə-ˈlä-ji-kəl]', audio: 'audio/sociol05.mp3' },
+  { word: 'asocial', phonetic: '[(ˌ)ā-ˈsō-shəl]', audio: 'audio/asocia01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

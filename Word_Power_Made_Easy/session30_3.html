@@ -1,147 +1,53 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>session30_3</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">incendiarism</td>
-				<td>[in-ˈsen-dē-ə-ˌri-zəm]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/incend01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">incendiary</td>
-				<td>[in-ˈsen-dē-ˌer-ē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/incend02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">arson</td>
-				<td>[ˈär-sᵊn]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/arson001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">arsonist</td>
-				<td>[ˈär-sᵊn-ist]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/arson002.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">megalomania</td>
-				<td>[ˌme-gə-lō-ˈmā-nē-ə]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/megalo03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">megalomaniac</td>
-				<td>[ˌme-gə-lō-ˈmā-nē-ˌak]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/megalo04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">megalomaniacal</td>
-				<td>[ˌme-gə-lō-mə-ˈnī-ə-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/megalo06.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">nymphomania</td>
-				<td>[ˌnim(p)-fə-ˈmā-nē-ə]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/nympho05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">nymphomaniac</td>
-				<td>[ˌnim(p)-fə-ˈmā-nē-ˌak]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/nympho06.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">nymphomaniacal</td>
-				<td>[ˌnim(p)-fə-mə-ˈnī-ə-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/nympho07.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">satyriasis</td>
-				<td>[ˌsā-tə-ˈrī-ə-səs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/satyri01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'incendiarism', phonetic: '[in-ˈsen-dē-ə-ˌri-zəm]', audio: 'audio/incend01.mp3' },
+  { word: 'incendiary', phonetic: '[in-ˈsen-dē-ˌer-ē]', audio: 'audio/incend02.mp3' },
+  { word: 'arson', phonetic: '[ˈär-sᵊn]', audio: 'audio/arson001.mp3' },
+  { word: 'arsonist', phonetic: '[ˈär-sᵊn-ist]', audio: 'audio/arson002.mp3' },
+  { word: 'megalomania', phonetic: '[ˌme-gə-lō-ˈmā-nē-ə]', audio: 'audio/megalo03.mp3' },
+  { word: 'megalomaniac', phonetic: '[ˌme-gə-lō-ˈmā-nē-ˌak]', audio: 'audio/megalo04.mp3' },
+  { word: 'megalomaniacal', phonetic: '[ˌme-gə-lō-mə-ˈnī-ə-kəl]', audio: 'audio/megalo06.mp3' },
+  { word: 'nymphomania', phonetic: '[ˌnim(p)-fə-ˈmā-nē-ə]', audio: 'audio/nympho05.mp3' },
+  { word: 'nymphomaniac', phonetic: '[ˌnim(p)-fə-ˈmā-nē-ˌak]', audio: 'audio/nympho06.mp3' },
+  { word: 'nymphomaniacal', phonetic: '[ˌnim(p)-fə-mə-ˈnī-ə-kəl]', audio: 'audio/nympho07.mp3' },
+  { word: 'satyriasis', phonetic: '[ˌsā-tə-ˈrī-ə-səs]', audio: 'audio/satyri01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

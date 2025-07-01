@@ -1,115 +1,52 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session40_2</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">evanescent</td>
-				<td>[ˌe-və-ˈne-sᵊnt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/evanes03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">evanescence</td>
-				<td>[ˌe-və-ˈne-sᵊn(t)s]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/evanes02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">evanesce</td>
-				<td>[ˌe-və-ˈnes]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/evanes01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">euphemistic</td>
-				<td>[ˌyü-fə-ˈmi-stik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/euphem03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">euphony</td>
-				<td>[ˈyü-fə-nē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/euphon03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">euphonic</td>
-				<td>[yu̇-ˈfä-nik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/euphon04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">euphonious</td>
-				<td>[yü-ˈfō-nē-əs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/euphon01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">eulogy</td>
-				<td>[ˈyü-lə-jē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/eulogy01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">eulogistic</td>
-				<td>[ˌyü-lə-ˈji-stik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/eulogy02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">eulogize</td>
-				<td>[ˈyü-lə-ˌjīz]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/eulogi04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'evanescent', phonetic: '[ˌe-və-ˈne-sᵊnt]', audio: 'audio/evanes03.mp3' },
+  { word: 'evanescence', phonetic: '[ˌe-və-ˈne-sᵊn(t)s]', audio: 'audio/evanes02.mp3' },
+  { word: 'evanesce', phonetic: '[ˌe-və-ˈnes]', audio: 'audio/evanes01.mp3' },
+  { word: 'euphemistic', phonetic: '[ˌyü-fə-ˈmi-stik]', audio: 'audio/euphem03.mp3' },
+  { word: 'euphony', phonetic: '[ˈyü-fə-nē]', audio: 'audio/euphon03.mp3' },
+  { word: 'euphonic', phonetic: '[yu̇-ˈfä-nik]', audio: 'audio/euphon04.mp3' },
+  { word: 'euphonious', phonetic: '[yü-ˈfō-nē-əs]', audio: 'audio/euphon01.mp3' },
+  { word: 'eulogy', phonetic: '[ˈyü-lə-jē]', audio: 'audio/eulogy01.mp3' },
+  { word: 'eulogistic', phonetic: '[ˌyü-lə-ˈji-stik]', audio: 'audio/eulogy02.mp3' },
+  { word: 'eulogize', phonetic: '[ˈyü-lə-ˌjīz]', audio: 'audio/eulogi04.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

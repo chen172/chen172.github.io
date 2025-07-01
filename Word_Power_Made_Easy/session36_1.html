@@ -1,125 +1,53 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session36_1</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">magnanimity</td>
-				<td>[ˌmag-nə-ˈni-mə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/magnan01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">pusillanimous</td>
-				<td>[ˌpyü-sə-ˈla-nə-məs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/pusill02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">pusillanimity</td>
-				<td>[ˌpyü-sə-lə-ˈni-mə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/pusill01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">unanimous</td>
-				<td>[yu̇-ˈna-nə-məs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/unanim02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">unanimity</td>
-				<td>[ˌyü-nə-ˈni-mə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/unanim01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">equanimity</td>
-				<td>[ˌē-kwə-ˈni-mə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/equani01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">animus</td>
-				<td>[ˈa-nə-məs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/animus01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">animosity</td>
-				<td>[ˌa-nə-ˈmä-sə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/animos01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">versatility</td>
-				<td>[ˌvər-sə-ˈti-lə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/versat09.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">stoic</td>
-				<td>[ˈstō-ik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/stoic101.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">stoicism</td>
-				<td>[ˈstō-ə-ˌsi-zəm]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/stoici01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'magnanimity', phonetic: '[ˌmag-nə-ˈni-mə-tē]', audio: 'audio/magnan01.mp3' },
+  { word: 'pusillanimous', phonetic: '[ˌpyü-sə-ˈla-nə-məs]', audio: 'audio/pusill02.mp3' },
+  { word: 'pusillanimity', phonetic: '[ˌpyü-sə-lə-ˈni-mə-tē]', audio: 'audio/pusill01.mp3' },
+  { word: 'unanimous', phonetic: '[yu̇-ˈna-nə-məs]', audio: 'audio/unanim02.mp3' },
+  { word: 'unanimity', phonetic: '[ˌyü-nə-ˈni-mə-tē]', audio: 'audio/unanim01.mp3' },
+  { word: 'equanimity', phonetic: '[ˌē-kwə-ˈni-mə-tē]', audio: 'audio/equani01.mp3' },
+  { word: 'animus', phonetic: '[ˈa-nə-məs]', audio: 'audio/animus01.mp3' },
+  { word: 'animosity', phonetic: '[ˌa-nə-ˈmä-sə-tē]', audio: 'audio/animos01.mp3' },
+  { word: 'versatility', phonetic: '[ˌvər-sə-ˈti-lə-tē]', audio: 'audio/versat09.mp3' },
+  { word: 'stoic', phonetic: '[ˈstō-ik]', audio: 'audio/stoic101.mp3' },
+  { word: 'stoicism', phonetic: '[ˈstō-ə-ˌsi-zəm]', audio: 'audio/stoici01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

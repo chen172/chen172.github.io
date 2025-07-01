@@ -1,243 +1,52 @@
-
-
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-<meta charset="utf-8">
-
-<title>
-
-Session6_1</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 </head>
-
 <body>
-
-  
-  
- 
- 
- 
- 
-
-  
-
-
-
-<table>
-
- 
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">orthopedics</td>
-
-<td>[ˌȯr-thə-ˈpē-diks]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/orthop03.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">orthopedic</td>
-
-<td>[ˌȯr-thə-ˈpē-dik]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/orthop01.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">orthodontia</td>
-
-<td>[ˌȯr-thə-ˈdän(t)-sh(ē-)ə]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/orthod01.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">orthodontist</td>
-
-<td>[ˌȯr-thə-ˈdän-tist]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/orthod05.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">orthodontic</td>
-
-<td>[ˌȯr-thə-ˈdän-tik]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/orthod03.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">cardiology</td>
-
-<td>[ˌkär-dē-ˈä-lə-jē]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/cardio07.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">cardiological</td>
-
-<td>[ˌkär-dē-ə-ˈlä-ji-kəl]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/cardio08.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">cardiac</td>
-
-<td>[ˈkär-dē-ˌak]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/cardia03.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">cardiogram</td>
-
-<td>[ˈkär-dē-ə-ˌgram]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/cardio02.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">cardiograph</td>
-
-<td>[ˈkär-dē-ə-ˌgraf]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/cardio03.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
- 
-
-</table>   
-
-         
-
-
-
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
+
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
+
+  <script>
+    const entries = [
+  { word: 'orthopedics', phonetic: '[ˌȯr-thə-ˈpē-diks]', audio: 'audio/orthop03.mp3' },
+  { word: 'orthopedic', phonetic: '[ˌȯr-thə-ˈpē-dik]', audio: 'audio/orthop01.mp3' },
+  { word: 'orthodontia', phonetic: '[ˌȯr-thə-ˈdän(t)-sh(ē-)ə]', audio: 'audio/orthod01.mp3' },
+  { word: 'orthodontist', phonetic: '[ˌȯr-thə-ˈdän-tist]', audio: 'audio/orthod05.mp3' },
+  { word: 'orthodontic', phonetic: '[ˌȯr-thə-ˈdän-tik]', audio: 'audio/orthod03.mp3' },
+  { word: 'cardiology', phonetic: '[ˌkär-dē-ˈä-lə-jē]', audio: 'audio/cardio07.mp3' },
+  { word: 'cardiological', phonetic: '[ˌkär-dē-ə-ˈlä-ji-kəl]', audio: 'audio/cardio08.mp3' },
+  { word: 'cardiac', phonetic: '[ˈkär-dē-ˌak]', audio: 'audio/cardia03.mp3' },
+  { word: 'cardiogram', phonetic: '[ˈkär-dē-ə-ˌgram]', audio: 'audio/cardio02.mp3' },
+  { word: 'cardiograph', phonetic: '[ˈkär-dē-ə-ˌgraf]', audio: 'audio/cardio03.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
 </body>
-
 </html>
-

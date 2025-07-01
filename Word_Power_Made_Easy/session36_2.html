@@ -1,135 +1,54 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session36_2</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">intrepidity</td>
-				<td>[ˌin-trə-ˈpi-də-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/intrep02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">trepidation</td>
-				<td>[ˌtre-pə-ˈdā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/trepid03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">scintilla</td>
-				<td>[sin-ˈti-lə]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/scinti03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">scintillate</td>
-				<td>[ˈsin-tə-ˌlāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/scinti05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">scintillation</td>
-				<td>[ˌsin-tə-ˈlā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/scinti07.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">urbanity</td>
-				<td>[ˌər-ˈba-nə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/urbani06.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">suburbia</td>
-				<td>[sə-ˈbər-bē-ə]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/suburb06.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">interurban</td>
-				<td>[ˌin-tər-ˈər-bən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/inter9s3.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">exurb</td>
-				<td>[ˈek-ˌsərb]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/exurb002.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">exurban</td>
-				<td>[ek-ˈsər-bən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/exurb003.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">exurbanite</td>
-				<td>[ek-ˈsər-bə-ˌnīt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/exurba01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">exurbia</td>
-				<td>[ek-ˈsər-bē-ə]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/exurbi01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'intrepidity', phonetic: '[ˌin-trə-ˈpi-də-tē]', audio: 'audio/intrep02.mp3' },
+  { word: 'trepidation', phonetic: '[ˌtre-pə-ˈdā-shən]', audio: 'audio/trepid03.mp3' },
+  { word: 'scintilla', phonetic: '[sin-ˈti-lə]', audio: 'audio/scinti03.mp3' },
+  { word: 'scintillate', phonetic: '[ˈsin-tə-ˌlāt]', audio: 'audio/scinti05.mp3' },
+  { word: 'scintillation', phonetic: '[ˌsin-tə-ˈlā-shən]', audio: 'audio/scinti07.mp3' },
+  { word: 'urbanity', phonetic: '[ˌər-ˈba-nə-tē]', audio: 'audio/urbani06.mp3' },
+  { word: 'suburbia', phonetic: '[sə-ˈbər-bē-ə]', audio: 'audio/suburb06.mp3' },
+  { word: 'interurban', phonetic: '[ˌin-tər-ˈər-bən]', audio: 'audio/inter9s3.mp3' },
+  { word: 'exurb', phonetic: '[ˈek-ˌsərb]', audio: 'audio/exurb002.mp3' },
+  { word: 'exurban', phonetic: '[ek-ˈsər-bən]', audio: 'audio/exurb003.mp3' },
+  { word: 'exurbanite', phonetic: '[ek-ˈsər-bə-ˌnīt]', audio: 'audio/exurba01.mp3' },
+  { word: 'exurbia', phonetic: '[ek-ˈsər-bē-ə]', audio: 'audio/exurbi01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

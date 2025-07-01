@@ -1,115 +1,52 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session14</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">notorious</td>
-				<td>[nō-ˈtȯr-ē-əs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/notori02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">consummate</td>
-				<td>[ˈkän(t)-sə-mət]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/consum10.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">incorrigible</td>
-				<td>[(ˌ)in-ˈkȯr-ə-jə-bəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/incorr04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">inveterate</td>
-				<td>[in-ˈve-t(ə-)rət]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/invete02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">congenital</td>
-				<td>[kən-ˈje-nə-tᵊl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/congen09.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">chronic</td>
-				<td>[ˈkrä-nik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/chroni01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">pathological</td>
-				<td>[ˌpa-thə-ˈlä-ji-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/pathol01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">unconscionable</td>
-				<td>[ˌən-ˈkän(t)-sh(ə-)nə-bəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/uncons01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">glib</td>
-				<td>[ˈglib]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/glib0001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">egregious</td>
-				<td>[i-ˈgrē-jəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/egregi01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'notorious', phonetic: '[nō-ˈtȯr-ē-əs]', audio: 'audio/notori02.mp3' },
+  { word: 'consummate', phonetic: '[ˈkän(t)-sə-mət]', audio: 'audio/consum10.mp3' },
+  { word: 'incorrigible', phonetic: '[(ˌ)in-ˈkȯr-ə-jə-bəl]', audio: 'audio/incorr04.mp3' },
+  { word: 'inveterate', phonetic: '[in-ˈve-t(ə-)rət]', audio: 'audio/invete02.mp3' },
+  { word: 'congenital', phonetic: '[kən-ˈje-nə-tᵊl]', audio: 'audio/congen09.mp3' },
+  { word: 'chronic', phonetic: '[ˈkrä-nik]', audio: 'audio/chroni01.mp3' },
+  { word: 'pathological', phonetic: '[ˌpa-thə-ˈlä-ji-kəl]', audio: 'audio/pathol01.mp3' },
+  { word: 'unconscionable', phonetic: '[ˌən-ˈkän(t)-sh(ə-)nə-bəl]', audio: 'audio/uncons01.mp3' },
+  { word: 'glib', phonetic: '[ˈglib]', audio: 'audio/glib0001.mp3' },
+  { word: 'egregious', phonetic: '[i-ˈgrē-jəs]', audio: 'audio/egregi01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

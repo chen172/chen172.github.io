@@ -1,155 +1,56 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session12_3</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">autonomy</td>
-				<td>[ȯ-ˈtä-nə-mē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/autono05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">autonomous</td>
-				<td>[ȯ-ˈtä-nə-məs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/autono04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">metronome</td>
-				<td>[ˈme-trə-ˌnōm]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/metron02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">autobiography</td>
-				<td>[ˌȯ-tə-bī-ˈä-grə-fē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/autobi01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">autobiographer</td>
-				<td>[ˌȯ-tə-bī-ˈä-grə-fər]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/autobi02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">autobiographical</td>
-				<td>[ˌȯ-tə-ˌbī-ə-ˈgra-fi-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/autobi04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">biopsy</td>
-				<td>[ˈbī-ˌäp-sē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/biopsy01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">autopsy</td>
-				<td>[ˈȯ-ˌtäp-sē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/autops01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">botany</td>
-				<td>[ˈbä-tə-nē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/botany01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">botanical</td>
-				<td>[bə-ˈta-ni-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/botani02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">zoology</td>
-				<td>[zō-ˈä-lə-jē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/zoolog05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">zoological</td>
-				<td>[ˌzō-ə-ˈlä-ji-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/zoolog01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">zodiac</td>
-				<td>[ˈzō-dē-ˌak]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/zodiac01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">zodiacal</td>
-				<td>[zō-ˈdī-ə-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/zodiac02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'autonomy', phonetic: '[ȯ-ˈtä-nə-mē]', audio: 'audio/autono05.mp3' },
+  { word: 'autonomous', phonetic: '[ȯ-ˈtä-nə-məs]', audio: 'audio/autono04.mp3' },
+  { word: 'metronome', phonetic: '[ˈme-trə-ˌnōm]', audio: 'audio/metron02.mp3' },
+  { word: 'autobiography', phonetic: '[ˌȯ-tə-bī-ˈä-grə-fē]', audio: 'audio/autobi01.mp3' },
+  { word: 'autobiographer', phonetic: '[ˌȯ-tə-bī-ˈä-grə-fər]', audio: 'audio/autobi02.mp3' },
+  { word: 'autobiographical', phonetic: '[ˌȯ-tə-ˌbī-ə-ˈgra-fi-kəl]', audio: 'audio/autobi04.mp3' },
+  { word: 'biopsy', phonetic: '[ˈbī-ˌäp-sē]', audio: 'audio/biopsy01.mp3' },
+  { word: 'autopsy', phonetic: '[ˈȯ-ˌtäp-sē]', audio: 'audio/autops01.mp3' },
+  { word: 'botany', phonetic: '[ˈbä-tə-nē]', audio: 'audio/botany01.mp3' },
+  { word: 'botanical', phonetic: '[bə-ˈta-ni-kəl]', audio: 'audio/botani02.mp3' },
+  { word: 'zoology', phonetic: '[zō-ˈä-lə-jē]', audio: 'audio/zoolog05.mp3' },
+  { word: 'zoological', phonetic: '[ˌzō-ə-ˈlä-ji-kəl]', audio: 'audio/zoolog01.mp3' },
+  { word: 'zodiac', phonetic: '[ˈzō-dē-ˌak]', audio: 'audio/zodiac01.mp3' },
+  { word: 'zodiacal', phonetic: '[zō-ˈdī-ə-kəl]', audio: 'audio/zodiac02.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

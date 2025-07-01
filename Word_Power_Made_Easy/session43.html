@@ -1,145 +1,55 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session43</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">enervation</td>
-				<td>[ˌe-nər-ˈvā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/enerva03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">synergism</td>
-				<td>[ˈsi-nər-ˌji-zəm]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/synerg05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">synergy</td>
-				<td>[ˈsi-nər-jē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/synerg09.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">synergistic</td>
-				<td>[ˌsi-nər-ˈji-stik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/synerg07.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">castigation</td>
-				<td>[ˌka-stə-ˈgā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/castig02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">self-abnegation</td>
-				<td>[ˌself-ˌab-ni-ˈgā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/self-abnegation.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">negate</td>
-				<td>[ni-ˈgāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/negate01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">negation</td>
-				<td>[ni-ˈgā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/negati01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">decapitate</td>
-				<td>[di-ˈka-pə-ˌtāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/decapi01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">decapitation</td>
-				<td>[di-ˌka-pə-ˈtā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/decapi02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">recapitulation</td>
-				<td>[ˌrē-kə-ˌpi-chə-ˈlā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/recapi04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">capitulate</td>
-				<td>[kə-ˈpi-chə-ˌlāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/capitu03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">capitulation</td>
-				<td>[kə-ˌpi-chə-ˈlā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/capitu04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'enervation', phonetic: '[ˌe-nər-ˈvā-shən]', audio: 'audio/enerva03.mp3' },
+  { word: 'synergism', phonetic: '[ˈsi-nər-ˌji-zəm]', audio: 'audio/synerg05.mp3' },
+  { word: 'synergy', phonetic: '[ˈsi-nər-jē]', audio: 'audio/synerg09.mp3' },
+  { word: 'synergistic', phonetic: '[ˌsi-nər-ˈji-stik]', audio: 'audio/synerg07.mp3' },
+  { word: 'castigation', phonetic: '[ˌka-stə-ˈgā-shən]', audio: 'audio/castig02.mp3' },
+  { word: 'self-abnegation', phonetic: '[ˌself-ˌab-ni-ˈgā-shən]', audio: 'audio/self-abnegating_1.mp3' },
+  { word: 'negate', phonetic: '[ni-ˈgāt]', audio: 'audio/negate01.mp3' },
+  { word: 'negation', phonetic: '[ni-ˈgā-shən]', audio: 'audio/negati01.mp3' },
+  { word: 'decapitate', phonetic: '[di-ˈka-pə-ˌtāt]', audio: 'audio/decapi01.mp3' },
+  { word: 'decapitation', phonetic: '[di-ˌka-pə-ˈtā-shən]', audio: 'audio/decapi02.mp3' },
+  { word: 'recapitulation', phonetic: '[ˌrē-kə-ˌpi-chə-ˈlā-shən]', audio: 'audio/recapi04.mp3' },
+  { word: 'capitulate', phonetic: '[kə-ˈpi-chə-ˌlāt]', audio: 'audio/capitu03.mp3' },
+  { word: 'capitulation', phonetic: '[kə-ˌpi-chə-ˈlā-shən]', audio: 'audio/capitu04.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

@@ -1,195 +1,60 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session33_2</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">vital</td>
-				<td>[ˈvī-tᵊl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vital001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">vitality</td>
-				<td>[vī-ˈta-lə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vitali04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">vitalize</td>
-				<td>[ˈvī-tə-ˌlīz]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vitali05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">vitalization</td>
-				<td>[ˌvī-tə-lə-ˈzā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vitali06.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">revitalize</td>
-				<td>[(ˌ)rē-ˈvī-tə-ˌlīz]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/revita01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">revitalization</td>
-				<td>[(ˌ)rē-ˌvī-tə-lə-ˈzā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/revita02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">devitalize</td>
-				<td>[(ˌ)dē-ˈvī-tə-ˌlīz]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/devita01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">devitalization</td>
-				<td>[(ˌ)dē-ˌvī-tə-lə-ˈzā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/devit01m.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">joie de vivre</td>
-				<td>[ˌzhwä-də-ˈvēvrᵊ]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/joiede01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">ennui</td>
-				<td>[ˌän-ˈwē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ennui001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">bon vivant</td>
-				<td>[ˌbän-vē-ˈvänt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/bonvi01w.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">gourmand</td>
-				<td>[ˈgu̇r-ˌmänd]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/gourma01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">gourmet</td>
-				<td>[ˈgu̇r-ˌmā]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/gourme01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">gormandize</td>
-				<td>[ˈgȯr-mən-ˌdīz]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/gorman01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">glutton</td>
-				<td>[ˈglə-tᵊn]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/glutto01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">gluttonous</td>
-				<td>[ˈglə-tə-nəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/glutto02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-			
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">gluttonize</td>
-				<td>[ˈglʌt nˌaɪz]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/gluttonize.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>			
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">vitamin</td>
-				<td>[ˈvī-tə-mən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vitami01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'vital', phonetic: '[ˈvī-tᵊl]', audio: 'audio/vital001.mp3' },
+  { word: 'vitality', phonetic: '[vī-ˈta-lə-tē]', audio: 'audio/vitali04.mp3' },
+  { word: 'vitalize', phonetic: '[ˈvī-tə-ˌlīz]', audio: 'audio/vitali05.mp3' },
+  { word: 'vitalization', phonetic: '[ˌvī-tə-lə-ˈzā-shən]', audio: 'audio/vitali06.mp3' },
+  { word: 'revitalize', phonetic: '[(ˌ)rē-ˈvī-tə-ˌlīz]', audio: 'audio/revita01.mp3' },
+  { word: 'revitalization', phonetic: '[(ˌ)rē-ˌvī-tə-lə-ˈzā-shən]', audio: 'audio/revita02.mp3' },
+  { word: 'devitalize', phonetic: '[(ˌ)dē-ˈvī-tə-ˌlīz]', audio: 'audio/devita01.mp3' },
+  { word: 'devitalization', phonetic: '[(ˌ)dē-ˌvī-tə-lə-ˈzā-shən]', audio: 'audio/devit01m.mp3' },
+  { word: 'joie de vivre', phonetic: '[ˌzhwä-də-ˈvēvrᵊ]', audio: 'audio/joiede01.mp3' },
+  { word: 'ennui', phonetic: '[ˌän-ˈwē]', audio: 'audio/ennui001.mp3' },
+  { word: 'bon vivant', phonetic: '[ˌbän-vē-ˈvänt]', audio: 'audio/bonvi01w.mp3' },
+  { word: 'gourmand', phonetic: '[ˈgu̇r-ˌmänd]', audio: 'audio/gourma01.mp3' },
+  { word: 'gourmet', phonetic: '[ˈgu̇r-ˌmā]', audio: 'audio/gourme01.mp3' },
+  { word: 'gormandize', phonetic: '[ˈgȯr-mən-ˌdīz]', audio: 'audio/gorman01.mp3' },
+  { word: 'glutton', phonetic: '[ˈglə-tᵊn]', audio: 'audio/glutto01.mp3' },
+  { word: 'gluttonous', phonetic: '[ˈglə-tə-nəs]', audio: 'audio/glutto02.mp3' },
+  { word: 'gluttonize', phonetic: '[ˈglʌt nˌaɪz]', audio: 'audio/gluttonize.mp3' },
+  { word: 'vitamin', phonetic: '[ˈvī-tə-mən]', audio: 'audio/vitami01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

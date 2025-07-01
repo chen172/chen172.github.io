@@ -1,125 +1,53 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session46_2</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">cavalry</td>
-				<td>[ˈka-vəl-rē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/cavalr01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">chivalry</td>
-				<td>[ˈshi-vəl-rē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/chival03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">chivalric</td>
-				<td>[shə-ˈval-rik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/chival01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">condole</td>
-				<td>[kən-ˈdōl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/condol01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">condolence</td>
-				<td>[kən-ˈdō-lən(t)s]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/condol03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">equestrian</td>
-				<td>[i-ˈkwe-strē-ən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/equest01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">equestrienne</td>
-				<td>[i-ˌkwe-strē-ˈen]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/equest02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">equine</td>
-				<td>[ˈē-ˌkwīn]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/equine01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">cadaver</td>
-				<td>[kə-ˈda-vər]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/cadave01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">decadent</td>
-				<td>[ˈde-kə-dənt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/decade05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">decadence</td>
-				<td>[ˈde-kə-dən(t)s]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/decade03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'cavalry', phonetic: '[ˈka-vəl-rē]', audio: 'audio/cavalr01.mp3' },
+  { word: 'chivalry', phonetic: '[ˈshi-vəl-rē]', audio: 'audio/chival03.mp3' },
+  { word: 'chivalric', phonetic: '[shə-ˈval-rik]', audio: 'audio/chival01.mp3' },
+  { word: 'condole', phonetic: '[kən-ˈdōl]', audio: 'audio/condol01.mp3' },
+  { word: 'condolence', phonetic: '[kən-ˈdō-lən(t)s]', audio: 'audio/condol03.mp3' },
+  { word: 'equestrian', phonetic: '[i-ˈkwe-strē-ən]', audio: 'audio/equest01.mp3' },
+  { word: 'equestrienne', phonetic: '[i-ˌkwe-strē-ˈen]', audio: 'audio/equest02.mp3' },
+  { word: 'equine', phonetic: '[ˈē-ˌkwīn]', audio: 'audio/equine01.mp3' },
+  { word: 'cadaver', phonetic: '[kə-ˈda-vər]', audio: 'audio/cadave01.mp3' },
+  { word: 'decadent', phonetic: '[ˈde-kə-dənt]', audio: 'audio/decade05.mp3' },
+  { word: 'decadence', phonetic: '[ˈde-kə-dən(t)s]', audio: 'audio/decade03.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

@@ -1,283 +1,54 @@
-
-
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-<meta charset="utf-8">
-
-<title>
-
-Session6_2</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 </head>
-
 <body>
-
-  
-  
- 
- 
- 
- 
-
-  
-
-
-
-<table>
-
- 
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">neurology</td>
-
-<td>[nu̇-ˈrä-lə-jē]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/neurol03.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">neurological</td>
-
-<td>[ˌnu̇r-ə-ˈlä-ji-kəl]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/neurol05.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">neuralgia</td>
-
-<td>[nu̇-ˈral-jə]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/neural03.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">neuritis</td>
-
-<td>[nu̇-ˈrī-təs]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/neurit01.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">neurosis</td>
-
-<td>[nu̇-ˈrō-səs]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/neuros07.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">neurotic</td>
-
-<td>[nu̇-ˈrä-tik]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/neurot01.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">psychosis</td>
-
-<td>[sī-ˈkō-səs]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/psycho78.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">psychotic</td>
-
-<td>[sī-ˈkä-tik]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/psycho93.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">psychiatry</td>
-
-<td>[sə-ˈkī-ə-trē]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/psychi01.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">psychiatric</td>
-
-<td>[ˌsī-kē-ˈa-trik]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/psychi02.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">geriatrician</td>
-
-<td>[ˌjer-ē-ə-ˈtri-shən]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/geriat02.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">geriatric</td>
-
-<td>[ˌjer-ē-ˈa-trik]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/geriat01.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
- 
-
-</table>   
-
-         
-
-
-
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
+
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
+
+  <script>
+    const entries = [
+  { word: 'neurology', phonetic: '[nu̇-ˈrä-lə-jē]', audio: 'audio/neurol03.mp3' },
+  { word: 'neurological', phonetic: '[ˌnu̇r-ə-ˈlä-ji-kəl]', audio: 'audio/neurol05.mp3' },
+  { word: 'neuralgia', phonetic: '[nu̇-ˈral-jə]', audio: 'audio/neural03.mp3' },
+  { word: 'neuritis', phonetic: '[nu̇-ˈrī-təs]', audio: 'audio/neurit01.mp3' },
+  { word: 'neurosis', phonetic: '[nu̇-ˈrō-səs]', audio: 'audio/neuros07.mp3' },
+  { word: 'neurotic', phonetic: '[nu̇-ˈrä-tik]', audio: 'audio/neurot01.mp3' },
+  { word: 'psychosis', phonetic: '[sī-ˈkō-səs]', audio: 'audio/psycho78.mp3' },
+  { word: 'psychotic', phonetic: '[sī-ˈkä-tik]', audio: 'audio/psycho93.mp3' },
+  { word: 'psychiatry', phonetic: '[sə-ˈkī-ə-trē]', audio: 'audio/psychi01.mp3' },
+  { word: 'psychiatric', phonetic: '[ˌsī-kē-ˈa-trik]', audio: 'audio/psychi02.mp3' },
+  { word: 'geriatrician', phonetic: '[ˌjer-ē-ə-ˈtri-shən]', audio: 'audio/geriat02.mp3' },
+  { word: 'geriatric', phonetic: '[ˌjer-ē-ˈa-trik]', audio: 'audio/geriat01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
 </body>
-
 </html>
-

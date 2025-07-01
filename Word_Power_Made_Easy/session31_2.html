@@ -1,135 +1,54 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session31_2</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">monotheism</td>
-				<td>[ˈmä-nə-(ˌ)thē-ˌi-zəm]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/monoth01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">monotheist</td>
-				<td>[ˈmä-nə-ˌthē-ist]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/monoth02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">monotheistic</td>
-				<td>[ˌmä-nə-thē-ˈi-stik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/monoth03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">polytheism</td>
-				<td>[ˈpä-lē-(ˌ)thē-ˌi-zəm]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/polyth01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">polytheist</td>
-				<td>[ˈpä-lē-ˌthē-ist]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/polyth02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">polytheistic</td>
-				<td>[ˌpä-lē-thē-ˈi-stik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/polyth03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">pantheism</td>
-				<td>[ˈpan(t)-thē-ˌi-zəm]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/panthe01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">pantheist</td>
-				<td>[ˈpan(t)-thē-ist]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/panthe02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">pantheistic</td>
-				<td>[ˌpan(t)-thē-ˈi-stik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/panthe03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">theology</td>
-				<td>[thē-ˈä-lə-jē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/theolo07.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">theologian</td>
-				<td>[ˌthē-ə-ˈlō-jən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/theolo01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">theological</td>
-				<td>[ˌthē-ə-ˈlä-ji-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/theolo02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'monotheism', phonetic: '[ˈmä-nə-(ˌ)thē-ˌi-zəm]', audio: 'audio/monoth01.mp3' },
+  { word: 'monotheist', phonetic: '[ˈmä-nə-ˌthē-ist]', audio: 'audio/monoth02.mp3' },
+  { word: 'monotheistic', phonetic: '[ˌmä-nə-thē-ˈi-stik]', audio: 'audio/monoth03.mp3' },
+  { word: 'polytheism', phonetic: '[ˈpä-lē-(ˌ)thē-ˌi-zəm]', audio: 'audio/polyth01.mp3' },
+  { word: 'polytheist', phonetic: '[ˈpä-lē-ˌthē-ist]', audio: 'audio/polyth02.mp3' },
+  { word: 'polytheistic', phonetic: '[ˌpä-lē-thē-ˈi-stik]', audio: 'audio/polyth03.mp3' },
+  { word: 'pantheism', phonetic: '[ˈpan(t)-thē-ˌi-zəm]', audio: 'audio/panthe01.mp3' },
+  { word: 'pantheist', phonetic: '[ˈpan(t)-thē-ist]', audio: 'audio/panthe02.mp3' },
+  { word: 'pantheistic', phonetic: '[ˌpan(t)-thē-ˈi-stik]', audio: 'audio/panthe03.mp3' },
+  { word: 'theology', phonetic: '[thē-ˈä-lə-jē]', audio: 'audio/theolo07.mp3' },
+  { word: 'theologian', phonetic: '[ˌthē-ə-ˈlō-jən]', audio: 'audio/theolo01.mp3' },
+  { word: 'theological', phonetic: '[ˌthē-ə-ˈlä-ji-kəl]', audio: 'audio/theolo02.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

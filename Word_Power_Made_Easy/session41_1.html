@@ -1,115 +1,52 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session41_1</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">leonine</td>
-				<td>[ˈlē-ə-ˌnīn]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/leonin01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">canine</td>
-				<td>[ˈkā-ˌnīn]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/canine01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">feline</td>
-				<td>[ˈfē-ˌlīn]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/feline01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">porcine</td>
-				<td>[ˈpȯr-ˌsīn]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/porcin01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">vulpine</td>
-				<td>[ˈvəl-ˌpīn]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vulpin01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">ursine</td>
-				<td>[ˈər-ˌsīn]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ursine01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">lupine</td>
-				<td>[ˈlü-pən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/lupine01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">equine</td>
-				<td>[ˈē-ˌkwīn]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/equine01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">piscine</td>
-				<td>[ˈpī-ˌsēn]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/piscin03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">nostalgic</td>
-				<td>[nä-ˈstal-jik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/nostal02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'leonine', phonetic: '[ˈlē-ə-ˌnīn]', audio: 'audio/leonin01.mp3' },
+  { word: 'canine', phonetic: '[ˈkā-ˌnīn]', audio: 'audio/canine01.mp3' },
+  { word: 'feline', phonetic: '[ˈfē-ˌlīn]', audio: 'audio/feline01.mp3' },
+  { word: 'porcine', phonetic: '[ˈpȯr-ˌsīn]', audio: 'audio/porcin01.mp3' },
+  { word: 'vulpine', phonetic: '[ˈvəl-ˌpīn]', audio: 'audio/vulpin01.mp3' },
+  { word: 'ursine', phonetic: '[ˈər-ˌsīn]', audio: 'audio/ursine01.mp3' },
+  { word: 'lupine', phonetic: '[ˈlü-pən]', audio: 'audio/lupine01.mp3' },
+  { word: 'equine', phonetic: '[ˈē-ˌkwīn]', audio: 'audio/equine01.mp3' },
+  { word: 'piscine', phonetic: '[ˈpī-ˌsēn]', audio: 'audio/piscin03.mp3' },
+  { word: 'nostalgic', phonetic: '[nä-ˈstal-jik]', audio: 'audio/nostal02.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

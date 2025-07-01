@@ -1,155 +1,56 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session41_2</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">cacophonous</td>
-				<td>[ka-ˈkä-fə-nəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/cacoph01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">phonetics</td>
-				<td>[fə-ˈne-tiks]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/phonet04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">phonetic</td>
-				<td>[fə-ˈne-tik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/phonet01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">phonetician</td>
-				<td>[ˌfō-nə-ˈti-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/phonet03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">carnivore</td>
-				<td>[ˈkär-nə-ˌvȯr]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/carniv03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">herbivore</td>
-				<td>[ˈ(h)ər-bə-ˌvȯr]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/herbi04m.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">herbivorous</td>
-				<td>[ˌ(h)ər-ˈbiv-rəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/herbi05m.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">omnivorous</td>
-				<td>[äm-ˈni-v(ə-)rəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/omnivo02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">voracious</td>
-				<td>[vȯ-ˈrā-shəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/voraci01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">voracity</td>
-				<td>[vȯ-ˈra-sə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/voraci02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">omnipotent</td>
-				<td>[äm-ˈni-pə-tənt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/omnipo02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">impotent</td>
-				<td>[ˈim-pə-tənt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/impote03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">impotence</td>
-				<td>[ˈim-pə-tən(t)s]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/impote01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">omnipotence</td>
-				<td>[äm-ˈni-pə-tən(t)s]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/omnipo01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'cacophonous', phonetic: '[ka-ˈkä-fə-nəs]', audio: 'audio/cacoph01.mp3' },
+  { word: 'phonetics', phonetic: '[fə-ˈne-tiks]', audio: 'audio/phonet04.mp3' },
+  { word: 'phonetic', phonetic: '[fə-ˈne-tik]', audio: 'audio/phonet01.mp3' },
+  { word: 'phonetician', phonetic: '[ˌfō-nə-ˈti-shən]', audio: 'audio/phonet03.mp3' },
+  { word: 'carnivore', phonetic: '[ˈkär-nə-ˌvȯr]', audio: 'audio/carniv03.mp3' },
+  { word: 'herbivore', phonetic: '[ˈ(h)ər-bə-ˌvȯr]', audio: 'audio/herbi04m.mp3' },
+  { word: 'herbivorous', phonetic: '[ˌ(h)ər-ˈbiv-rəs]', audio: 'audio/herbi05m.mp3' },
+  { word: 'omnivorous', phonetic: '[äm-ˈni-v(ə-)rəs]', audio: 'audio/omnivo02.mp3' },
+  { word: 'voracious', phonetic: '[vȯ-ˈrā-shəs]', audio: 'audio/voraci01.mp3' },
+  { word: 'voracity', phonetic: '[vȯ-ˈra-sə-tē]', audio: 'audio/voraci02.mp3' },
+  { word: 'omnipotent', phonetic: '[äm-ˈni-pə-tənt]', audio: 'audio/omnipo02.mp3' },
+  { word: 'impotent', phonetic: '[ˈim-pə-tənt]', audio: 'audio/impote03.mp3' },
+  { word: 'impotence', phonetic: '[ˈim-pə-tən(t)s]', audio: 'audio/impote01.mp3' },
+  { word: 'omnipotence', phonetic: '[äm-ˈni-pə-tən(t)s]', audio: 'audio/omnipo01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

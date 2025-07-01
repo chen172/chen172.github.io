@@ -1,155 +1,56 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session31_1</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">iconoclasm</td>
-				<td>[ī-ˈkä-nə-ˌkla-zəm]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/iconoc01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">iconoclastic</td>
-				<td>[(ˌ)ī-ˌkä-nə-ˈkla-stik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/iconoc03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">atheism</td>
-				<td>[ˈā-thē-ˌi-zəm]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/atheis01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">atheistic</td>
-				<td>[ˌā-thē-ˈi-stik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/atheis03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">agnostic</td>
-				<td>[ag-ˈnä-stik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/agnost01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">agnosticism</td>
-				<td>[ag-ˈnä-stə-ˌsi-zəm]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/agnost02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">diagnosis</td>
-				<td>[ˌdī-ig-ˈnō-səs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/diagno06.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">diagnose</td>
-				<td>[ˈdī-ig-ˌnōs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/diagno01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">diagnostic</td>
-				<td>[ˌdī-ig-ˈnä-stik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/diagno04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">diagnostician</td>
-				<td>[ˌdī-ig-(ˌ)nä-ˈsti-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/diagno09.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">prognosis</td>
-				<td>[präg-ˈnō-səs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/progno01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">prognostic</td>
-				<td>[präg-ˈnä-stik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/progno03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">prognosticate</td>
-				<td>[präg-ˈnä-stə-ˌkāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/progno04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">prognostication</td>
-				<td>[(ˌ)präg-ˌnä-stə-ˈkā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/progno07.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'iconoclasm', phonetic: '[ī-ˈkä-nə-ˌkla-zəm]', audio: 'audio/iconoc01.mp3' },
+  { word: 'iconoclastic', phonetic: '[(ˌ)ī-ˌkä-nə-ˈkla-stik]', audio: 'audio/iconoc03.mp3' },
+  { word: 'atheism', phonetic: '[ˈā-thē-ˌi-zəm]', audio: 'audio/atheis01.mp3' },
+  { word: 'atheistic', phonetic: '[ˌā-thē-ˈi-stik]', audio: 'audio/atheis03.mp3' },
+  { word: 'agnostic', phonetic: '[ag-ˈnä-stik]', audio: 'audio/agnost01.mp3' },
+  { word: 'agnosticism', phonetic: '[ag-ˈnä-stə-ˌsi-zəm]', audio: 'audio/agnost02.mp3' },
+  { word: 'diagnosis', phonetic: '[ˌdī-ig-ˈnō-səs]', audio: 'audio/diagno06.mp3' },
+  { word: 'diagnose', phonetic: '[ˈdī-ig-ˌnōs]', audio: 'audio/diagno01.mp3' },
+  { word: 'diagnostic', phonetic: '[ˌdī-ig-ˈnä-stik]', audio: 'audio/diagno04.mp3' },
+  { word: 'diagnostician', phonetic: '[ˌdī-ig-(ˌ)nä-ˈsti-shən]', audio: 'audio/diagno09.mp3' },
+  { word: 'prognosis', phonetic: '[präg-ˈnō-səs]', audio: 'audio/progno01.mp3' },
+  { word: 'prognostic', phonetic: '[präg-ˈnä-stik]', audio: 'audio/progno03.mp3' },
+  { word: 'prognosticate', phonetic: '[präg-ˈnä-stə-ˌkāt]', audio: 'audio/progno04.mp3' },
+  { word: 'prognostication', phonetic: '[(ˌ)präg-ˌnä-stə-ˈkā-shən]', audio: 'audio/progno07.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

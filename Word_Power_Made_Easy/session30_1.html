@@ -1,145 +1,55 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session30</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">fraternize</td>
-				<td>[ˈfra-tər-ˌnīz]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/frater05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">fraternization</td>
-				<td>[ˌfra-tər-nə-ˈzā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/frater06.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">fraternal</td>
-				<td>[frə-ˈtər-nᵊl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/frater01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">fraternity</td>
-				<td>[frə-ˈtər-nə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/frater04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">sorority</td>
-				<td>[sə-ˈrȯr-ə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/sorori01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">uxorious</td>
-				<td>[ˌək-ˈsȯr-ē-əs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/uxorio02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">uxorial</td>
-				<td>[ˌək-ˈsȯr-ē-əl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/uxoria02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">marital</td>
-				<td>[ˈmer-ə-tᵊl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/marita01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">extramarital</td>
-				<td>[ˌek-strə-ˈmer-ə-tᵊl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/extram01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">premarital</td>
-				<td>[ˌprē-ˈmer-ə-tᵊl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/prema02m.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">regal</td>
-				<td>[ˈrē-gəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/regal001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">regality</td>
-				<td>[ri-ˈga-lə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/regal002.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">regalia</td>
-				<td>[ri-ˈgāl-yə]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/regali01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'fraternize', phonetic: '[ˈfra-tər-ˌnīz]', audio: 'audio/frater05.mp3' },
+  { word: 'fraternization', phonetic: '[ˌfra-tər-nə-ˈzā-shən]', audio: 'audio/frater06.mp3' },
+  { word: 'fraternal', phonetic: '[frə-ˈtər-nᵊl]', audio: 'audio/frater01.mp3' },
+  { word: 'fraternity', phonetic: '[frə-ˈtər-nə-tē]', audio: 'audio/frater04.mp3' },
+  { word: 'sorority', phonetic: '[sə-ˈrȯr-ə-tē]', audio: 'audio/sorori01.mp3' },
+  { word: 'uxorious', phonetic: '[ˌək-ˈsȯr-ē-əs]', audio: 'audio/uxorio02.mp3' },
+  { word: 'uxorial', phonetic: '[ˌək-ˈsȯr-ē-əl]', audio: 'audio/uxoria02.mp3' },
+  { word: 'marital', phonetic: '[ˈmer-ə-tᵊl]', audio: 'audio/marita01.mp3' },
+  { word: 'extramarital', phonetic: '[ˌek-strə-ˈmer-ə-tᵊl]', audio: 'audio/extram01.mp3' },
+  { word: 'premarital', phonetic: '[ˌprē-ˈmer-ə-tᵊl]', audio: 'audio/prema02m.mp3' },
+  { word: 'regal', phonetic: '[ˈrē-gəl]', audio: 'audio/regal001.mp3' },
+  { word: 'regality', phonetic: '[ri-ˈga-lə-tē]', audio: 'audio/regal002.mp3' },
+  { word: 'regalia', phonetic: '[ri-ˈgāl-yə]', audio: 'audio/regali01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

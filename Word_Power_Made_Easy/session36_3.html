@@ -1,75 +1,48 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session36_3</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">rural</td>
-				<td>[ˈru̇r(-ə)l]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/rural001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">rustic</td>
-				<td>[ˈrə-stik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/rustic01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">rusticity</td>
-				<td>[ˌrə-ˈsti-sə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/rustic04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">rusticate</td>
-				<td>[ˈrə-sti-ˌkāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/rustic05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">rustication</td>
-				<td>[ˌrə-sti-ˈkā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/rustic06.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">pejorative</td>
-				<td>[pi-ˈjȯr-ə-tiv]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/pejora01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'rural', phonetic: '[ˈru̇r(-ə)l]', audio: 'audio/rural001.mp3' },
+  { word: 'rustic', phonetic: '[ˈrə-stik]', audio: 'audio/rustic01.mp3' },
+  { word: 'rusticity', phonetic: '[ˌrə-ˈsti-sə-tē]', audio: 'audio/rustic04.mp3' },
+  { word: 'rusticate', phonetic: '[ˈrə-sti-ˌkāt]', audio: 'audio/rustic05.mp3' },
+  { word: 'rustication', phonetic: '[ˌrə-sti-ˈkā-shən]', audio: 'audio/rustic06.mp3' },
+  { word: 'pejorative', phonetic: '[pi-ˈjȯr-ə-tiv]', audio: 'audio/pejora01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

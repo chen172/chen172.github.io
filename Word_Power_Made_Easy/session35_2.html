@@ -1,125 +1,53 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session35_2</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">perspicuous</td>
-				<td>[pər-ˈspi-kyə-wəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/perspi03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">perspicuity</td>
-				<td>[ˌpər-spə-ˈkyü-ə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/perspi04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">retrospect</td>
-				<td>[ˈre-trə-ˌspekt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/retros01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">prospect</td>
-				<td>[ˈprä-ˌspekt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/prospe01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">prospective</td>
-				<td>[prə-ˈspek-tiv]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/prospe04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">introspective</td>
-				<td>[ˌin-trə-ˈspek-tiv]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/intros04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">introspect</td>
-				<td>[ˌin-trə-ˈspekt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/intros02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">introspection</td>
-				<td>[ˌin-trə-ˈspek-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/intros01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">circumspect</td>
-				<td>[ˈsər-kəm-ˌspekt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/circum26.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">circumspection</td>
-				<td>[ˌsər-kəm-ˈspek-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/circum27.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">specious</td>
-				<td>[ˈspē-shəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/specio02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'perspicuous', phonetic: '[pər-ˈspi-kyə-wəs]', audio: 'audio/perspi03.mp3' },
+  { word: 'perspicuity', phonetic: '[ˌpər-spə-ˈkyü-ə-tē]', audio: 'audio/perspi04.mp3' },
+  { word: 'retrospect', phonetic: '[ˈre-trə-ˌspekt]', audio: 'audio/retros01.mp3' },
+  { word: 'prospect', phonetic: '[ˈprä-ˌspekt]', audio: 'audio/prospe01.mp3' },
+  { word: 'prospective', phonetic: '[prə-ˈspek-tiv]', audio: 'audio/prospe04.mp3' },
+  { word: 'introspective', phonetic: '[ˌin-trə-ˈspek-tiv]', audio: 'audio/intros04.mp3' },
+  { word: 'introspect', phonetic: '[ˌin-trə-ˈspekt]', audio: 'audio/intros02.mp3' },
+  { word: 'introspection', phonetic: '[ˌin-trə-ˈspek-shən]', audio: 'audio/intros01.mp3' },
+  { word: 'circumspect', phonetic: '[ˈsər-kəm-ˌspekt]', audio: 'audio/circum26.mp3' },
+  { word: 'circumspection', phonetic: '[ˌsər-kəm-ˈspek-shən]', audio: 'audio/circum27.mp3' },
+  { word: 'specious', phonetic: '[ˈspē-shəs]', audio: 'audio/specio02.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

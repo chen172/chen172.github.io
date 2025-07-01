@@ -1,185 +1,59 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session23_1</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">benign</td>
-				<td>[bi-ˈnīn]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/benign01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">benignity</td>
-				<td>[bi-ˈnig-nə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/benign02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">benignant</td>
-				<td>[bi-ˈnig-nənt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/benign05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">benignancy</td>
-				<td>[bi-ˈnig-nən(t)-sē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/benign04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">benediction</td>
-				<td>[ˌbe-nə-ˈdik-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/benedi03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">benedictory</td>
-				<td>[ˌbe-nə-ˈdik-t(ə-)rē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/benedi04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">beneficent</td>
-				<td>[bə-ˈne-fə-sənt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/benefi04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">beneficence</td>
-				<td>[bə-ˈne-fə-sən(t)s]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/benefi03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">benefactor</td>
-				<td>[ˈbe-nə-ˌfak-tər]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/benefa02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">benefaction</td>
-				<td>[ˌbe-nə-ˈfak-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/benefa01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">beneficiary</td>
-				<td>[ˌbe-nə-ˈfi-shē-ˌer-ē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/benefi08.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">benevolent</td>
-				<td>[bə-ˈnev-lənt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/benevo02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">benevolence</td>
-				<td>[bə-ˈnev-lən(t)s]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/benevo01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">bona fide</td>
-				<td>[ˈbō-nə-ˌfīd]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/bonaf02w.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">fidelity</td>
-				<td>[fə-ˈde-lə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/fideli02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">infidelity</td>
-				<td>[ˌin-fə-ˈde-lə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/infide02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">infidel</td>
-				<td>[ˈin-fə-dᵊl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/infide01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'benign', phonetic: '[bi-ˈnīn]', audio: 'audio/benign01.mp3' },
+  { word: 'benignity', phonetic: '[bi-ˈnig-nə-tē]', audio: 'audio/benign02.mp3' },
+  { word: 'benignant', phonetic: '[bi-ˈnig-nənt]', audio: 'audio/benign05.mp3' },
+  { word: 'benignancy', phonetic: '[bi-ˈnig-nən(t)-sē]', audio: 'audio/benign04.mp3' },
+  { word: 'benediction', phonetic: '[ˌbe-nə-ˈdik-shən]', audio: 'audio/benedi03.mp3' },
+  { word: 'benedictory', phonetic: '[ˌbe-nə-ˈdik-t(ə-)rē]', audio: 'audio/benedi04.mp3' },
+  { word: 'beneficent', phonetic: '[bə-ˈne-fə-sənt]', audio: 'audio/benefi04.mp3' },
+  { word: 'beneficence', phonetic: '[bə-ˈne-fə-sən(t)s]', audio: 'audio/benefi03.mp3' },
+  { word: 'benefactor', phonetic: '[ˈbe-nə-ˌfak-tər]', audio: 'audio/benefa02.mp3' },
+  { word: 'benefaction', phonetic: '[ˌbe-nə-ˈfak-shən]', audio: 'audio/benefa01.mp3' },
+  { word: 'beneficiary', phonetic: '[ˌbe-nə-ˈfi-shē-ˌer-ē]', audio: 'audio/benefi08.mp3' },
+  { word: 'benevolent', phonetic: '[bə-ˈnev-lənt]', audio: 'audio/benevo02.mp3' },
+  { word: 'benevolence', phonetic: '[bə-ˈnev-lən(t)s]', audio: 'audio/benevo01.mp3' },
+  { word: 'bona fide', phonetic: '[ˈbō-nə-ˌfīd]', audio: 'audio/bonaf02w.mp3' },
+  { word: 'fidelity', phonetic: '[fə-ˈde-lə-tē]', audio: 'audio/fideli02.mp3' },
+  { word: 'infidelity', phonetic: '[ˌin-fə-ˈde-lə-tē]', audio: 'audio/infide02.mp3' },
+  { word: 'infidel', phonetic: '[ˈin-fə-dᵊl]', audio: 'audio/infide01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

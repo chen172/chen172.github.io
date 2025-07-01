@@ -1,125 +1,53 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session35_1</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">perspicacious</td>
-				<td>[ˌpər-spə-ˈkā-shəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/perspi01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">perspicacity</td>
-				<td>[ˌpər-spə-ˈka-sə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/perspi02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">acumen</td>
-				<td>[ˈa-kyü-mən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/acumen01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">acute</td>
-				<td>[ə-ˈkyüt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/acute001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">acuity</td>
-				<td>[ə-ˈkyü-ə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/acuity01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">acupuncture</td>
-				<td>[ˈa-kyə-ˌpəŋ(k)-chər]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/acupun01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">punctuate</td>
-				<td>[ˈpəŋk-chə-ˌwāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/punctu04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">punctilious</td>
-				<td>[ˌpəŋk-ˈti-lē-əs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/puncti02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">puncture</td>
-				<td>[ˈpəŋk-chər]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/punctu07.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">pungent</td>
-				<td>[ˈpən-jənt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/pungen02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">pungency</td>
-				<td>[ˈpən-jən(t)-sē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/pungen01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'perspicacious', phonetic: '[ˌpər-spə-ˈkā-shəs]', audio: 'audio/perspi01.mp3' },
+  { word: 'perspicacity', phonetic: '[ˌpər-spə-ˈka-sə-tē]', audio: 'audio/perspi02.mp3' },
+  { word: 'acumen', phonetic: '[ˈa-kyü-mən]', audio: 'audio/acumen01.mp3' },
+  { word: 'acute', phonetic: '[ə-ˈkyüt]', audio: 'audio/acute001.mp3' },
+  { word: 'acuity', phonetic: '[ə-ˈkyü-ə-tē]', audio: 'audio/acuity01.mp3' },
+  { word: 'acupuncture', phonetic: '[ˈa-kyə-ˌpəŋ(k)-chər]', audio: 'audio/acupun01.mp3' },
+  { word: 'punctuate', phonetic: '[ˈpəŋk-chə-ˌwāt]', audio: 'audio/punctu04.mp3' },
+  { word: 'punctilious', phonetic: '[ˌpəŋk-ˈti-lē-əs]', audio: 'audio/puncti02.mp3' },
+  { word: 'puncture', phonetic: '[ˈpəŋk-chər]', audio: 'audio/punctu07.mp3' },
+  { word: 'pungent', phonetic: '[ˈpən-jənt]', audio: 'audio/pungen02.mp3' },
+  { word: 'pungency', phonetic: '[ˈpən-jən(t)-sē]', audio: 'audio/pungen01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

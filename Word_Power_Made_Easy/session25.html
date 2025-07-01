@@ -1,185 +1,59 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session25</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">taciturnity</td>
-				<td>[ˌta-sə-ˈtər-nə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/tacitu02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">tacit</td>
-				<td>[ˈta-sət]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/tacit001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">reticent</td>
-				<td>[ˈre-tə-sənt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/retice03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">reticence</td>
-				<td>[ˈre-tə-sən(t)s]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/retice01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">reticency</td>
-				<td>[ˈre-tə-sən(t)-sē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/retice02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">loquacity</td>
-				<td>[lō-ˈkwa-sə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/loquac02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">soliloquy</td>
-				<td>[sə-ˈli-lə-kwē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/solilo03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">soliloquist</td>
-				<td>[sə-ˈli-lə-kwist]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/solilo01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">soliloquize</td>
-				<td>[sə-ˈli-lə-ˌkwīz]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/solilo02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">ventriloquist</td>
-				<td>[ven-ˈtri-lə-kwist]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ventri08.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">ventriloquism</td>
-				<td>[ven-ˈtri-lə-ˌkwi-zəm]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ventri05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">ventriloquistic</td>
-				<td>[(ˌ)ven-ˌtri-lə-ˈkwi-stik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ventri09.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">ventriloquize</td>
-				<td>[ven-ˈtri-lə-ˌkwīz]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ventri10.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">colloquial</td>
-				<td>[kə-ˈlō-kwē-əl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/colloq01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">colloquialism</td>
-				<td>[kə-ˈlō-kwē-ə-ˌli-zəm]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/colloq04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">circumlocution</td>
-				<td>[ˌsər-kəm-lō-ˈkyü-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/circum16.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">circumlocutory</td>
-				<td>[ˌsər-kəm-ˈlä-kyə-ˌtȯr-ē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/circum17.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'taciturnity', phonetic: '[ˌta-sə-ˈtər-nə-tē]', audio: 'audio/tacitu02.mp3' },
+  { word: 'tacit', phonetic: '[ˈta-sət]', audio: 'audio/tacit001.mp3' },
+  { word: 'reticent', phonetic: '[ˈre-tə-sənt]', audio: 'audio/retice03.mp3' },
+  { word: 'reticence', phonetic: '[ˈre-tə-sən(t)s]', audio: 'audio/retice01.mp3' },
+  { word: 'reticency', phonetic: '[ˈre-tə-sən(t)-sē]', audio: 'audio/retice02.mp3' },
+  { word: 'loquacity', phonetic: '[lō-ˈkwa-sə-tē]', audio: 'audio/loquac02.mp3' },
+  { word: 'soliloquy', phonetic: '[sə-ˈli-lə-kwē]', audio: 'audio/solilo03.mp3' },
+  { word: 'soliloquist', phonetic: '[sə-ˈli-lə-kwist]', audio: 'audio/solilo01.mp3' },
+  { word: 'soliloquize', phonetic: '[sə-ˈli-lə-ˌkwīz]', audio: 'audio/solilo02.mp3' },
+  { word: 'ventriloquist', phonetic: '[ven-ˈtri-lə-kwist]', audio: 'audio/ventri08.mp3' },
+  { word: 'ventriloquism', phonetic: '[ven-ˈtri-lə-ˌkwi-zəm]', audio: 'audio/ventri05.mp3' },
+  { word: 'ventriloquistic', phonetic: '[(ˌ)ven-ˌtri-lə-ˈkwi-stik]', audio: 'audio/ventri09.mp3' },
+  { word: 'ventriloquize', phonetic: '[ven-ˈtri-lə-ˌkwīz]', audio: 'audio/ventri10.mp3' },
+  { word: 'colloquial', phonetic: '[kə-ˈlō-kwē-əl]', audio: 'audio/colloq01.mp3' },
+  { word: 'colloquialism', phonetic: '[kə-ˈlō-kwē-ə-ˌli-zəm]', audio: 'audio/colloq04.mp3' },
+  { word: 'circumlocution', phonetic: '[ˌsər-kəm-lō-ˈkyü-shən]', audio: 'audio/circum16.mp3' },
+  { word: 'circumlocutory', phonetic: '[ˌsər-kəm-ˈlä-kyə-ˌtȯr-ē]', audio: 'audio/circum17.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

@@ -1,105 +1,51 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session31_4</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">prurient</td>
-				<td>[ˈpru̇r-ē-ənt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/prurie03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">prurience</td>
-				<td>[ˈpru̇r-ē-ən(t)s]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/prurie01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">pruritic</td>
-				<td>[prü-ˈri-tik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/prurit01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">hypochondria</td>
-				<td>[ˌhī-pə-ˈkän-drē-ə]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/hypoch03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">hypochondriacal</td>
-				<td>[ˌhī-pə-kən-ˈdrī-ə-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/hypoch05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">hypotension</td>
-				<td>[ˌhī-pō-ˈten(t)-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/hypote01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">hypertension</td>
-				<td>[ˌhī-pər-ˈten(t)-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/hypert01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">hypotensive</td>
-				<td>[ˌhī-pō-ˈten(t)-siv]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/hypote02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">hypertensive</td>
-				<td>[ˌhī-pər-ˈten(t)-siv]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/hypert02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'prurient', phonetic: '[ˈpru̇r-ē-ənt]', audio: 'audio/prurie03.mp3' },
+  { word: 'prurience', phonetic: '[ˈpru̇r-ē-ən(t)s]', audio: 'audio/prurie01.mp3' },
+  { word: 'pruritic', phonetic: '[prü-ˈri-tik]', audio: 'audio/prurit01.mp3' },
+  { word: 'hypochondria', phonetic: '[ˌhī-pə-ˈkän-drē-ə]', audio: 'audio/hypoch03.mp3' },
+  { word: 'hypochondriacal', phonetic: '[ˌhī-pə-kən-ˈdrī-ə-kəl]', audio: 'audio/hypoch05.mp3' },
+  { word: 'hypotension', phonetic: '[ˌhī-pō-ˈten(t)-shən]', audio: 'audio/hypote01.mp3' },
+  { word: 'hypertension', phonetic: '[ˌhī-pər-ˈten(t)-shən]', audio: 'audio/hypert01.mp3' },
+  { word: 'hypotensive', phonetic: '[ˌhī-pō-ˈten(t)-siv]', audio: 'audio/hypote02.mp3' },
+  { word: 'hypertensive', phonetic: '[ˌhī-pər-ˈten(t)-siv]', audio: 'audio/hypert02.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

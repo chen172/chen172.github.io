@@ -14,4 +14,3 @@ chirographer
 chirographic
 chiromancy
 chiromancer
-chiromantic

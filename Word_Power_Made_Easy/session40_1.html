@@ -1,125 +1,53 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session40_1</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">penurious</td>
-				<td>[pə-ˈnu̇r-ē-əs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/penuri01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">parsimonious</td>
-				<td>[ˌpär-sə-ˈmō-nē-əs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/parsim01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">parsimony</td>
-				<td>[ˈpär-sə-ˌmō-nē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/parsim02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">indigence</td>
-				<td>[ˈin-di-jən(t)s]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/indige01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">indigent</td>
-				<td>[ˈin-di-jənt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/indige07.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">destitution</td>
-				<td>[ˌde-stə-ˈtü-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/destit02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">destitute</td>
-				<td>[ˈde-stə-ˌtüt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/destit01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">affluence</td>
-				<td>[ˈa-(ˌ)flü-ən(t)s]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/afflue02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">affluent</td>
-				<td>[ˈa-(ˌ)flü-ənt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/afflue04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">opulence</td>
-				<td>[ˈä-pyə-lən(t)s]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/opulen01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">opulent</td>
-				<td>[ˈä-pyə-lənt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/opulen02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'penurious', phonetic: '[pə-ˈnu̇r-ē-əs]', audio: 'audio/penuri01.mp3' },
+  { word: 'parsimonious', phonetic: '[ˌpär-sə-ˈmō-nē-əs]', audio: 'audio/parsim01.mp3' },
+  { word: 'parsimony', phonetic: '[ˈpär-sə-ˌmō-nē]', audio: 'audio/parsim02.mp3' },
+  { word: 'indigence', phonetic: '[ˈin-di-jən(t)s]', audio: 'audio/indige01.mp3' },
+  { word: 'indigent', phonetic: '[ˈin-di-jənt]', audio: 'audio/indige07.mp3' },
+  { word: 'destitution', phonetic: '[ˌde-stə-ˈtü-shən]', audio: 'audio/destit02.mp3' },
+  { word: 'destitute', phonetic: '[ˈde-stə-ˌtüt]', audio: 'audio/destit01.mp3' },
+  { word: 'affluence', phonetic: '[ˈa-(ˌ)flü-ən(t)s]', audio: 'audio/afflue02.mp3' },
+  { word: 'affluent', phonetic: '[ˈa-(ˌ)flü-ənt]', audio: 'audio/afflue04.mp3' },
+  { word: 'opulence', phonetic: '[ˈä-pyə-lən(t)s]', audio: 'audio/opulen01.mp3' },
+  { word: 'opulent', phonetic: '[ˈä-pyə-lənt]', audio: 'audio/opulen02.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

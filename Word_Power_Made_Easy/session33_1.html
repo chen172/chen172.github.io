@@ -1,185 +1,58 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session33_1</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">conviviality</td>
-				<td>[kən-ˌvi-vē-ˈa-lə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/conviv02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">vivacious</td>
-				<td>[və-ˈvā-shəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vivaci01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">vivacity</td>
-				<td>[və-ˈva-sə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vivaci02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">vivid</td>
-				<td>[ˈvi-vəd]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vivid001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-			
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">vividness</td>
-				<td>[ˈvɪv.ɪd.nəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vividness.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>			
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">revive</td>
-				<td>[ri-ˈvīv]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/revive01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">revival</td>
-				<td>[ri-ˈvī-vəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/reviva01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">vivisection</td>
-				<td>[ˌvi-və-ˈsek-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vivise03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">antivivisectionist</td>
-				<td>[ˌan-tē-ˌvi-və-ˈsek-sh(ə-)nist]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/antiv08m.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">viviparous</td>
-				<td>[vī-ˈvi-p(ə-)rəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vivipa02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">oviparous</td>
-				<td>[ō-ˈvi-p(ə-)rəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ovipar01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">oval</td>
-				<td>[ˈō-vəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/oval0001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">ovoid</td>
-				<td>[ˈō-ˌvȯid]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ovoid001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">ovary</td>
-				<td>[ˈō-və-rē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ovary001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">ovarian</td>
-				<td>[ō-ˈver-ē-ən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ovaria01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">ovulate</td>
-				<td>[ˈä-vyə-ˌlāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ovulat04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">ovulation</td>
-				<td>[ˌä vyə-ˈlā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ovulat03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'conviviality', phonetic: '[kən-ˌvi-vē-ˈa-lə-tē]', audio: 'audio/conviv02.mp3' },
+  { word: 'vivacious', phonetic: '[və-ˈvā-shəs]', audio: 'audio/vivaci01.mp3' },
+  { word: 'vivacity', phonetic: '[və-ˈva-sə-tē]', audio: 'audio/vivaci02.mp3' },
+  { word: 'vivid', phonetic: '[ˈvi-vəd]', audio: 'audio/vivid001.mp3' },
+  { word: 'revive', phonetic: '[ri-ˈvīv]', audio: 'audio/revive01.mp3' },
+  { word: 'revival', phonetic: '[ri-ˈvī-vəl]', audio: 'audio/reviva01.mp3' },
+  { word: 'vivisection', phonetic: '[ˌvi-və-ˈsek-shən]', audio: 'audio/vivise03.mp3' },
+  { word: 'antivivisectionist', phonetic: '[ˌan-tē-ˌvi-və-ˈsek-sh(ə-)nist]', audio: 'audio/antiv08m.mp3' },
+  { word: 'viviparous', phonetic: '[vī-ˈvi-p(ə-)rəs]', audio: 'audio/vivipa02.mp3' },
+  { word: 'oviparous', phonetic: '[ō-ˈvi-p(ə-)rəs]', audio: 'audio/ovipar01.mp3' },
+  { word: 'oval', phonetic: '[ˈō-vəl]', audio: 'audio/oval0001.mp3' },
+  { word: 'ovoid', phonetic: '[ˈō-ˌvȯid]', audio: 'audio/ovoid001.mp3' },
+  { word: 'ovary', phonetic: '[ˈō-və-rē]', audio: 'audio/ovary001.mp3' },
+  { word: 'ovarian', phonetic: '[ō-ˈver-ē-ən]', audio: 'audio/ovaria01.mp3' },
+  { word: 'ovulate', phonetic: '[ˈä-vyə-ˌlāt]', audio: 'audio/ovulat04.mp3' },
+  { word: 'ovulation', phonetic: '[ˌä vyə-ˈlā-shən]', audio: 'audio/ovulat03.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

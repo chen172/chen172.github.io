@@ -1,216 +1,62 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>
-Session3_1</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 </head>
-<body> 
- <table>
- 
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">ambidextrous</td>
-<td>[ˌam-bi-ˈdek-strəs]</td>
-<td><audio controls="controls">
-<source src="audio/ambide02.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">ambidexterity</td>
-<td>[ˌam-bi-(ˌ)dek-ˈster-ə-tē]</td>
-<td><audio controls="controls">
-<source src="audio/ambide01.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">dexterous</td>
-<td>[ˈdek-st(ə-)rəs]</td>
-<td><audio controls="controls">
-<source src="audio/dexter03.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">dexterity</td>
-<td>[dek-ˈster-ə-tē]</td>
-<td><audio controls="controls">
-<source src="audio/dexter02.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
-
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">sinister</td>
-<td>[ˈsi-nə-stər]</td>
-<td><audio controls="controls">
-<source src="audio/sinist01.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
-
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">gauche</td>
-<td>[ˈgōsh]</td>
-<td><audio controls="controls">
-<source src="audio/gauche01.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
-
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">gaucherie</td>
-<td>[ˌgō-sh(ə-)ˈrē]</td>
-<td><audio controls="controls">
-<source src="audio/gauche02.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
-
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">adroit</td>
-<td>[ə-ˈdrȯit]</td>
-<td><audio controls="controls">
-<source src="audio/adroit01.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
-
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">anthropology</td>
-<td>[ˌan(t)-thrə-ˈpä-lə-jē]</td>
-<td><audio controls="controls">
-<source src="audio/anthro09.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
-
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">anthropologist</td>
-<td>[ˌan(t)-thrə-ˈpä-lə-jist]</td>
-<td><audio controls="controls">
-<source src="audio/anthro12.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
-
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">anthropological</td>
-<td>[ˌan(t)-thrə-pə-ˈlä-ji-kəl]</td>
-<td><audio controls="controls">
-<source src="audio/anthro10.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
-
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">philanthropist</td>
-<td>[fə-ˈlan(t)-thrə-pist]</td>
-<td><audio controls="controls">
-<source src="audio/philan07.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
-
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">philanthropy</td>
-<td>[fə-ˈlan(t)-thrə-pē]</td>
-<td><audio controls="controls">
-<source src="audio/philan09.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
-
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">philanthropic</td>
-<td>[ˌfi-lən-ˈthrä-pik]</td>
-<td><audio controls="controls">
-<source src="audio/philan04.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
-
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">gynecologist</td>
-<td>[ˌgī-nə-ˈkä-lə-jist]</td>
-<td><audio controls="controls">
-<source src="audio/gyneco08.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
-
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">gynecology</td>
-<td>[ˌgī-nə-ˈkä-lə-jē]</td>
-<td><audio controls="controls">
-<source src="audio/gyneco05.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
-
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">gynecological</td>
-<td>[ˌgī-ni-kə-ˈlä-ji-kəl]</td>
-<td><audio controls="controls">
-<source src="audio/gyneco07.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
-
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">monogamist</td>
-<td>[mə-ˈnä-gə-mist]</td>
-<td><audio controls="controls">
-<source src="audio/monoga01.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
-
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">monogamy</td>
-<td>[mə-ˈnä-gə-mē]</td>
-<td><audio controls="controls">
-<source src="audio/monoga02.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
-
-<tr>
-<td style="font-family:arial;color:black;font-size:30px;">monogamous</td>
-<td>[mə-ˈnä-gə-məs]</td>
-<td><audio controls="controls">
-<source src="audio/monoga04.mp3" type="audio/mpeg">
-Browser not support audio 
-</audio>    
-</td>
-</tr>
- 
-</table>    
-         
-
+  <script>
+    const entries = [
+  { word: 'ambidextrous', phonetic: '[ˌam-bi-ˈdek-strəs]', audio: 'audio/ambide02.mp3' },
+  { word: 'ambidexterity', phonetic: '[ˌam-bi-(ˌ)dek-ˈster-ə-tē]', audio: 'audio/ambide01.mp3' },
+  { word: 'dexterous', phonetic: '[ˈdek-st(ə-)rəs]', audio: 'audio/dexter03.mp3' },
+  { word: 'dexterity', phonetic: '[dek-ˈster-ə-tē]', audio: 'audio/dexter02.mp3' },
+  { word: 'sinister', phonetic: '[ˈsi-nə-stər]', audio: 'audio/sinist01.mp3' },
+  { word: 'gauche', phonetic: '[ˈgōsh]', audio: 'audio/gauche01.mp3' },
+  { word: 'gaucherie', phonetic: '[ˌgō-sh(ə-)ˈrē]', audio: 'audio/gauche02.mp3' },
+  { word: 'adroit', phonetic: '[ə-ˈdrȯit]', audio: 'audio/adroit01.mp3' },
+  { word: 'anthropology', phonetic: '[ˌan(t)-thrə-ˈpä-lə-jē]', audio: 'audio/anthro09.mp3' },
+  { word: 'anthropologist', phonetic: '[ˌan(t)-thrə-ˈpä-lə-jist]', audio: 'audio/anthro12.mp3' },
+  { word: 'anthropological', phonetic: '[ˌan(t)-thrə-pə-ˈlä-ji-kəl]', audio: 'audio/anthro10.mp3' },
+  { word: 'philanthropist', phonetic: '[fə-ˈlan(t)-thrə-pist]', audio: 'audio/philan07.mp3' },
+  { word: 'philanthropy', phonetic: '[fə-ˈlan(t)-thrə-pē]', audio: 'audio/philan09.mp3' },
+  { word: 'philanthropic', phonetic: '[ˌfi-lən-ˈthrä-pik]', audio: 'audio/philan04.mp3' },
+  { word: 'gynecologist', phonetic: '[ˌgī-nə-ˈkä-lə-jist]', audio: 'audio/gyneco08.mp3' },
+  { word: 'gynecology', phonetic: '[ˌgī-nə-ˈkä-lə-jē]', audio: 'audio/gyneco05.mp3' },
+  { word: 'gynecological', phonetic: '[ˌgī-ni-kə-ˈlä-ji-kəl]', audio: 'audio/gyneco07.mp3' },
+  { word: 'monogamist', phonetic: '[mə-ˈnä-gə-mist]', audio: 'audio/monoga01.mp3' },
+  { word: 'monogamy', phonetic: '[mə-ˈnä-gə-mē]', audio: 'audio/monoga02.mp3' },
+  { word: 'monogamous', phonetic: '[mə-ˈnä-gə-məs]', audio: 'audio/monoga04.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
 </body>
 </html>

@@ -1,105 +1,52 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session42</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">enervate</td>
-				<td>[i-ˈnər-vət]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/enerva01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">castigate</td>
-				<td>[ˈka-stə-ˌgāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/castig01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">recapitulate</td>
-				<td>[ˌrē-kə-ˈpi-chə-ˌlāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/recapi03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">vegetate</td>
-				<td>[ˈve-jə-ˌtāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vegeta06.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">simulate</td>
-				<td>[ˈsim-yə-ˌlāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/simula05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">intimate</td>
-				<td>[ˈin-tə-mət]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/intima07.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">alleviate</td>
-				<td>[ə-ˈlē-vē-ˌāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/allevi01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">commiserate</td>
-				<td>[kə-ˈmi-zə-ˌrāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/commis01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">vacillate</td>
-				<td>[ˈva-sə-ˌlāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vacill01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'enervate', phonetic: '[i-ˈnər-vət]', audio: 'audio/enerva01.mp3' },
+  { word: 'castigate', phonetic: '[ˈka-stə-ˌgāt]', audio: 'audio/castig01.mp3' },
+  { word: 'self-abnegation', phonetic: '[ˌself-ˌab-ni-ˈgā-shən]', audio: 'audio/self-abnegating_1.mp3' },
+  { word: 'recapitulate', phonetic: '[ˌrē-kə-ˈpi-chə-ˌlāt]', audio: 'audio/recapi03.mp3' },
+  { word: 'vegetate', phonetic: '[ˈve-jə-ˌtāt]', audio: 'audio/vegeta06.mp3' },
+  { word: 'simulate', phonetic: '[ˈsim-yə-ˌlāt]', audio: 'audio/simula05.mp3' },
+  { word: 'intimate', phonetic: '[ˈin-tə-mət]', audio: 'audio/intima07.mp3' },
+  { word: 'alleviate', phonetic: '[ə-ˈlē-vē-ˌāt]', audio: 'audio/allevi01.mp3' },
+  { word: 'commiserate', phonetic: '[kə-ˈmi-zə-ˌrāt]', audio: 'audio/commis01.mp3' },
+  { word: 'vacillate', phonetic: '[ˈva-sə-ˌlāt]', audio: 'audio/vacill01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

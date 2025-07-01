@@ -1,145 +1,55 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session26_2</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">magnanimous</td>
-				<td>[mag-ˈna-nə-məs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/magnan02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">magnate</td>
-				<td>[ˈmag-ˌnāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/magnat01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">magnum opus</td>
-				<td>[ˈmag-nəm-ˈō-pəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/magnum02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">verbatim</td>
-				<td>[(ˌ)vər-ˈbā-təm]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/verbat01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">verbal</td>
-				<td>[ˈvər-bəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/verbal01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">verbalize</td>
-				<td>[ˈvər-bə-ˌlīz]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/verbal06.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">verbiage</td>
-				<td>[ˈvər-bē-ij]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/verbia02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">revolve</td>
-				<td>[ri-ˈvälv]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/revolv01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">revolution</td>
-				<td>[ˌre-və-ˈlü-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/revolu02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">revolutionary</td>
-				<td>[ˌre-və-ˈlü-shə-ˌner-ē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/revolu03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">evolve</td>
-				<td>[i-ˈvälv]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/evolve01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">evolution</td>
-				<td>[ˌe-və-ˈlü-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/evolut02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">evolutionary</td>
-				<td>[ˌe-və-ˈlü-shə-ˌner-ē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/evolut04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'magnanimous', phonetic: '[mag-ˈna-nə-məs]', audio: 'audio/magnan02.mp3' },
+  { word: 'magnate', phonetic: '[ˈmag-ˌnāt]', audio: 'audio/magnat01.mp3' },
+  { word: 'magnum opus', phonetic: '[ˈmag-nəm-ˈō-pəs]', audio: 'audio/magnum02.mp3' },
+  { word: 'verbatim', phonetic: '[(ˌ)vər-ˈbā-təm]', audio: 'audio/verbat01.mp3' },
+  { word: 'verbal', phonetic: '[ˈvər-bəl]', audio: 'audio/verbal01.mp3' },
+  { word: 'verbalize', phonetic: '[ˈvər-bə-ˌlīz]', audio: 'audio/verbal06.mp3' },
+  { word: 'verbiage', phonetic: '[ˈvər-bē-ij]', audio: 'audio/verbia02.mp3' },
+  { word: 'revolve', phonetic: '[ri-ˈvälv]', audio: 'audio/revolv01.mp3' },
+  { word: 'revolution', phonetic: '[ˌre-və-ˈlü-shən]', audio: 'audio/revolu02.mp3' },
+  { word: 'revolutionary', phonetic: '[ˌre-və-ˈlü-shə-ˌner-ē]', audio: 'audio/revolu03.mp3' },
+  { word: 'evolve', phonetic: '[i-ˈvälv]', audio: 'audio/evolve01.mp3' },
+  { word: 'evolution', phonetic: '[ˌe-və-ˈlü-shən]', audio: 'audio/evolut02.mp3' },
+  { word: 'evolutionary', phonetic: '[ˌe-və-ˈlü-shə-ˌner-ē]', audio: 'audio/evolut04.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

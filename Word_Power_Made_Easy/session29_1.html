@@ -1,125 +1,53 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session29_1</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">martinet</td>
-				<td>[ˌmär-tə-ˈnet]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/martin02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">sycophancy</td>
-				<td>[ˈsi-kə-fən(t)-sē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/sycoph01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">sycophantic</td>
-				<td>[ˌsi-kə-ˈfan-tik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/sycoph03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">diaphanous</td>
-				<td>[dī-ˈa-fə-nəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/diapha02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">dilettante</td>
-				<td>[ˈdi-lə-ˌtänt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/dilett01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">dilettantism</td>
-				<td>[ˈdi-lə-ˌtän-ˌti-zəm]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/dilett21.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">dilettantish</td>
-				<td>[ˈdi-lə-ˌtän-tish]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/dilett03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">tyro</td>
-				<td>[ˈtī-(ˌ)rō]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/tyro0001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">virtuoso</td>
-				<td>[ˌvər-chü-ˈō-(ˌ)sō]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/virtuo03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">termagant</td>
-				<td>[ˈtər-mə-gənt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/termag01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">harridan</td>
-				<td>[ˈher-ə-dən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/harrid01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'martinet', phonetic: '[ˌmär-tə-ˈnet]', audio: 'audio/martin02.mp3' },
+  { word: 'sycophancy', phonetic: '[ˈsi-kə-fən(t)-sē]', audio: 'audio/sycoph01.mp3' },
+  { word: 'sycophantic', phonetic: '[ˌsi-kə-ˈfan-tik]', audio: 'audio/sycoph03.mp3' },
+  { word: 'diaphanous', phonetic: '[dī-ˈa-fə-nəs]', audio: 'audio/diapha02.mp3' },
+  { word: 'dilettante', phonetic: '[ˈdi-lə-ˌtänt]', audio: 'audio/dilett01.mp3' },
+  { word: 'dilettantism', phonetic: '[ˈdi-lə-ˌtän-ˌti-zəm]', audio: 'audio/dilett21.mp3' },
+  { word: 'dilettantish', phonetic: '[ˈdi-lə-ˌtän-tish]', audio: 'audio/dilett03.mp3' },
+  { word: 'tyro', phonetic: '[ˈtī-(ˌ)rō]', audio: 'audio/tyro0001.mp3' },
+  { word: 'virtuoso', phonetic: '[ˌvər-chü-ˈō-(ˌ)sō]', audio: 'audio/virtuo03.mp3' },
+  { word: 'termagant', phonetic: '[ˈtər-mə-gənt]', audio: 'audio/termag01.mp3' },
+  { word: 'harridan', phonetic: '[ˈher-ə-dən]', audio: 'audio/harrid01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

@@ -1,145 +1,55 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session12_1</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">anthropology</td>
-				<td>[ˌan(t)-thrə-ˈpä-lə-jē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/anthro09.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">anthropological</td>
-				<td>[ˌan(t)-thrə-pə-ˈlä-ji-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/anthro10.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">astronomy</td>
-				<td>[ə-ˈsträ-nə-mē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/astron11.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">astronomical</td>
-				<td>[ˌa-strə-ˈnä-mi-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/astron08.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">astrology</td>
-				<td>[ə-ˈsträ-lə-jē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/astrol03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">astrological</td>
-				<td>[ˌa-strə-ˈlä-ji-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/astrol04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">astronaut</td>
-				<td>[ˈa-strə-ˌnȯt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/astron01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">cosmonaut</td>
-				<td>[ˈkäz-mə-ˌnȯt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/cosmon01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">nautical</td>
-				<td>[ˈnȯ-ti-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/nautic01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">aster</td>
-				<td>[ˈa-stər]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/aster001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">asterisk</td>
-				<td>[ˈa-stə-ˌrisk]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/asteri03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">disaster</td>
-				<td>[di-ˈza-stər]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/disast02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">disastrous</td>
-				<td>[di-ˈza-strəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/disast03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'anthropology', phonetic: '[ˌan(t)-thrə-ˈpä-lə-jē]', audio: 'audio/anthro09.mp3' },
+  { word: 'anthropological', phonetic: '[ˌan(t)-thrə-pə-ˈlä-ji-kəl]', audio: 'audio/anthro10.mp3' },
+  { word: 'astronomy', phonetic: '[ə-ˈsträ-nə-mē]', audio: 'audio/astron11.mp3' },
+  { word: 'astronomical', phonetic: '[ˌa-strə-ˈnä-mi-kəl]', audio: 'audio/astron08.mp3' },
+  { word: 'astrology', phonetic: '[ə-ˈsträ-lə-jē]', audio: 'audio/astrol03.mp3' },
+  { word: 'astrological', phonetic: '[ˌa-strə-ˈlä-ji-kəl]', audio: 'audio/astrol04.mp3' },
+  { word: 'astronaut', phonetic: '[ˈa-strə-ˌnȯt]', audio: 'audio/astron01.mp3' },
+  { word: 'cosmonaut', phonetic: '[ˈkäz-mə-ˌnȯt]', audio: 'audio/cosmon01.mp3' },
+  { word: 'nautical', phonetic: '[ˈnȯ-ti-kəl]', audio: 'audio/nautic01.mp3' },
+  { word: 'aster', phonetic: '[ˈa-stər]', audio: 'audio/aster001.mp3' },
+  { word: 'asterisk', phonetic: '[ˈa-stə-ˌrisk]', audio: 'audio/asteri03.mp3' },
+  { word: 'disaster', phonetic: '[di-ˈza-stər]', audio: 'audio/disast02.mp3' },
+  { word: 'disastrous', phonetic: '[di-ˈza-strəs]', audio: 'audio/disast03.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

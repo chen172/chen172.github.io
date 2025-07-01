@@ -1,226 +1,52 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-<meta charset="utf-8">
-
-<title>Session1</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 </head>
-
 <body>
- <table>
-
- 
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">egoist</td>
-
-<td>[ˈiː.ɡoʊ.ɪst]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/useeg__028.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">egotist</td>
-
-<td>[ ˈē-gə-tist]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/egotis02.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">altruist</td>
-
-<td>[ˈal-trü-ist]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/altrui02.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">introvert</td>
-
-<td>[ˈin-trə-ˌvərt]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/introv03.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">extrovert</td>
-
-<td>[ˈek-strə-ˌvərt]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/extrov02.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">ambivert</td>
-
-<td>[ˈam-bi-ˌvərt]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/ambive02.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">misanthrope</td>
-
-<td>[ˈmi-sᵊn-ˌthrōp]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/misant01.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">misogynist</td>
-
-<td>[mə-ˈsä-jə-nist]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/misogy04.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">misogamy</td>
-
-<td>[mi-ˈsä-gə-mē]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/misoga01.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td style="font-family:arial;color:black;font-size:30px;">ascetic</td>
-
-<td>[ə-ˈse-tik]</td>
-
-<td><audio controls="controls">
-
-<source src="audio/asceti01.mp3" type="audio/mpeg">
-
-Browser not support audio 
-
-</audio>    
-
-</td>
-
-</tr>
-
- 
-
-</table>    
-
-         
-
-
-
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
+
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
+
+  <script>
+    const entries = [
+  { word: 'egoist', phonetic: '[ˈiː.ɡoʊ.ɪst]', audio: 'audio/egoist01.mp3' },
+  { word: 'egotist', phonetic: '[ˈē-gə-ˌti-zəm]', audio: 'audio/egotis02.mp3' },
+  { word: 'altruist', phonetic: '[ˈal-trü-ist]', audio: 'audio/altrui02.mp3' },
+  { word: 'introvert', phonetic: '[ˈin-trə-ˌvərt]', audio: 'audio/introv03.mp3' },
+  { word: 'extrovert', phonetic: '[ˈek-strə-ˌvərt]', audio: 'audio/extrov02.mp3' },
+  { word: 'ambivert', phonetic: '[ˈam-bi-ˌvərt]', audio: 'audio/ambive02.mp3' },
+  { word: 'misanthrope', phonetic: '[ˈmi-sᵊn-ˌthrōp]', audio: 'audio/misant01.mp3' },
+  { word: 'misogynist', phonetic: '[mə-ˈsä-jə-nist]', audio: 'audio/misogy04.mp3' },
+  { word: 'misogamist', phonetic: '[mi-ˈsä-gə-mē]', audio: 'audio/misoga01.mp3' },
+  { word: 'ascetic', phonetic: '[ə-ˈse-tik]', audio: 'audio/asceti01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
 </body>
-
 </html>

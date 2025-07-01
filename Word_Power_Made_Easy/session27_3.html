@@ -1,115 +1,52 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session27_3</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">ambulatory</td>
-				<td>[ˈam-byə-lə-ˌtȯr-ē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ambula09.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">perambulator</td>
-				<td>[pə-ˈram-byə-ˌlā-tər]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/peramb04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">perambulate</td>
-				<td>[pə-ˈram-byə-ˌlāt]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/peramb01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">perambulation</td>
-				<td>[pə-ˌram-byə-ˈlā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/peramb02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">amble</td>
-				<td>[ˈam-bəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/amble001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">preamble</td>
-				<td>[ˈprē-ˌam-bəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/preamb01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">soporific</td>
-				<td>[ˌsä-pə-ˈri-fik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/sopori02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">inarticulate</td>
-				<td>[ˌi-(ˌ)när-ˈti-kyə-lət]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/inarti02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">articulate</td>
-				<td>[är-ˈti-kyə-lət]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/articu10.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">banality</td>
-				<td>[bə-ˈna-lə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/banal003.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'ambulatory', phonetic: '[ˈam-byə-lə-ˌtȯr-ē]', audio: 'audio/ambula09.mp3' },
+  { word: 'perambulator', phonetic: '[pə-ˈram-byə-ˌlā-tər]', audio: 'audio/peramb04.mp3' },
+  { word: 'perambulate', phonetic: '[pə-ˈram-byə-ˌlāt]', audio: 'audio/peramb01.mp3' },
+  { word: 'perambulation', phonetic: '[pə-ˌram-byə-ˈlā-shən]', audio: 'audio/peramb02.mp3' },
+  { word: 'amble', phonetic: '[ˈam-bəl]', audio: 'audio/amble001.mp3' },
+  { word: 'preamble', phonetic: '[ˈprē-ˌam-bəl]', audio: 'audio/preamb01.mp3' },
+  { word: 'soporific', phonetic: '[ˌsä-pə-ˈri-fik]', audio: 'audio/sopori02.mp3' },
+  { word: 'inarticulate', phonetic: '[ˌi-(ˌ)när-ˈti-kyə-lət]', audio: 'audio/inarti02.mp3' },
+  { word: 'articulate', phonetic: '[är-ˈti-kyə-lət]', audio: 'audio/articu10.mp3' },
+  { word: 'banality', phonetic: '[bə-ˈna-lə-tē]', audio: 'audio/banal003.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

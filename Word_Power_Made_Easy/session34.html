@@ -1,215 +1,62 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session34</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">indefatigability</td>
-				<td>[ˌin-di-ˌfa-ti-gə-ˈbi-lə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/indefa02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">ingenious</td>
-				<td>[in-ˈjēn-yəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ingeni01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">ingenuity</td>
-				<td>[ˌin-jə-ˈnü-ə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/ingenu02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">naive</td>
-				<td>[nä-ˈēv]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/naive001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">naivete</td>
-				<td>[nä-ˌēv-ˈtā]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/naivet01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">credulous</td>
-				<td>[ˈkre-jə-ləs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/credul02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">incredulous</td>
-				<td>[(ˌ)in-ˈkre-jə-ləs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/incred06.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">gullible</td>
-				<td>[ˈgə-lə-bəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/gullib01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">gullibility</td>
-				<td>[ˌgə-lə-ˈbi-lə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/gullib02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">credible</td>
-				<td>[ˈkre-də-bəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/credib02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">incredible</td>
-				<td>[(ˌ)in-ˈkre-də-bəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/incred01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">credulity</td>
-				<td>[kri-ˈdü-lə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/credul01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">incredulity</td>
-				<td>[ˌin-kri-ˈdü-lə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/incred05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">credibility</td>
-				<td>[ˌkre-də-ˈbi-lə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/credib01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">incredibility</td>
-				<td>[(ˌ)in-ˌkre-də-ˈbi-lə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/incred02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">credo</td>
-				<td>[ˈkrē-(ˌ)dō]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/credo002.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">creed</td>
-				<td>[ˈkrēd]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/creed001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">credence</td>
-				<td>[ˈkrē-dᵊn(t)s]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/creden01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">credentials</td>
-				<td>[krɪˈden·ʃəlz]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/credentials.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">disingenuous</td>
-				<td>[ˌdis-in-ˈjen-yə-wəs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/dising01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'indefatigability', phonetic: '[ˌin-di-ˌfa-ti-gə-ˈbi-lə-tē]', audio: 'audio/indefa02.mp3' },
+  { word: 'ingenious', phonetic: '[in-ˈjēn-yəs]', audio: 'audio/ingeni01.mp3' },
+  { word: 'ingenuity', phonetic: '[ˌin-jə-ˈnü-ə-tē]', audio: 'audio/ingenu02.mp3' },
+  { word: 'naive', phonetic: '[nä-ˈēv]', audio: 'audio/naive001.mp3' },
+  { word: 'naivete', phonetic: '[nä-ˌēv-ˈtā]', audio: 'audio/naivet01.mp3' },
+  { word: 'credulous', phonetic: '[ˈkre-jə-ləs]', audio: 'audio/credul02.mp3' },
+  { word: 'incredulous', phonetic: '[(ˌ)in-ˈkre-jə-ləs]', audio: 'audio/incred06.mp3' },
+  { word: 'gullible', phonetic: '[ˈgə-lə-bəl]', audio: 'audio/gullib01.mp3' },
+  { word: 'gullibility', phonetic: '[ˌgə-lə-ˈbi-lə-tē]', audio: 'audio/gullib02.mp3' },
+  { word: 'credible', phonetic: '[ˈkre-də-bəl]', audio: 'audio/credib02.mp3' },
+  { word: 'incredible', phonetic: '[(ˌ)in-ˈkre-də-bəl]', audio: 'audio/incred01.mp3' },
+  { word: 'credulity', phonetic: '[kri-ˈdü-lə-tē]', audio: 'audio/credul01.mp3' },
+  { word: 'incredulity', phonetic: '[ˌin-kri-ˈdü-lə-tē]', audio: 'audio/incred05.mp3' },
+  { word: 'credibility', phonetic: '[ˌkre-də-ˈbi-lə-tē]', audio: 'audio/credib01.mp3' },
+  { word: 'incredibility', phonetic: '[(ˌ)in-ˌkre-də-ˈbi-lə-tē]', audio: 'audio/incred02.mp3' },
+  { word: 'credo', phonetic: '[ˈkrē-(ˌ)dō]', audio: 'audio/credo002.mp3' },
+  { word: 'creed', phonetic: '[ˈkrēd]', audio: 'audio/creed001.mp3' },
+  { word: 'credence', phonetic: '[ˈkrē-dᵊn(t)s]', audio: 'audio/creden01.mp3' },
+  { word: 'credentials', phonetic: '[kri-ˈden(t)-shəl]', audio: 'audio/creden03.mp3' },
+  { word: 'disingenuous', phonetic: '[ˌdis-in-ˈjen-yə-wəs]', audio: 'audio/dising01.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>

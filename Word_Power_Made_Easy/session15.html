@@ -1,175 +1,58 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Session15</title>
-	</head>
-			
-	<body>
-   
-		<table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1</title>
+  <link href="assets/css/session.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="button-container">
+    <button class="toggle-btn" onclick="toggleLayout()" id="toggleViewBtn">Card View</button>
+    <button class="toggle-btn" onclick="playAll()">▶️ Play All</button>
+    <button class="toggle-btn" id="playPauseBtn" onclick="togglePlayPause()">⏸️ Pause</button>
+    <div class="delay-wrapper" title="Delay between audios in milliseconds">
+      <label for="delayInput" style="user-select:none;">Delay (ms):</label>
+      <input type="number" id="delayInput" value="500" min="0" />
+    </div>
+  </div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">notoriety</td>
-				<td>[ˌnō-tə-ˈrī-ə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/notori01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- TABLE VIEW -->
+  <table class="table-view" id="tableView" cellspacing="0" cellpadding="0" role="grid" aria-label="Word list table">
+    <thead>
+      <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Phonetic</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">consummate</td>
-				<td>[ˈkän(t)-sə-mət]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/consum10.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
+  <!-- CARD VIEW -->
+  <div class="card-view" id="cardView" role="list"></div>
 
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">consummation</td>
-				<td>[ˌkän-sə-ˈmā-shən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/consum16.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">incorrigibility</td>
-				<td>[(ˌ)in-ˌkȯr-ə-jə-ˈbi-lə-tē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/incorr05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">inveteracy</td>
-				<td>[in-ˈve-t(ə-)rə-sē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/invete01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">veteran</td>
-				<td>[ˈve-tə-rən]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/vetera01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">genetics</td>
-				<td>[jə-ˈne-tiks]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/geneti04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">geneticist</td>
-				<td>[jə-ˈne-tə-sist]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/geneti05.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">genetic</td>
-				<td>[jə-ˈne-tik]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/geneti01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">gene</td>
-				<td>[ˈjēn]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/gene0001.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">genealogy</td>
-				<td>[ˌjē-nē-ˈä-lə-jē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/geneal02.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">genealogist</td>
-				<td>[ˌjē-nē-ˈä-lə-jist]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/geneal01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">genealogical</td>
-				<td>[ˌjē-nē-ə-ˈlä-ji-kəl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/geneal04.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">genital</td>
-				<td>[ˈje-nə-tᵊl]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/genita01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">genesis</td>
-				<td>[ˈje-nə-səs]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/genesi01.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
-
-			<tr>
-				<td style="font-family:arial;color:black;font-size:30px;">hereditary</td>
-				<td>[hə-ˈre-də-ˌter-ē]</td>
-				<td>
-					<audio controls="controls">
-						<source src="audio/heredi03.mp3" type="audio/mpeg">Browser not support audio 
-					</audio>
-				</td>
-			</tr>
- 
-		</table>   
-	</body>
+  <script>
+    const entries = [
+  { word: 'notoriety', phonetic: '[ˌnō-tə-ˈrī-ə-tē]', audio: 'audio/notori01.mp3' },
+  { word: 'consummate', phonetic: '[ˈkän(t)-sə-mət]', audio: 'audio/consum10.mp3' },
+  { word: 'consummation', phonetic: '[ˌkän-sə-ˈmā-shən]', audio: 'audio/consum16.mp3' },
+  { word: 'incorrigibility', phonetic: '[(ˌ)in-ˌkȯr-ə-jə-ˈbi-lə-tē]', audio: 'audio/incorr05.mp3' },
+  { word: 'inveteracy', phonetic: '[in-ˈve-t(ə-)rə-sē]', audio: 'audio/invete01.mp3' },
+  { word: 'veteran', phonetic: '[ˈve-tə-rən]', audio: 'audio/vetera01.mp3' },
+  { word: 'genetics', phonetic: '[jə-ˈne-tiks]', audio: 'audio/geneti04.mp3' },
+  { word: 'geneticist', phonetic: '[jə-ˈne-tə-sist]', audio: 'audio/geneti05.mp3' },
+  { word: 'genetic', phonetic: '[jə-ˈne-tik]', audio: 'audio/geneti01.mp3' },
+  { word: 'gene', phonetic: '[ˈjēn]', audio: 'audio/gene0001.mp3' },
+  { word: 'genealogy', phonetic: '[ˌjē-nē-ˈä-lə-jē]', audio: 'audio/geneal02.mp3' },
+  { word: 'genealogist', phonetic: '[ˌjē-nē-ˈä-lə-jist]', audio: 'audio/geneal01.mp3' },
+  { word: 'genealogical', phonetic: '[ˌjē-nē-ə-ˈlä-ji-kəl]', audio: 'audio/geneal04.mp3' },
+  { word: 'genital', phonetic: '[ˈje-nə-tᵊl]', audio: 'audio/genita01.mp3' },
+  { word: 'genesis', phonetic: '[ˈje-nə-səs]', audio: 'audio/genesi01.mp3' },
+  { word: 'hereditary', phonetic: '[hə-ˈre-də-ˌter-ē]', audio: 'audio/heredi03.mp3' }
+    ];
+  </script>
+  <script src="assets/js/session.js"></script>
+</body>
 </html>
