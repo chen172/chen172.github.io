@@ -1,0 +1,47 @@
+[
+    {
+        "root": "ACER/ACR",
+        "def": "meaing \"sharp\" or \"sour.\" Grapefruit and limes have an <em>acid</em> taste; <em>acid</em> can also describle a person's sense of humor (other words for it might be <em>sharp</em> or biting). The <em>acidity</em> of the soil often indicates whether it's good for growing certain crops.",
+        "count": 4
+    },
+    {
+        "root": "STRICT",
+        "def": "meaing \"to draw tight, bind, or tie.\" So the English word <em>strict</em> means \"tightly controlled.\" And when someone begin a sentence \"Strictly speaking,...\" you know he or she is going to be talking about a word or idea in its most limited sense, \"drawing tight\" the meaning till it's as narrow as possible.",
+        "count": 4
+    },
+    {
+        "root": "STRU/STRUCT",
+        "def": "meaning \"to put together, build, arrange.\" A <em>structure</em> is something that's been <em>constructed</em>,--that is, built or put together. <em>Instructions</em> tells how the pieces should be arranged. Something that <em>obstructs</em> is a barrier that's been \"built\" to stand in your way. And something <em>destructive</em> \"unbuilds.\"",
+        "count": 4
+    },
+    {
+        "root": "PROP/PROPRI",
+        "def": "meaning \"own.\" A <em>proprietor</em> is an owner, and <em>property</em> is what he or she owns.",
+        "count": 4
+    },
+    {
+        "root": "TORT",
+        "def": "meaning \"to twist, wind, or wrench.\" In <em>torture</em>, parts of the body may be wrenched or twisted or stretched; so those \"Indian sunburns\" that schoolkids give by twisting in different directions on some unlucky guy's wrist stay pretty close to <em>torture</em>'s original meaning.",
+        "count": 4
+    },
+    {
+        "root": "VIV",
+        "def": "meaning \"to live or be alive.\" A <em>survivor</em> has lived through something terrible. A <em>revival</em> brings something back to life, whether it's an old film, interest in a long-dead novelist, or religious enthusiam in a group, may be in a huge tent in the countryside.",
+        "count": 4
+    },
+    {
+        "root": "SERV",
+        "def": "means \"to be subject to.\" A <em>servant</em> is the person who <em>serves</em> you with meals and provides other necessary services.",
+        "count": 4
+    },
+    {
+        "root": "CLUS",
+        "def": "meaning \"to close.\" Words based on the Latin verb often have forms in which the <em>d</em> becomes an <em>s</em>. So, for example, <em>include</em>, which once meant \"to shut up or enclose\" and now means \"to contain,\" has the releated word <em>inclusive</em>, which means \"including everything.\"",
+        "count": 4
+    },
+    {
+        "root": "Greek and Latin Borrowings",
+        "def": "",
+        "count": 8
+    }
+]

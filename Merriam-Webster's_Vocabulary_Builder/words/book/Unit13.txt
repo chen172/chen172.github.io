@@ -1,0 +1,49 @@
+# CORD
+accord
+concord
+cordial
+discordant
+# CULP
+culpable
+exculpate
+inculpate
+mea culpa
+# DICT
+diction
+edict
+jurisdiction
+dictum
+# GNI/GNO
+cognitive
+agnostic
+incognito
+prognosis
+# GRAPH
+calligraphy
+hagiography
+choreography
+lithograph
+# ART
+artful
+artifact
+artifice
+artisan
+# PORT
+fortify
+fortification
+forte
+fortitude
+# CIS
+concise
+excise
+incisive
+precision
+# Animal Words
+apiary
+caper
+equestrian
+lupine
+ovine
+ornithologist
+serpentine
+simian

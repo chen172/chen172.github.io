@@ -1,0 +1,47 @@
+[
+    {
+        "root": "VERB",
+        "def": "meaning \"word.\" A <em>verb</em>--or action word--appears in some form in every complete sentence. To express something <em>verbally</em>--or to <em>verbalize</em> something--is to say it or write it.",
+        "count": 4
+    },
+    {
+        "root": "SIMIL/SIMUL",
+        "def": "meaning \"like, resembling, similar.\" and \"to make like.\" Two <em>similar</em> things resemble each other. Two <em>simultaneous</em> activities proceed at the same time. And a <em>facsimile</em>, such as you might receive from your <em>fax</em> machine, looks exactly the same as the original.",
+        "count": 4
+    },
+    {
+        "root": "SCEND",
+        "def": "means \"to climb.\" The staircase we <em>ascend</em> to our bedroom at night we will <em>descend</em> the next morning, since what goes up must come down.",
+        "count": 4
+    },
+    {
+        "root": "ONYM",
+        "def": "meaning \"name, word.\" An <em>anonymous</em> donor or writer is one who isn't named. A <em> synonym</em> is a word with the same meaning as another word. And <em>homonyms</em> are words that look and sound alike but aren't actually releated, such as <em>well</em> (\"healthy\") and <em>well</em> (\"a deep hole with water in it\").",
+        "count": 4
+    },
+    {
+        "root": "SCRIB/SCRIP",
+        "def": "means \"to write.\" <em>Scribble</em> is an old word meaning to write or draw carelessly. A written work that hasn't been published is a <em>manuscript</em>. And to <em>describe</em> is to picture something in words.",
+        "count": 4
+    },
+    {
+        "root": "FALL",
+        "def": "means \"to deceive.\" It's actually at the root of the word <em>false</em>, which we rarely use today to mean \"deceptive.\"",
+        "count": 4
+    },
+    {
+        "root": "SOLU",
+        "def": "means \"to lossen, free, release,\" and the root therefore may taken the form <em>solv-</em> as well. So to <em>solve</em> a problem means to find its <em>solution</em>, as if you were freeing up a logjam. And a <em>solvent</em> is a chemical that dissolves or \"loosens up\" oil or paint.",
+        "count": 4
+    },
+    {
+        "root": "HYDR",
+        "def": "means \"water.\" The \"water\" root can be found in the lovely flower called the <em>hydrangea</em>: its seed capsules resemble ancient Greek water vessels.",
+        "count": 4
+    },
+    {
+        "root": "Greek and Latin Borrowings",
+        "def": "",
+        "count": 8
+    }
+]

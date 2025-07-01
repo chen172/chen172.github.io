@@ -1,0 +1,47 @@
+[
+    {
+        "root": "TEXT",
+        "def": "means \"to weave.\" So a <em>textile</em> is a woven or knitted cloth. The material it's made from determines its <em>texture</em>, the smoothness or roughness of its surface. And individual words are \"woven\" into sentences and paragraphs to form a <em>text</em>.",
+        "count": 4
+    },
+    {
+        "root": "PLAC",
+        "def": "means \"to please or be agreeable to,\" or \"to soothe or calm.\" <em>Pleasant</em>, <em>pleasurable</em>, and <em>pleasing</em> all derive from this root, even though their spelling makes it hard to see.",
+        "count": 4
+    },
+    {
+        "root": "AUT/AUTO",
+        "def": "means \"same\" or \"self.\" Something <em>automatic</em> operates by itself, and an <em>automobile</em> moves by itself, without the help of a horse. An <em>autograph</em> is in the handwriting of the person him- or herself, and an <em>autopsy</em> is an inspection of a corpse by an examiner's own eyes.",
+        "count": 4
+    },
+    {
+        "root": "GRAT",
+        "def": "meaning \"pleasing, welcome, or agreeable,\" or meaning \"grace, agreeableness, or pleasantness.\" A meal that's served <em>graciously</em> will be received with <em>gratitude</em> by <em>grateful</em> guests; those who show no appreciation could be called <em>ingrates</em>.",
+        "count": 4
+    },
+    {
+        "root": "CLAM/CLAIM",
+        "def": "meaning \"to shout or cry out.\" To <em>claim</em> often means \"to call for.\" And an <em>exclamation</em> is a cry of shock, joy, or surprise.",
+        "count": 4
+    },
+    {
+        "root": "CRAC/CRAT",
+        "def": "meaning \"power.\" Attached to another root, it indicates which group holds the power. With <em>demos</em>, the word for \"people,\" it forms <em>democracy</em>, a form of governmnet in which the people rule. A <em>theocracy</em>, with <em>theos</em>, the word for \"god,\" is government based on divine guidance. In a <em>meritocracy</em>, people earn power by their own merit.",
+        "count": 4
+    },
+    {
+        "root": "PUNC",
+        "def": "meaning \"point.\" A period is a form of <em>punctuation</em> that's literally a point, and a <em>punctured</em> tire has been pricked by a sharp point.",
+        "count": 4
+    },
+    {
+        "root": "POT",
+        "def": "meaning \"able.\" Our English word <em>potent</em> means \"powerful\" or \"effective,\" whether for good or bad. A <em>potent</em> new antibiotic might be able to deal with infections that have developed resistance to old drugs; an industrial gas might be identified as a <em>potent</em> contributor to climate change; and a <em>potent drink</em> might leave you staggering.",
+        "count": 4
+    },
+    {
+        "root": "Greek and Latin Borrowings",
+        "def": "",
+        "count": 8
+    }
+]

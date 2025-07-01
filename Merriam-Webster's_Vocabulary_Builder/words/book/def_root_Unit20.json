@@ -1,0 +1,52 @@
+[
+    {
+        "root": "NOM",
+        "def": "comes from the Latin word for \"name.\" A <em>nominee</em> is a person \"named\"--or <em>nominated</em>--to run for or serve in office. A <em>binomial</em> (\"two names\") is the scientific name for a species: <em>Felis catus</em> for the house cat, for example. A <em>polynomial</em>, with \"many names,\" is an algebra expression involving several terms: 2x^2 + 9y - z^3, for instance.",
+        "count": 4
+    },
+    {
+        "root": "PATER/PATR",
+        "def": "comes from both the Greek and the Latin word for \"father.\" So a <em>patron</em>, for example, is someone who assumes a fatherly role toward an institution or project or individual, giving moral and financial support.",
+        "count": 4
+    },
+    {
+        "root": "LEGA",
+        "def": "comes from the Latin <em>legare</em>, meaning \"to appoint\" or \"to send as a deputy.\" The same root actually shows up in such words as <em>legal</em>--but how the law connects with sending deputies can get awfully complicated and probably isn't worth going into.",
+        "count": 4
+    },
+    {
+        "root": "GREG",
+        "def": "comes from the Latin <em>grex</em>, \"herd\" or \"flock.\" Bees, starlings, cows--any creatures that like to live together in flocks or herds--are called <em>gregarious</em>, and the same word is used for people who enjoy companionship and are happiest when they're in the middle of a rowdy herd.",
+        "count": 4
+    },
+    {
+        "root": "FLU",
+        "def": "comes from the Latin verb <em>fluere</em>, \"to flow.\" So a <em>flume</em> is a narrow gorge with a stream flowing through it. A <em>fluent</em> speaker is one from whom words <em>flows</em> easily. <em>Influence</em> originally referred to an invisible <em>fluid</em> that was believed to flow from the stars and to affect the actions of humans. A mysterious outbreak of disease in 15th-century Italy led Italians to blame it on the stars' <em>influenza</em>--and the name stuck.",
+        "count": 4
+    },
+    {
+        "root": "PREHEND/PREHENS",
+        "def": "comes from the Latin verb <em>prehendere</em>, \"to seize.\" Most of the English words where it appears are closely related to the ones discussed below.",
+        "count": 4
+    },
+    {
+        "root": "TEMPER",
+        "def": "comes from the Latin verb <em>temperare</em>, \"to moderate or keep within limits\" or \"to mix.\" Most of the world's people live in the <em>temperate</em> zone--that is, the zone where the <em>temperature</em> is moderate, between the hot tropics and the icy Arctic and Antarctic Circles. It's less easy to see how we get <em>temperature</em> from this root; the word actually used to refer to the mixing of differnet basic elements in the body, and only slowly came to mean how hot or cold that body was.",
+        "count": 4
+    },
+    {
+        "root": "PURG",
+        "def": "comes from the Latin verb <em>purgare</em>, \"to clean or cleanse.\" Almost all the English words where it shows up are closely to those related below.",
+        "count": 4
+    },
+    {
+        "root": "MILL",
+        "def": "means either \"a thousand\" or \"a thousandth.\" A <em>millennium</em> is a thousand years, and a <em>million</em> is a thousand thousands. But a <em>milligram</em> is a thousandth of a gram, a <em>milliliter</em> a thousandth of a liter, and a <em>millimeter</em> a thousandth of a meter.",
+        "count": 4
+    },
+    {
+        "root": "HEMI/SEMI",
+        "def": "means \"half.\" <em>Hemi-</em> comes from Greek, <em>semi-</em> from Latin. A <em>hemisphere</em> is half a sphere, and a <em>semicircle</em> is half a circle. (The French prefix <em>demi-</em>, which probably developed from Latin as well, also means \"half\"--as in <em>demitasse</em>, a little after-dinner coffee cup half the size of a regular cup.)",
+        "count": 4
+    }
+]
