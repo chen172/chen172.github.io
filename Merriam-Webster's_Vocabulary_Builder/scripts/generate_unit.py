@@ -19,9 +19,9 @@ def generate_html(base_name):
     with open(json_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    # Read words from the words file (Unit1.txt, etc.)
+    # Read words from the words file (Unit1.txt, etc.), skipping lines starting with '#'
     with open(words_file, 'r', encoding='utf-8') as f:
-        words = f.read().splitlines()
+        words = [line for line in f.read().splitlines() if not line.startswith('#')]
 
     # Read phonetic pronunciations from the phonetic file (prs_Unit1.txt, etc.)
     with open(phonetic_file, 'r', encoding='utf-8') as f:
@@ -31,6 +31,9 @@ def generate_html(base_name):
     with open(audio_file, 'r', encoding='utf-8') as f:
         audios = f.read().splitlines()
 
+    # Format the unit title to include a space after "Unit" (e.g., "Unit 1")
+    unit_title = f"Unit {base_name.lstrip('Unit')}"
+
     # Create the HTML content
     html_content = f'''<!DOCTYPE html>
 <html lang="en">
@@ -38,7 +41,7 @@ def generate_html(base_name):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{base_name}</title>
+    <title>{unit_title}</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/unit.css">
 </head>
