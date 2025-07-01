@@ -1,0 +1,145 @@
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333; /* Default text color */
+  margin: 0;
+  padding: 0;
+  background-color: transparent; /* Let Dark Reader handle the background */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Styles */
+h1 {
+  font-size: 2.4em;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+h1 a {
+  color: #2980b9;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1 a:hover {
+  background-color: #ecf0f1;
+  color: #3498db;
+}
+
+/* Table Styles */
+.unit-table {
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  border-collapse: collapse;
+  background-color: transparent; /* Let Dark Reader manage the background */
+}
+
+.unit-table:hover {
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 1.1em;
+  width: 33%;
+  background-color: transparent; /* Allow Dark Reader to adjust */
+  color: inherit; /* Inherit text color */
+  font-weight: 400;
+}
+
+tr:nth-child(even) td {
+  background-color: transparent; /* Transparent for Dark Reader */
+}
+
+td a {
+  display: block;
+  padding: 12px;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 4px;
+  color: #3498db;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+td a:hover {
+  background-color: #e0e0e0;
+  color: #2980b9;
+  transform: scale(1.05);
+}
+
+/* Unit Block Header */
+.unit-header {
+  background-color: transparent; /* Let Dark Reader handle */
+  border-left: 8px solid #3498db;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.unit-header a {
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.unit-header a:hover {
+  background-color: #2980b9;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  td {
+    width: 100%;
+    text-align: center;
+    padding: 16px 12px;
+    font-size: 1em;
+  }
+
+  td {
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+}
+
+/* Accessibility Focus Styles */
+a:focus, td a:focus {
+  outline: 3px solid #3498db;
+  background-color: #ecf0f1;
+  transform: scale(1.05);
+}
+
+/* Subtle animation for card-like table items */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.unit-table {
+  animation: fadeIn 1s ease-out;
+}
