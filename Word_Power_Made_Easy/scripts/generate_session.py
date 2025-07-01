@@ -46,12 +46,21 @@ def main():
 
     entries_str = ",\n".join(entries_js)
 
+    # Ensure there's a space after 'Session' if it's not already there
+    session_title = base_name.replace('.txt', '')  # Remove .txt from base_name
+    if session_title.lower().startswith('session'):
+        # If "Session" is already there, we just make sure there's a space after it
+        session_title = 'Session ' + session_title[len('Session'):].strip()
+    else:
+        # Otherwise, we prepend "Session " to the title
+        session_title = "Session " + session_title.capitalize()
+
     html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Session 1</title>
+  <title>{session_title}</title>  <!-- Dynamic title -->
   <link href="assets/css/session.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 </head>
