@@ -1,0 +1,29 @@
+/* Back to Top Button */
+.back-to-top, .go-to-bottom {
+  position: fixed;
+  right: 30px;
+  background-color: #3498db;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 1.5em;
+  text-decoration: none;
+  z-index: 999;
+}
+
+/* Back to Top positioning */
+.back-to-top {
+  bottom: 30px;
+  display: block; /* Temporarily set to block for testing */
+}
+
+/* Go to Bottom positioning */
+.go-to-bottom {
+  bottom: 80px;
+  display: block; /* Temporarily set to block for testing */
+}
+
+/* Hover effect */
+.back-to-top:hover, .go-to-bottom:hover {
+  background-color: #2980b9;
+}

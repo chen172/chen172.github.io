@@ -4,6 +4,7 @@ import json
 # Define the output HTML file path and the path to your CSS file
 output_html = "Merriam-Webster's_Vocabulary_Builder_Audio.html"
 css_link = 'assets/css/webster.css'
+js_link = 'assets/js/backToTop.js'  # Path to your external JS file
 
 # Function to generate HTML for each unit
 def generate_unit_html(unit_number, json_data):
@@ -72,6 +73,7 @@ def generate_full_html():
         <title>Merriam-Webster's Vocabulary Builder Audio</title>
         <link rel="icon" href="img/webster.ico" type="image/x-icon">
         <link rel="stylesheet" href="assets/css/webster.css">
+        <link rel="stylesheet" href="assets/css/backToTop.css">
     </head>
     <body>
         <div class="container">
@@ -93,6 +95,22 @@ def generate_full_html():
             full_html += unit_html
         else:
             print(f"Warning: {json_file_path} not found!")
+
+    # Add Back to Top and Go to Bottom buttons
+    full_html += '''
+        <a href="#" class="back-to-top">↑</a>
+        <a href="#bottom" class="go-to-bottom">↓</a>
+    '''
+
+    # Link the external JavaScript file for the Back to Top and Go to Bottom functionality
+    full_html += f'''
+    <script src="{js_link}"></script>
+    '''
+
+    # Add bottom section to be targeted by the Go to Bottom button
+    full_html += '''
+        <div id="bottom" style="height: 100px;"></div>
+    '''
 
     # Close the HTML body and document
     full_html += '''
