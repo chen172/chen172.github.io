@@ -10,6 +10,13 @@ The pronunciation, audio files, and definitions for words are automatically gene
 
 # Generate Pages
 
+## Generate webster page
+
+```bash
+cd Merriam-Webster's_Vocabulary_Builder\words\book
+python ..\..\..\scripts\generate_webster.py
+```
+
 ## Generate All Session Pages for *Word Power Made Easy*
 
 To generate all session pages, navigate to the `scripts` folder and run the following command:
