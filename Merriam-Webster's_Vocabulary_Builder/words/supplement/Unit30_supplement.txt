@@ -8,7 +8,6 @@ relaxant
 slur
 botulism
 venom
-hemotoxic
 flimsy
 sanity
 smallpox
@@ -38,7 +37,7 @@ perplex
 crane
 stunt
 skateboarder
-snowboarder
+snowboard
 compost
 manure
 faucet
@@ -66,3 +65,8 @@ nymph
 reed
 satire
 fortress
+inflate
+glide
+pant
+sketchy
+shun
