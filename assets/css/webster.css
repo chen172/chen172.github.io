@@ -36,6 +36,13 @@ h1 a:hover {
   color: #3498db;
 }
 
+h1 a:active,
+h1 a:focus {
+  color: #2980b9; /* Maintain the original color on click/focus */
+  background-color: transparent; /* Remove background highlight */
+  outline: none; /* Remove default focus outline if it's not needed */
+}
+
 /* Table Styles */
 .unit-table {
   width: 100%;
@@ -84,6 +91,13 @@ td a:hover {
   transform: scale(1.05);
 }
 
+td a:active,
+td a:focus {
+  outline: none; /* Remove focus outline */
+  background-color: transparent; /* Remove background highlight */
+  color: #2980b9; /* Maintain color on click */
+}
+
 /* Unit Block Header */
 .unit-header {
   background-color: transparent; /* Let Dark Reader handle */
@@ -107,6 +121,13 @@ td a:hover {
 
 .unit-header a:hover {
   background-color: #2980b9;
+}
+
+.unit-header a:active,
+.unit-header a:focus {
+  background-color: transparent; /* Remove background on click/focus */
+  color: #2980b9;
+  outline: none; /* Remove default focus outline */
 }
 
 /* Media Queries for Mobile Responsiveness */
