@@ -59,6 +59,7 @@ def main():
         </div>
         <button type="button" onclick="checkPart1()">Submit Part 1</button>
       </form>
+      <div id="resultPart1" class="result"></div> <!-- Result for Part 1 -->
     </section>
 """
 
@@ -81,6 +82,7 @@ def main():
         </div>
         <button type="button" onclick="checkPart2()">Submit Part 2</button>
       </form>
+      <div id="resultPart2" class="result"></div> <!-- Result for Part 2 -->
     </section>
 """
 
@@ -100,8 +102,8 @@ def main():
     html += """
         <button type="button" onclick="checkPart3()">Submit Part 3</button>
       </div>
+      <div id="resultPart3" class="result"></div> <!-- Result for Part 3 -->
     </section>
-    <div id="result" class="result"></div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>

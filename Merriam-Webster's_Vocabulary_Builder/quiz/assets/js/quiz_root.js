@@ -64,7 +64,15 @@ function checkPart3() {
 
 // Function to show the result message
 function showResult(allCorrect, partName) {
-  const resultEl = document.getElementById("result");
+  let resultEl;
+  if (partName === "Part 1") {
+    resultEl = document.getElementById("resultPart1");
+  } else if (partName === "Part 2") {
+    resultEl = document.getElementById("resultPart2");
+  } else if (partName === "Part 3") {
+    resultEl = document.getElementById("resultPart3");
+  }
+
   if (allCorrect) {
     resultEl.textContent = `Great job! All answers in ${partName} are correct.`;
     resultEl.className = "result correct";
@@ -74,9 +82,9 @@ function showResult(allCorrect, partName) {
   }
 }
 
-// Function to show a message
+// Function to show a message for Part 3
 function showMessage(message) {
-  const resultEl = document.getElementById("result");
+  const resultEl = document.getElementById("resultPart3");
   resultEl.textContent = message;
   resultEl.className = "result";
 }
