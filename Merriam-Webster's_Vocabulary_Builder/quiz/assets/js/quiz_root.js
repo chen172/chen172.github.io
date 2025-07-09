@@ -1,3 +1,4 @@
+// Function to randomize the options
 function randomizeOptions(selectId, options) {
   const select = document.getElementById(selectId);
   select.innerHTML = '';
@@ -17,44 +18,40 @@ function randomizeOptions(selectId, options) {
   });
 }
 
+// Function to set the select style based on correctness
 function setSelectStyle(select, isCorrect) {
   const container = select.closest('.choices');
   if (!container) return;
   container.setAttribute('data-state', isCorrect ? 'correct' : 'incorrect');
 }
 
+// Function to check answers for Part 1
 function checkPart1() {
-  const answers = {
-    cap: 1, anthrop: 2, mis: 3, lyc: 4, re: 5,
-    de: 6, ate: 7, ology: 8, oid: 9, ic: 10
-  };
   let allCorrect = true;
-  for (let key in answers) {
+  for (let key in part1Answers) {
     const select = document.getElementById(key);
     const val = parseInt(select.value);
-    const correct = val === answers[key];
+    const correct = val === part1Answers[key];
     setSelectStyle(select, correct);
     if (!correct) allCorrect = false;
   }
   showResult(allCorrect, "Part 1");
 }
 
+// Function to check answers for Part 2
 function checkPart2() {
-  const answers = {
-    rejuvenate: 1, misdirect: 2, deforest: 3, recap: 4,
-    anthropocentric: 5, lycanthropist: 6, capitulation: 7, zoophilic: 8
-  };
   let allCorrect = true;
-  for (let key in answers) {
+  for (let key in part2Answers) {
     const select = document.getElementById(key);
     const val = parseInt(select.value);
-    const correct = val === answers[key];
+    const correct = val === part2Answers[key];
     setSelectStyle(select, correct);
     if (!correct) allCorrect = false;
   }
   showResult(allCorrect, "Part 2");
 }
 
+// Function to check answers for Part 3
 function checkPart3() {
   const q1 = document.getElementById('part3q1').value.trim();
   const q2 = document.getElementById('part3q2').value.trim();
@@ -65,6 +62,7 @@ function checkPart3() {
   }
 }
 
+// Function to show the result message
 function showResult(allCorrect, partName) {
   const resultEl = document.getElementById("result");
   if (allCorrect) {
@@ -76,6 +74,7 @@ function showResult(allCorrect, partName) {
   }
 }
 
+// Function to show a message
 function showMessage(message) {
   const resultEl = document.getElementById("result");
   resultEl.textContent = message;

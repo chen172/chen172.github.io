@@ -51,7 +51,7 @@ def main():
 
     for q in part1["questions"]:
         label, term = q["item"].split(". ", 1)
-        select_id = term.lower().replace("-", "").strip()
+        select_id = term.lower().replace("-", "").strip()  # Remove hyphens in term
         part1_ids.append(select_id)
         html += f"""          <label>{label}. <strong>{term}</strong><select id="{select_id}"></select></label>\n"""
 
@@ -109,18 +109,35 @@ def main():
   <script>
 """
 
-    # JS options
+    # JS options for Part 1
     html += "    const optionsPart1 = [\n"
+    part1_answers = {}
     for i, q in enumerate(part1["questions"], start=1):
         html += f'      {{ value: {i}, text: "{q["meaning"]}" }},\n'
+        # Fix: Remove hyphen and special characters for part1 answers
+        key = q["item"].split(". ")[1].lower().strip().replace("-", "")  # Remove hyphens
+        part1_answers[key] = i
     html += "    ];\n\n"
 
+    # JS options for Part 2
     html += "    const optionsPart2 = [\n"
+    part2_answers = {}
     for i, q in enumerate(part2["questions"], start=1):
         html += f'      {{ value: {i}, text: "{q["definition"]}" }},\n'
+        # Fix: Remove hyphen and special characters for part2 answers
+        key = q["word"].lower().strip().replace("-", "")  # Remove hyphens
+        part2_answers[key] = i
     html += "    ];\n\n"
 
-    html += "    window.onload = function () {\n"
+    # JS function for Part 1 and Part 2 answers
+    html += """
+    const part1Answers = """ + json.dumps(part1_answers) + """;
+    const part2Answers = """ + json.dumps(part2_answers) + """;
+
+    window.onload = function () {
+    """
+
+    # Randomize the options for Part 1 and Part 2
     for id in part1_ids:
         html += f'      randomizeOptions("{id}", optionsPart1);\n'
     for id in part2_ids:

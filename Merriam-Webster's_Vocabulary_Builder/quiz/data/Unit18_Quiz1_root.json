@@ -43,6 +43,10 @@
         {
           "item": "J. -IC",
           "meaning": "Suffix meaning pertaining to or related to."
+        },
+        {
+          "item": "K. -Y",
+          "meaning": "A suffix that often indicates a state or condition."
         }
       ]
     },
@@ -78,6 +82,11 @@
           "word": "lycanthropist",
           "prefix_root_suffix": "LYC + ANTHROP + IST",
           "definition": "Someone who believes in or is obsessed with lycanthropy."
+        },
+        {
+          "word": "misanthropy",
+          "prefix_root_suffix": "MIS + ANTHROP + Y",
+          "definition": "A dislike or hatred of humans."
         },
         {
           "word": "capitulation",

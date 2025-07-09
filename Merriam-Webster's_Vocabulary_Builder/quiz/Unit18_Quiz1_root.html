@@ -25,6 +25,7 @@
           <label>H. <strong>-OLOGY</strong><select id="ology"></select></label>
           <label>I. <strong>-OID</strong><select id="oid"></select></label>
           <label>J. <strong>-IC</strong><select id="ic"></select></label>
+          <label>K. <strong>-Y</strong><select id="y"></select></label>
 
         </div>
         <button type="button" onclick="checkPart1()">Submit Part 1</button>
@@ -41,8 +42,9 @@
           <label>4. <strong>recap</strong> <em>(RE + CAP)</em><select id="recap"></select></label>
           <label>5. <strong>anthropocentric</strong> <em>(ANTHROP + CENTRIC)</em><select id="anthropocentric"></select></label>
           <label>6. <strong>lycanthropist</strong> <em>(LYC + ANTHROP + IST)</em><select id="lycanthropist"></select></label>
-          <label>7. <strong>capitulation</strong> <em>(CAP + ITUL + ATION)</em><select id="capitulation"></select></label>
-          <label>8. <strong>zoophilic</strong> <em>(ZOO + PHIL + IC)</em><select id="zoophilic"></select></label>
+          <label>7. <strong>misanthropy</strong> <em>(MIS + ANTHROP + Y)</em><select id="misanthropy"></select></label>
+          <label>8. <strong>capitulation</strong> <em>(CAP + ITUL + ATION)</em><select id="capitulation"></select></label>
+          <label>9. <strong>zoophilic</strong> <em>(ZOO + PHIL + IC)</em><select id="zoophilic"></select></label>
 
         </div>
         <button type="button" onclick="checkPart2()">Submit Part 2</button>
@@ -81,6 +83,7 @@
       { value: 8, text: "Suffix meaning the study of." },
       { value: 9, text: "Suffix meaning like or resembling." },
       { value: 10, text: "Suffix meaning pertaining to or related to." },
+      { value: 11, text: "A suffix that often indicates a state or condition." },
     ];
 
     const optionsPart2 = [
@@ -90,12 +93,17 @@
       { value: 4, text: "To summarize or go over the main points again." },
       { value: 5, text: "To view human beings as the most important aspect of the universe." },
       { value: 6, text: "Someone who believes in or is obsessed with lycanthropy." },
-      { value: 7, text: "The act of surrendering or giving up." },
-      { value: 8, text: "Having an affection for animals." },
+      { value: 7, text: "A dislike or hatred of humans." },
+      { value: 8, text: "The act of surrendering or giving up." },
+      { value: 9, text: "Having an affection for animals." },
     ];
 
+
+    const part1Answers = {"cap": 1, "anthrop": 2, "mis": 3, "lyc": 4, "re": 5, "de": 6, "ate": 7, "ology": 8, "oid": 9, "ic": 10, "y": 11};
+    const part2Answers = {"rejuvenate": 1, "misdirect": 2, "deforest": 3, "recap": 4, "anthropocentric": 5, "lycanthropist": 6, "misanthropy": 7, "capitulation": 8, "zoophilic": 9};
+
     window.onload = function () {
-      randomizeOptions("cap", optionsPart1);
+          randomizeOptions("cap", optionsPart1);
       randomizeOptions("anthrop", optionsPart1);
       randomizeOptions("mis", optionsPart1);
       randomizeOptions("lyc", optionsPart1);
@@ -105,12 +113,14 @@
       randomizeOptions("ology", optionsPart1);
       randomizeOptions("oid", optionsPart1);
       randomizeOptions("ic", optionsPart1);
+      randomizeOptions("y", optionsPart1);
       randomizeOptions("rejuvenate", optionsPart2);
       randomizeOptions("misdirect", optionsPart2);
       randomizeOptions("deforest", optionsPart2);
       randomizeOptions("recap", optionsPart2);
       randomizeOptions("anthropocentric", optionsPart2);
       randomizeOptions("lycanthropist", optionsPart2);
+      randomizeOptions("misanthropy", optionsPart2);
       randomizeOptions("capitulation", optionsPart2);
       randomizeOptions("zoophilic", optionsPart2);
     };
