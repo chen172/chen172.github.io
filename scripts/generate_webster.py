@@ -24,6 +24,7 @@ def generate_unit_html(unit_number, json_data):
 
     # Loop through the roots in the JSON data and generate the table rows (2 roots per row)
     row = []
+    quiz_number = 1  # Starting quiz number for each unit
     for entry in json_data:
         root = entry['root']
         
@@ -35,17 +36,18 @@ def generate_unit_html(unit_number, json_data):
             unit_section_html += f'''
                 <tr>
                     {''.join(row)}
-                    <td><a href="Merriam-Webster\'s_Vocabulary_Builder/Unit{unit_number}.txt.html#QUIZ">Quiz</a></td>
+                    <td><a href="Merriam-Webster\'s_Vocabulary_Builder/quiz/Unit{unit_number}_Quiz{quiz_number}.html">Quiz{quiz_number}</a></td>
                 </tr>
             '''
             row = []  # Reset the row for the next pair
+            quiz_number += 1  # Increment quiz number for the next quiz
 
     # If there's an odd number of roots, add the last one and a quiz link
     if row:
         unit_section_html += f'''
             <tr>
                 {''.join(row)}
-                <td><a href="Merriam-Webster\'s_Vocabulary_Builder/Unit{unit_number}.txt.html#QUIZ">Quiz</a></td>
+                <td><a href="Merriam-Webster\'s_Vocabulary_Builder/quiz/Unit{unit_number}_Quiz{quiz_number}.html">Quiz{quiz_number}</a></td>
             </tr>
         '''
 
