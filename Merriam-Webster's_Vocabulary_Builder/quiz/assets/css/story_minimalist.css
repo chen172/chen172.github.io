@@ -1,0 +1,145 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Light background for regular theme */
+    color: #666; /* Muted dark gray text */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode body styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1e1e1e; /* Dark background for dark mode */
+        color: #aaa; /* Light gray text for dark mode */
+    }
+}
+
+/* Main container styles */
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff; /* Light background for container */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode container styles */
+@media (prefers-color-scheme: dark) {
+    .container {
+        background-color: #1c1c1c; /* Dark background for container */
+        color: #aaa; /* Light gray text for container */
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Slight white shadow for contrast */
+    }
+}
+
+/* Title styling */
+h1 {
+    font-size: 2.5em;
+    color: #7f8c8d; /* Softer dark gray title color */
+    text-align: center;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+/* Dark mode title styling */
+@media (prefers-color-scheme: dark) {
+    h1 {
+        color: #bdc3c7; /* Lighter muted color for dark mode */
+    }
+}
+
+/* Image styling */
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 20px 0;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1.1em;
+    margin: 15px 0;
+    text-align: justify;
+    color: #b3adad; /* Muted text color */
+}
+
+/* Highlighted text */
+strong {
+    font-weight: bold;
+    color: #d35400; /* Muted orange color for emphasis */
+}
+
+/* Dark mode highlighted text */
+@media (prefers-color-scheme: dark) {
+    strong {
+        color: #f39c12; /* Lighter muted orange for dark mode */
+    }
+}
+
+em {
+    font-style: italic;
+    color: #2980b9; /* Softer blue color for emphasis */
+}
+
+/* Dark mode emphasized text */
+@media (prefers-color-scheme: dark) {
+    em {
+        color: #3498db; /* Lighter, softer blue for dark mode */
+    }
+}
+
+/* Quote block styling */
+.quote {
+    background-color: #f7f7f7; /* Light background for quotes */
+    padding: 15px;
+    margin: 20px 0;
+    border-left: 5px solid #d35400; /* Muted orange left border */
+    font-style: italic;
+    color: #777; /* Lighter gray text for quotes */
+}
+
+/* Dark mode quote block styling */
+@media (prefers-color-scheme: dark) {
+    .quote {
+        background-color: #202020; /* Darker background for quotes */
+        color: #b8b7b7; /* Light gray text for dark mode quotes */
+        border-left: 5px solid #f39c12; /* Lighter muted orange left border */
+    }
+}
+
+.quote span {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #aaa; /* Muted footer text */
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Dark mode footer styling */
+@media (prefers-color-scheme: dark) {
+    footer {
+        background-color: #222; /* Dark background for footer */
+        color: #ccc; /* Lighter footer text for dark mode */
+    }
+}
+
+footer p {
+    margin: 0;
+}
