@@ -25,3 +25,8 @@ aura
 josh
 acquit
 rascal
+all-out
+function
+pier
+moth
+touchy
