@@ -1,0 +1,110 @@
+{
+  "quiz_title": "Roots, Prefixes & Suffixes Quiz",
+  "parts": [
+    {
+      "title": "Part 1: Match the Root/Prefix/Suffix to Its Meaning",
+      "questions": [
+        {
+          "item": "A. CAP",
+          "meaning": "Refers to the head or top part of something."
+        },
+        {
+          "item": "B. ANTHROP",
+          "meaning": "Relates to human beings or the study of humans."
+        },
+        {
+          "item": "C. MIS",
+          "meaning": "Denotes something wrong, bad, or incorrect."
+        },
+        {
+          "item": "D. LYC",
+          "meaning": "Refers to the wolf."
+        },
+        {
+          "item": "E. RE",
+          "meaning": "Means again or back."
+        },
+        {
+          "item": "F. DE",
+          "meaning": "Indicates down, away, or reverse."
+        },
+        {
+          "item": "G. -ATE",
+          "meaning": "A verb suffix meaning to make or act."
+        },
+        {
+          "item": "H. -OLOGY",
+          "meaning": "Suffix meaning the study of."
+        },
+        {
+          "item": "I. -OID",
+          "meaning": "Suffix meaning like or resembling."
+        },
+        {
+          "item": "J. -IC",
+          "meaning": "Suffix meaning pertaining to or related to."
+        }
+      ]
+    },
+    {
+      "title": "Part 2: Use the Root/Prefix/Suffix to Guess the Word",
+      "questions": [
+        {
+          "word": "rejuvenate",
+          "prefix_root_suffix": "RE + JUVE + ATE",
+          "definition": "To make something feel or look fresher, younger, or revived."
+        },
+        {
+          "word": "misdirect",
+          "prefix_root_suffix": "MIS + DIRECT",
+          "definition": "To guide or lead someone in the wrong direction."
+        },
+        {
+          "word": "deforest",
+          "prefix_root_suffix": "DE + FOREST",
+          "definition": "To clear or remove trees from a forest."
+        },
+        {
+          "word": "recap",
+          "prefix_root_suffix": "RE + CAP",
+          "definition": "To summarize or go over the main points again."
+        },
+        {
+          "word": "anthropocentric",
+          "prefix_root_suffix": "ANTHROP + CENTRIC",
+          "definition": "To view human beings as the most important aspect of the universe."
+        },
+        {
+          "word": "lycanthropist",
+          "prefix_root_suffix": "LYC + ANTHROP + IST",
+          "definition": "Someone who believes in or is obsessed with lycanthropy."
+        },
+        {
+          "word": "capitulation",
+          "prefix_root_suffix": "CAP + ITUL + ATION",
+          "definition": "The act of surrendering or giving up."
+        },
+        {
+          "word": "zoophilic",
+          "prefix_root_suffix": "ZOO + PHIL + IC",
+          "definition": "Having an affection for animals."
+        }
+      ]
+    },
+    {
+      "title": "Part 3: Create & Connect",
+      "questions": [
+        {
+          "question": "Write a sentence using one RE word, one DE word, and one -OID word.",
+          "example": "The student had to recapitulate the entire lesson after the professor decapitated the main points and left out the anthropoid similarities.",
+          "user_input_placeholder": "Write your sentence here..."
+        },
+        {
+          "question": "Can you think of another word with one of the parts? Guess what it might mean.",
+          "example": "Decipher might mean to decode or figure something out, like removing a code (DE) to reveal its meaning.",
+          "user_input_placeholder": "Write your word and guess here..."
+        }
+      ]
+    }
+  ]
+}

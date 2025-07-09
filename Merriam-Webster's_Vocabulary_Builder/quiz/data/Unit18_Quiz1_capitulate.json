@@ -1,0 +1,109 @@
+{
+  "title": "Quiz: Understanding the Word \"Capitulate\"",
+  "description": "Test your knowledge on the word 'Capitulate'. Answer the following questions to learn more about its origins and meaning.",
+  "questions": [
+    {
+      "id": "q1",
+      "title": "Word Breakdown",
+      "question": "Which Latin word is capitulate derived from?",
+      "options": [
+        {"label": "A", "text": "Caput"},
+        {"label": "B", "text": "Capitulum"},
+        {"label": "C", "text": "Capitale"},
+        {"label": "D", "text": "Capitis"}
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "q2",
+      "title": "Meaning of 'Capitulate'",
+      "question": "What does 'capitulate' mean in modern English?",
+      "options": [
+        {"label": "A", "text": "To negotiate terms of a peace treaty"},
+        {"label": "B", "text": "To surrender or give in under pressure"},
+        {"label": "C", "text": "To write a detailed report"},
+        {"label": "D", "text": "To argue persistently"}
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "q3",
+      "title": "Etymological Connection",
+      "question": "What does capitulum mean?",
+      "options": [
+        {"label": "A", "text": "Small head"},
+        {"label": "B", "text": "Large body"},
+        {"label": "C", "text": "A type of negotiation"},
+        {"label": "D", "text": "A set of rules"}
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "q4",
+      "title": "Evolution of Meaning",
+      "question": "Originally, 'capitulate' meant:",
+      "options": [
+        {"label": "A", "text": "Organizing terms of surrender into sections (chapters)"},
+        {"label": "B", "text": "Writing a treaty without conflict"},
+        {"label": "C", "text": "Giving up without any discussion"},
+        {"label": "D", "text": "Planning for future resistance"}
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "q5",
+      "title": "Which of these sentences correctly uses the word 'capitulate'?",
+      "options": [
+        {"label": "A", "text": "The army refused to capitulate and fought until the last man."},
+        {"label": "B", "text": "After a long negotiation, the enemy forces finally capitulated to our demands."},
+        {"label": "C", "text": "She capitulated the paper before submitting it to the teacher."},
+        {"label": "D", "text": "The dog capitulated happily at the park."}
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "q6",
+      "title": "True or False",
+      "question": "The word capitulate originally referred to a form of surrender that involved breaking down terms into separate 'chapters' or sections.",
+      "options": [
+        {"label": "A", "text": "True"},
+        {"label": "B", "text": "False"}
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "q7",
+      "title": "Synonym Identification",
+      "question": "Which word is closest in meaning to 'capitulate'?",
+      "options": [
+        {"label": "A", "text": "Resist"},
+        {"label": "B", "text": "Yield"},
+        {"label": "C", "text": "Argue"},
+        {"label": "D", "text": "Conquer"}
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "q8",
+      "title": "Fill in the Blank",
+      "question": "After a long battle, the opposing army finally ________, agreeing to the terms set by the victors.",
+      "options": [
+        {"label": "A", "text": "capitulated"},
+        {"label": "B", "text": "resisted"},
+        {"label": "C", "text": "argued"},
+        {"label": "D", "text": "conquered"}
+      ],
+      "answer": "A"
+    }
+  ],
+  "answer_key": {
+    "q1": "B",
+    "q2": "B",
+    "q3": "A",
+    "q4": "A",
+    "q5": "B",
+    "q6": "A",
+    "q7": "B",
+    "q8": "A"
+  }
+}

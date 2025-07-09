@@ -1,0 +1,209 @@
+/* Body and General Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  background: #121212; /* Dark background for dark mode */
+  color: #e0e0e0; /* Light text color */
+  word-wrap: break-word;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  background: #1e1e1e; /* Dark container background */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1, h2, h3 {
+  font-family: 'Open Sans', sans-serif;
+  color: #f1f1f1; /* Lighter color for headings */
+}
+
+h1 {
+  font-size: 2.2rem;
+  border-bottom: 4px solid #3498db;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: #2980b9; /* Blue color for subheadings */
+  margin-top: 1.5rem;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #444; /* Lighter gray for hr */
+  margin: 2rem 0;
+}
+
+p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #b0b0b0; /* Softer text color for paragraphs */
+}
+
+ul, ol {
+  margin-left: 2rem;
+  margin-bottom: 1.2rem;
+  color: #b0b0b0; /* Adjust color for list items */
+}
+
+ul li, ol li {
+  margin-bottom: 0.7rem;
+}
+
+em {
+  font-style: italic;
+  color: #7f8c8d;
+}
+
+strong {
+  color: #f1f1f1;
+}
+
+.quiz-section {
+  background: #2e2e2e; /* Dark background for quiz section */
+  border: 1px solid #444; /* Darker border */
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.quiz-button {
+  background-color: #27ae60;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+  display: block;
+  width: 100%;
+}
+
+.quiz-button:hover {
+  background-color: #2ecc71; /* Green hover effect */
+}
+
+.quiz-button:disabled {
+  background-color: #bdc3c7;
+}
+
+.quiz-section h3 {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  color: #3498db; /* Blue color for quiz section headings */
+}
+
+.quiz-section p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+#results {
+  background: #2e2e2e; /* Dark background for results */
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+  border: 1px solid #444; /* Dark border for results */
+}
+
+#results h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #f1f1f1; /* Light color for results heading */
+}
+
+.quiz-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.quiz-section input[type="radio"] {
+  margin-right: 10px;
+}
+
+.quiz-section li {
+  display: flex;
+  align-items: center;
+  color: #b0b0b0; /* Light color for list items */
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  .quiz-button {
+    width: auto;
+  }
+}
+
+/* Add styling for the congratulatory message */
+.congratulations {
+  background-color: #2ecc71; /* Bright green background */
+  color: white; /* White text */
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between icon and text */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: congratulationAnimation 1s ease-in-out;
+}
+
+.congratulations-icon {
+  font-size: 2rem;
+  animation: bounce 1s infinite;
+}
+
+.congratulations-text {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+@keyframes congratulationAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Optional: Add bounce animation to the icon */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

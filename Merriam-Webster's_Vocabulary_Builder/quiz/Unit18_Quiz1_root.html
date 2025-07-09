@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roots, Prefixes & Suffixes Quiz</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+  <link rel="stylesheet" href="assets/css/quiz_root.css" />
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Roots, Prefixes & Suffixes Quiz</h1>
+
+    <section class="quiz-section">
+      <h2>Part 1: Match the Root/Prefix/Suffix to Its Meaning</h2>
+      <form id="part1Form">
+        <div class="quiz-group" id="part1-questions">
+          <label>A. <strong>CAP</strong><select id="cap"></select></label>
+          <label>B. <strong>ANTHROP</strong><select id="anthrop"></select></label>
+          <label>C. <strong>MIS</strong><select id="mis"></select></label>
+          <label>D. <strong>LYC</strong><select id="lyc"></select></label>
+          <label>E. <strong>RE</strong><select id="re"></select></label>
+          <label>F. <strong>DE</strong><select id="de"></select></label>
+          <label>G. <strong>-ATE</strong><select id="ate"></select></label>
+          <label>H. <strong>-OLOGY</strong><select id="ology"></select></label>
+          <label>I. <strong>-OID</strong><select id="oid"></select></label>
+          <label>J. <strong>-IC</strong><select id="ic"></select></label>
+
+        </div>
+        <button type="button" onclick="checkPart1()">Submit Part 1</button>
+      </form>
+    </section>
+
+    <section class="quiz-section">
+      <h2>Part 2: Use the Root/Prefix/Suffix to Guess the Word</h2>
+      <form id="part2Form">
+        <div class="quiz-group" id="part2-questions">
+          <label>1. <strong>rejuvenate</strong> <em>(RE + JUVE + ATE)</em><select id="rejuvenate"></select></label>
+          <label>2. <strong>misdirect</strong> <em>(MIS + DIRECT)</em><select id="misdirect"></select></label>
+          <label>3. <strong>deforest</strong> <em>(DE + FOREST)</em><select id="deforest"></select></label>
+          <label>4. <strong>recap</strong> <em>(RE + CAP)</em><select id="recap"></select></label>
+          <label>5. <strong>anthropocentric</strong> <em>(ANTHROP + CENTRIC)</em><select id="anthropocentric"></select></label>
+          <label>6. <strong>lycanthropist</strong> <em>(LYC + ANTHROP + IST)</em><select id="lycanthropist"></select></label>
+          <label>7. <strong>capitulation</strong> <em>(CAP + ITUL + ATION)</em><select id="capitulation"></select></label>
+          <label>8. <strong>zoophilic</strong> <em>(ZOO + PHIL + IC)</em><select id="zoophilic"></select></label>
+
+        </div>
+        <button type="button" onclick="checkPart2()">Submit Part 2</button>
+      </form>
+    </section>
+
+    <section class="quiz-section">
+      <h2>Part 3: Create & Connect</h2>
+      <div class="question-block">
+        <label for="part3q1">Q1: Write a sentence using one RE word, one DE word, and one -OID word.</label>
+        <p><em>Example: The student had to recapitulate the entire lesson after the professor decapitated the main points and left out the anthropoid similarities.</em></p>
+        <textarea id="part3q1" placeholder="Write your sentence here..."></textarea>
+
+        <label for="part3q2">Q2: Can you think of another word with one of the parts? Guess what it might mean.</label>
+        <p><em>Example: Decipher might mean to decode or figure something out, like removing a code (DE) to reveal its meaning.</em></p>
+        <textarea id="part3q2" placeholder="Write your word and guess here..."></textarea>
+
+
+        <button type="button" onclick="checkPart3()">Submit Part 3</button>
+      </div>
+    </section>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  <script src="assets/js/quiz_root.js"></script>
+  <script>
+    const optionsPart1 = [
+      { value: 1, text: "Refers to the head or top part of something." },
+      { value: 2, text: "Relates to human beings or the study of humans." },
+      { value: 3, text: "Denotes something wrong, bad, or incorrect." },
+      { value: 4, text: "Refers to the wolf." },
+      { value: 5, text: "Means again or back." },
+      { value: 6, text: "Indicates down, away, or reverse." },
+      { value: 7, text: "A verb suffix meaning to make or act." },
+      { value: 8, text: "Suffix meaning the study of." },
+      { value: 9, text: "Suffix meaning like or resembling." },
+      { value: 10, text: "Suffix meaning pertaining to or related to." },
+    ];
+
+    const optionsPart2 = [
+      { value: 1, text: "To make something feel or look fresher, younger, or revived." },
+      { value: 2, text: "To guide or lead someone in the wrong direction." },
+      { value: 3, text: "To clear or remove trees from a forest." },
+      { value: 4, text: "To summarize or go over the main points again." },
+      { value: 5, text: "To view human beings as the most important aspect of the universe." },
+      { value: 6, text: "Someone who believes in or is obsessed with lycanthropy." },
+      { value: 7, text: "The act of surrendering or giving up." },
+      { value: 8, text: "Having an affection for animals." },
+    ];
+
+    window.onload = function () {
+      randomizeOptions("cap", optionsPart1);
+      randomizeOptions("anthrop", optionsPart1);
+      randomizeOptions("mis", optionsPart1);
+      randomizeOptions("lyc", optionsPart1);
+      randomizeOptions("re", optionsPart1);
+      randomizeOptions("de", optionsPart1);
+      randomizeOptions("ate", optionsPart1);
+      randomizeOptions("ology", optionsPart1);
+      randomizeOptions("oid", optionsPart1);
+      randomizeOptions("ic", optionsPart1);
+      randomizeOptions("rejuvenate", optionsPart2);
+      randomizeOptions("misdirect", optionsPart2);
+      randomizeOptions("deforest", optionsPart2);
+      randomizeOptions("recap", optionsPart2);
+      randomizeOptions("anthropocentric", optionsPart2);
+      randomizeOptions("lycanthropist", optionsPart2);
+      randomizeOptions("capitulation", optionsPart2);
+      randomizeOptions("zoophilic", optionsPart2);
+    };
+
+  </script>
+</body>
+</html>
