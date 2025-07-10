@@ -1,0 +1,98 @@
+{
+  "quiz_title": "Roots, Prefixes & Suffixes Quiz",
+  "parts": [
+    {
+      "title": "Part 1: Match the Root/Prefix/Suffix to Its Meaning",
+      "questions": [
+        {
+          "item": "A. HYPER",
+          "meaning": "Means excessive or over."
+        },
+        {
+          "item": "B. TELE",
+          "meaning": "Refers to distance or far."
+        },
+        {
+          "item": "C. DYNAM",
+          "meaning": "Refers to power or force."
+        },
+        {
+          "item": "D. HYDRO",
+          "meaning": "Relates to water."
+        },
+        {
+          "item": "E. -IC",
+          "meaning": "Suffix meaning pertaining to or related to."
+        },
+        {
+          "item": "F. -ICS",
+          "meaning": "Suffix meaning study of or branch of knowledge."
+        },
+        {
+          "item": "G. -SIS",
+          "meaning": "Suffix indicating a process, action, or state."
+        }
+      ]
+    },
+    {
+      "title": "Part 2: Use the Root/Prefix/Suffix to Guess the Word",
+      "questions": [
+        {
+          "word": "hyperactive",
+          "prefix_root_suffix": "HYPER + ACTIVE",
+          "definition": "Excessively active, often beyond the usual or healthy level."
+        },
+        {
+          "word": "television",
+          "prefix_root_suffix": "TELE + VISION",
+          "definition": "A device for viewing images from a distance."
+        },
+        {
+          "word": "dynamite",
+          "prefix_root_suffix": "DYNAM + ITE",
+          "definition": "An explosive material that uses force (power) to detonate."
+        },
+        {
+          "word": "hydroelectric",
+          "prefix_root_suffix": "HYDRO + ELECTRIC",
+          "definition": "Relating to the generation of electricity through the movement of water."
+        },
+        {
+          "word": "physics",
+          "prefix_root_suffix": "PHYS + ICS",
+          "definition": "The branch of science concerned with the nature and properties of matter and energy."
+        },
+        {
+          "word": "analysis",
+          "prefix_root_suffix": "ANA + LYSIS",
+          "definition": "The detailed examination of the elements or structure of something."
+        },
+        {
+          "word": "dynamic",
+          "prefix_root_suffix": "DYNAM + IC",
+          "definition": "Characterized by constant change or activity."
+        },
+        {
+          "word": "hydrodynamics",
+          "prefix_root_suffix": "HYDRO + DYNAM + ICS",
+          "definition": "The branch of science concerned with the behavior of water in motion."
+        }
+      ]
+    },
+    {
+      "title": "Part 3: Create & Connect",
+      "questions": [
+        {
+          "question": "Write a sentence using one HYPER word, one TELE word, and one -ICS word.",
+          "example": "The hyperactive child watched the dynamic action scene on the television, fascinated by the energy of the characters.",
+          "user_input_placeholder": "Write your sentence here..."
+        },
+        {
+          "question": "Can you think of another word with one of the parts? Guess what it might mean.",
+          "example": "Hydrology might mean the study of water systems, as 'hydro' relates to water and 'logy' means study of.",
+          "user_input_placeholder": "Write your word and guess here..."
+        }
+      ]
+    }
+  ]
+}
