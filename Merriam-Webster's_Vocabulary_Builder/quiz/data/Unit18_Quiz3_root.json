@@ -1,0 +1,114 @@
+{
+  "quiz_title": "Roots, Prefixes & Suffixes Quiz",
+  "parts": [
+    {
+      "title": "Part 1: Match the Root/Prefix/Suffix to Its Meaning",
+      "questions": [
+        {
+          "item": "A. GRAD",
+          "meaning": "Refers to a step, degree, or stage."
+        },
+        {
+          "item": "B. DE",
+          "meaning": "A prefix meaning down, away, or reverse."
+        },
+        {
+          "item": "C. INTER",
+          "meaning": "Denotes 'between' or 'among'."
+        },
+        {
+          "item": "D. REG",
+          "meaning": "Relates to 'ruling' or 'guiding'."
+        },
+        {
+          "item": "E. -ION",
+          "meaning": "Suffix that turns verbs into nouns, indicating a process, result, or state."
+        },
+        {
+          "item": "F. -ENCY",
+          "meaning": "Suffix forming nouns from adjectives, often indicating a state or condition."
+        },
+        {
+          "item": "G. -EN",
+          "meaning": "Suffix used to form nouns indicating a system or process."
+        },
+        {
+          "item": "H. -IME",
+          "meaning": "Suffix related to time or a period of time."
+        },
+        {
+          "item": "I. -ATE",
+          "meaning": "Suffix meaning to 'make' or 'act in a certain way'."
+        },
+        {
+          "item": "J. -AL",
+          "meaning": "Suffix meaning pertaining to or related to."
+        },
+        {
+          "item": "K. -IAL",
+          "meaning": "Suffix meaning pertaining to or related to, often describing a characteristic."
+        }
+      ]
+    },
+    {
+      "title": "Part 2: Use the Root/Prefix/Suffix to Guess the Word",
+      "questions": [
+        {
+          "word": "gradual",
+          "prefix_root_suffix": "GRAD + UAL",
+          "definition": "Relating to a slow or steady change, process, or development."
+        },
+        {
+          "word": "decelerate",
+          "prefix_root_suffix": "DE + CELER + ATE",
+          "definition": "To reduce speed or slow down."
+        },
+        {
+          "word": "intermediate",
+          "prefix_root_suffix": "INTER + MEDI + ATE",
+          "definition": "A word meaning 'in between', often used to describe a middle level or stage."
+        },
+        {
+          "word": "regular",
+          "prefix_root_suffix": "REG + UAR",
+          "definition": "Conforming to a consistent, orderly pattern or rule."
+        },
+        {
+          "word": "expansion",
+          "prefix_root_suffix": "EX + PAN + ION",
+          "definition": "The action of increasing in size, volume, or quantity."
+        },
+        {
+          "word": "agency",
+          "prefix_root_suffix": "AG + ENCY",
+          "definition": "A business or organization that acts on behalf of others."
+        },
+        {
+          "word": "regulation",
+          "prefix_root_suffix": "REG + ULATE + ION",
+          "definition": "The act of controlling or directing by rules or laws."
+        },
+        {
+          "word": "timeframe",
+          "prefix_root_suffix": "TIME + FRAME",
+          "definition": "A specified period within which something occurs or is planned."
+        }
+      ]
+    },
+    {
+      "title": "Part 3: Create & Connect",
+      "questions": [
+        {
+          "question": "Write a sentence using one GRAD word, one DE word, and one -AL word.",
+          "example": "The gradual decline in temperature caused the icy road to become even more dangerous.",
+          "user_input_placeholder": "Write your sentence here..."
+        },
+        {
+          "question": "Can you think of another word with one of the parts? Guess what it might mean.",
+          "example": "Intermission might mean a break between two parts of a play or performance, as 'inter' refers to 'between'.",
+          "user_input_placeholder": "Write your word and guess here..."
+        }
+      ]
+    }
+  ]
+}

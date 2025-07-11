@@ -38,3 +38,11 @@ airlift
 drought
 gorilla
 beam
+noteworthy
+truffle
+barrack
+accommodation
+brazen
+brass
+muffle
+dictate

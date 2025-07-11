@@ -1,0 +1,137 @@
+/* Remove page breaks before and after headers to prevent blank pages */
+h1, h2, h3, h4, h5, h6 {
+  page-break-before: avoid;
+  page-break-after: avoid;
+  margin-top: 0.5em; /* Reduced margin-top for smaller space */
+  margin-bottom: 0.5em;
+}
+
+/* Improve paragraph spacing */
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.4;
+}
+
+/* Style blockquotes for clarity */
+blockquote {
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-left: 1em;
+  border-left: 4px solid #ccc;
+  color: #555;
+  margin-top: 0.5em; /* Reduced top margin for blockquotes */
+  margin-bottom: 0.5em; /* Reduced bottom margin */
+}
+
+/* Style lists for better readability */
+ul, ol {
+  margin-left: 2em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Optional: Style code blocks */
+pre {
+  background-color: #f4f4f4;
+  padding: 1em;
+  overflow-x: auto;
+  margin-top: 0.5em; /* Reduced margin-top for tighter layout */
+  margin-bottom: 0.5em; /* Reduced margin-bottom */
+}
+
+/* Apply smaller margins to the entire body for consistent spacing */
+body {
+  margin-top: 0.5em; /* Smaller top margin for the body */
+  margin-bottom: 1em; /* Maintain enough bottom space for readability */
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+/* Optional: Reduce overall spacing between pages */
+@page {
+  margin-top: 0.5em; /* Reduce top margin for every page */
+  margin-bottom: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+/* Summary Table Styling */
+table {
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #333;
+}
+
+td {
+  background-color: #fafafa;
+  color: #666;
+}
+
+td, th {
+  font-size: 1rem; /* Set a consistent font size */
+}
+
+/* Alternate row styling for better readability */
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Improve the general look of the header */
+h1 {
+  font-size: 1.8em;
+  margin-bottom: 0.6em;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+h3, h4, h5, h6 {
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+}
+
+/* Add spacing to list items */
+ul, ol {
+  margin-left: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* Style inline code */
+code {
+  font-family: monospace;
+  background-color: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+/* Style block-level code */
+pre {
+  background-color: #f4f4f4;
+  padding: 1em;
+  overflow-x: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-radius: 6px;
+}

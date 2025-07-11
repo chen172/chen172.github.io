@@ -1,0 +1,109 @@
+{
+  "title": "Quiz: Understanding the Word 'Degrade'",
+  "description": "Test your knowledge on the word 'Degrade'. Answer the following questions to learn more about its origins and meaning.",
+  "questions": [
+    {
+      "id": "q1",
+      "title": "Word Breakdown",
+      "question": "Which Latin root is 'degrade' derived from?",
+      "options": [
+        {"label": "A", "text": "'De-' and 'gradus'"},
+        {"label": "B", "text": "'De-' and 'gradere'"},
+        {"label": "C", "text": "'De-' and 'gradatio'"},
+        {"label": "D", "text": "'De-' and 'gratus'"}
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "q2",
+      "title": "Meaning of 'Degrade'",
+      "question": "What does 'degrade' mean in modern English?",
+      "options": [
+        {"label": "A", "text": "To raise in status or quality"},
+        {"label": "B", "text": "To lower in status, dignity, or quality"},
+        {"label": "C", "text": "To stay at the same level or position"},
+        {"label": "D", "text": "To enhance the quality of something"}
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "q3",
+      "title": "Etymological Connection",
+      "question": "What does 'gradus' mean in Latin?",
+      "options": [
+        {"label": "A", "text": "Step"},
+        {"label": "B", "text": "Rise"},
+        {"label": "C", "text": "Circle"},
+        {"label": "D", "text": "Change"}
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "q4",
+      "title": "Contextual Meaning",
+      "question": "In which context would you most commonly use the word 'degrade'?",
+      "options": [
+        {"label": "A", "text": "To describe a person whose reputation has worsened"},
+        {"label": "B", "text": "To describe someone gaining more status"},
+        {"label": "C", "text": "To describe something being upgraded"},
+        {"label": "D", "text": "To describe something maintaining the same quality"}
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "q5",
+      "title": "Which of these sentences correctly uses the word 'degrade'?",
+      "options": [
+        {"label": "A", "text": "The reputation of the company was degraded after the scandal."},
+        {"label": "B", "text": "She felt her efforts were degrading because she did not receive praise."},
+        {"label": "C", "text": "They decided to degrade their equipment for better quality."},
+        {"label": "D", "text": "He attempted to degrade his opponent by elevating his own reputation."}
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "q6",
+      "title": "True or False",
+      "question": "The word 'degrade' can refer to both physical breakdowns, like in chemicals, and social decline.",
+      "options": [
+        {"label": "A", "text": "True"},
+        {"label": "B", "text": "False"}
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "q7",
+      "title": "Synonym Identification",
+      "question": "Which of the following words is closest in meaning to 'degrade'?",
+      "options": [
+        {"label": "A", "text": "Enhance"},
+        {"label": "B", "text": "Deteriorate"},
+        {"label": "C", "text": "Improve"},
+        {"label": "D", "text": "Elevate"}
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "q8",
+      "title": "Fill in the Blank",
+      "question": "The once high-ranking official’s reputation _______ after the scandal.",
+      "options": [
+        {"label": "A", "text": "degraded"},
+        {"label": "B", "text": "elevated"},
+        {"label": "C", "text": "improved"},
+        {"label": "D", "text": "enhanced"}
+      ],
+      "answer": "A"
+    }
+  ],
+  "answer_key": {
+    "q1": "A",
+    "q2": "B",
+    "q3": "A",
+    "q4": "A",
+    "q5": "A",
+    "q6": "A",
+    "q7": "B",
+    "q8": "A"
+  }
+}

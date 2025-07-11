@@ -21,15 +21,23 @@
           "meaning": "Relates to water."
         },
         {
-          "item": "E. -IC",
+          "item": "E. KINESIO",
+          "meaning": "Relates to movement or motion."
+        },
+        {
+          "item": "F. -O",
+          "meaning": "A suffix that can form nouns or indicate a function or relation."
+        },
+        {
+          "item": "G. -IC",
           "meaning": "Suffix meaning pertaining to or related to."
         },
         {
-          "item": "F. -ICS",
+          "item": "H. -ICS",
           "meaning": "Suffix meaning study of or branch of knowledge."
         },
         {
-          "item": "G. -SIS",
+          "item": "I. -SIS",
           "meaning": "Suffix indicating a process, action, or state."
         }
       ]
@@ -38,44 +46,44 @@
       "title": "Part 2: Use the Root/Prefix/Suffix to Guess the Word",
       "questions": [
         {
-          "word": "hyperactive",
-          "prefix_root_suffix": "HYPER + ACTIVE",
-          "definition": "Excessively active, often beyond the usual or healthy level."
+          "word": "kinesthetic",
+          "prefix_root_suffix": "KINESIO + THETIC",
+          "definition": "Relating to the perception of movement or position of body parts."
         },
         {
-          "word": "television",
-          "prefix_root_suffix": "TELE + VISION",
-          "definition": "A device for viewing images from a distance."
+          "word": "telegraph",
+          "prefix_root_suffix": "TELE + GRAPH",
+          "definition": "A device or system for sending messages over long distances by wire."
         },
         {
-          "word": "dynamite",
-          "prefix_root_suffix": "DYNAM + ITE",
-          "definition": "An explosive material that uses force (power) to detonate."
+          "word": "dynamo",
+          "prefix_root_suffix": "DYNAM + O",
+          "definition": "A machine that generates electricity."
         },
         {
-          "word": "hydroelectric",
-          "prefix_root_suffix": "HYDRO + ELECTRIC",
-          "definition": "Relating to the generation of electricity through the movement of water."
+          "word": "hydrology",
+          "prefix_root_suffix": "HYDRO + LOGY",
+          "definition": "The study of water, especially its movement in relation to land."
         },
         {
-          "word": "physics",
-          "prefix_root_suffix": "PHYS + ICS",
-          "definition": "The branch of science concerned with the nature and properties of matter and energy."
+          "word": "kinesiologist",
+          "prefix_root_suffix": "KINESIO + LOGIST",
+          "definition": "A specialist in the study of human movement."
         },
         {
-          "word": "analysis",
-          "prefix_root_suffix": "ANA + LYSIS",
-          "definition": "The detailed examination of the elements or structure of something."
+          "word": "psychology",
+          "prefix_root_suffix": "PSYCHO + LOGY",
+          "definition": "The scientific study of the mind and behavior."
         },
         {
-          "word": "dynamic",
-          "prefix_root_suffix": "DYNAM + IC",
-          "definition": "Characterized by constant change or activity."
+          "word": "motion",
+          "prefix_root_suffix": "MOT + ION",
+          "definition": "The act or process of moving."
         },
         {
-          "word": "hydrodynamics",
-          "prefix_root_suffix": "HYDRO + DYNAM + ICS",
-          "definition": "The branch of science concerned with the behavior of water in motion."
+          "word": "biomechanics",
+          "prefix_root_suffix": "BIO + KINESIO + ICS",
+          "definition": "The study of the mechanical laws relating to the movement or structure of living organisms."
         }
       ]
     },
@@ -89,7 +97,7 @@
         },
         {
           "question": "Can you think of another word with one of the parts? Guess what it might mean.",
-          "example": "Hydrology might mean the study of water systems, as 'hydro' relates to water and 'logy' means study of.",
+          "example": "Kinesthetic might mean relating to the perception of body movement, as 'kinesio' refers to motion and 'thetic' refers to perception.",
           "user_input_placeholder": "Write your word and guess here..."
         }
       ]
