@@ -46,3 +46,7 @@ brazen
 brass
 muffle
 dictate
+rattle
+jolly
+slogan
+revolt
