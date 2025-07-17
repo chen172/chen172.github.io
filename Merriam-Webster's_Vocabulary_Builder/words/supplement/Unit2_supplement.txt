@@ -18,3 +18,5 @@ con
 pothole
 mutation
 speck
+squirt
+deficit
