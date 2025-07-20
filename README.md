@@ -49,8 +49,8 @@ generate_units.bat
 To generate a page for a specific unit, use the command below, replacing `session1.txt` with the desired unit file:
 
 ```bash
-cd Merriam-Webster's_Vocabulary_Builder/scripts
-python generate_unit.py ..\words\book\session1.txt
+cd Merriam-Webster's_Vocabulary_Builder\words\book
+python ..\..\scripts\generate_unit.py Unit2
 ```
 
 ## Generate All Supplement Pages
