@@ -26,6 +26,7 @@ conducive
 deduction
 induce
 seduction
+sequential
 subsequent
 consequential
 non sequitur
@@ -36,5 +37,4 @@ jovial
 mercurial
 Olympian
 venereal
-sequential
 delphic

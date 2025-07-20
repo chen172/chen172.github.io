@@ -26,6 +26,7 @@ conduc02
 deduct04
 induce01
 seduct01
+sequen05
 subseq03
 conseq03
 nonseq01
@@ -36,5 +37,4 @@ jovial01
 mercur03
 olympi02
 venere01
-sequen05
 delphi02
