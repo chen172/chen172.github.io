@@ -32,9 +32,9 @@ conseq03
 nonseq01
 apollo02
 baccha06
+delphi02
 dionys05
 jovial01
 mercur03
 olympi02
 venere01
-delphi02
