@@ -33,7 +33,6 @@ pocket01
 chisel01
 princi01
 dedica05
-adhom01w
 testim02
 roulet01
 logjam01

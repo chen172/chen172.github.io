@@ -21,3 +21,5 @@ stockbroker
 treachery
 deranged
 burglary
+multiplex
+hastily
