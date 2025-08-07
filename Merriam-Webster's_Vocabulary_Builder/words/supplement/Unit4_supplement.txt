@@ -31,3 +31,8 @@ coach
 convention
 goer
 seashore
+goalie
+shrine
+pilgrim
+pew
+aisle
