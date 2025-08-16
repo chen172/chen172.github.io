@@ -30,3 +30,8 @@ headgear
 band
 entangle
 steadfast
+lawbreaker
+footprint
+cabinet
+patrol
+waterfowl
