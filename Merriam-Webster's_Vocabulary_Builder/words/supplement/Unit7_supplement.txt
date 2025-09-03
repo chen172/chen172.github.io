@@ -15,3 +15,7 @@ thrash
 hardcore
 assault
 boost
+manicure
+pedicure
+quinine
+yew
