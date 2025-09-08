@@ -12,7 +12,6 @@ draft
 sternum
 seizure
 subnormal
-rescuer
 submersion
 prolonged
 dip
@@ -65,7 +64,7 @@ disinfect
 disbar
 overcast
 desperate
-sniper
+snipe
 pry
 athletic
 rhetoric

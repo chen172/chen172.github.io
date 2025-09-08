@@ -15,7 +15,7 @@ primary
 strain
 dubious
 deposition
-instil
+instill
 pension
 stockbroker
 treachery
@@ -51,7 +51,7 @@ ambush
 league
 prophet
 mouthpiece
-withered
+wither
 crone
 bewitching
 mast

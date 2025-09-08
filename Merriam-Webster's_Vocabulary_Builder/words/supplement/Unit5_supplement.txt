@@ -67,5 +67,5 @@ defendant
 sane
 dopey
 petrified
-yappy
+yap
 wool
