@@ -63,3 +63,5 @@ blunder
 rug
 faux pas
 interrogation
+goof
+reproduction
