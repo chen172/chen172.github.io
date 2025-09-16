@@ -27,3 +27,9 @@ verdict
 dangle
 opinionated
 impart
+dismiss
+gear
+axle
+spur
+grizzly
+errand
