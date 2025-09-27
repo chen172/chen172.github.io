@@ -75,3 +75,6 @@ sulfur
 drudgery
 candelabra
 carve
+fascination
+archer
+eggplant
