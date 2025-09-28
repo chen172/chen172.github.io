@@ -24,3 +24,10 @@ conductor
 notion
 ventilator
 vapour
+teller
+district
+attorney
+probable
+glum
+testify
+pacemaker
