@@ -31,3 +31,13 @@ probable
 glum
 testify
 pacemaker
+sediment
+muddle
+spark
+turbojet
+turboprop
+exhaust
+vane
+agitated
+liner
+rainfall
