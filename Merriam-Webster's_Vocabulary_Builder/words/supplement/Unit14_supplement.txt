@@ -33,3 +33,5 @@ ordain
 profess
 smoosh
 dwarf
+tenant
+lieu
