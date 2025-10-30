@@ -25,3 +25,7 @@ yuppie
 strip
 caterpillar
 mayfly
+terrier
+hibernation
+poodle
+medicate
