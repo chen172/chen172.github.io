@@ -29,3 +29,8 @@ terrier
 hibernation
 poodle
 medicate
+birder
+pheasant
+mallard
+beet
+lithium
