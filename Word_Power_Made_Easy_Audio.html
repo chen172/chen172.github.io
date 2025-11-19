@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,12 +30,16 @@
     }
 
     h2 {
-      font-size: 1.5rem;  /* Increased size for prominence */
-      font-weight: 600;   /* Bold weight to make it stand out */
-      color: #374151;     /* Updated color to match chapter-title */
+      font-size: 1.5rem;
+      /* Increased size for prominence */
+      font-weight: 600;
+      /* Bold weight to make it stand out */
+      color: #374151;
+      /* Updated color to match chapter-title */
       margin-top: 2rem;
       margin-bottom: 1rem;
-      border-bottom: 2px solid #374151; /* Same color as the text */
+      border-bottom: 2px solid #374151;
+      /* Same color as the text */
       padding-bottom: 0.5rem;
       display: flex;
       justify-content: space-between;
@@ -65,6 +70,7 @@
         opacity: 0;
         transform: translateY(20px);
       }
+
       100% {
         opacity: 1;
         transform: translateY(0);
@@ -72,18 +78,38 @@
     }
 
     /* Stagger animation delays for chapters */
-    .chapter:nth-of-type(1) { animation-delay: 0.1s; }
-    .chapter:nth-of-type(2) { animation-delay: 0.2s; }
-    .chapter:nth-of-type(3) { animation-delay: 0.3s; }
-    .chapter:nth-of-type(4) { animation-delay: 0.4s; }
-    .chapter:nth-of-type(5) { animation-delay: 0.5s; }
-    .chapter:nth-of-type(6) { animation-delay: 0.6s; }
+    .chapter:nth-of-type(1) {
+      animation-delay: 0.1s;
+    }
+
+    .chapter:nth-of-type(2) {
+      animation-delay: 0.2s;
+    }
+
+    .chapter:nth-of-type(3) {
+      animation-delay: 0.3s;
+    }
+
+    .chapter:nth-of-type(4) {
+      animation-delay: 0.4s;
+    }
+
+    .chapter:nth-of-type(5) {
+      animation-delay: 0.5s;
+    }
+
+    .chapter:nth-of-type(6) {
+      animation-delay: 0.6s;
+    }
 
     .chapter-title {
-      font-size: 1.125rem;  /* Slightly smaller size */
-      font-weight: 500;     /* Lighter weight */
+      font-size: 1.125rem;
+      /* Slightly smaller size */
+      font-weight: 500;
+      /* Lighter weight */
       margin-bottom: 0.75rem;
-      color: #374151;       /* Darker grey color */
+      color: #374151;
+      /* Darker grey color */
     }
 
     .chapter-links {
@@ -104,7 +130,8 @@
     }
 
     .chapter a {
-      color: #1d4ed8; /* Distinct link color */
+      color: #1d4ed8;
+      /* Distinct link color */
       text-decoration: none;
       font-weight: 500;
     }
@@ -114,6 +141,7 @@
     }
   </style>
 </head>
+
 <body>
   <h1>GETTING ORIENTED</h1>
 
@@ -248,6 +276,17 @@
       </div>
     </div>
   </div>
+  <div class="chapter">
+    <div class="chapter-title">Session 10</div>
+    <div class="chapter-links">
+      <div class="chapter-left">
+        <a href="Word_Power_Made_Easy/session10.html">Main</a>
+      </div>
+      <div class="chapter-right">
+        <a href="Word_Power_Made_Easy/session10_supplement.txt.html">[supplement]</a>
+      </div>
+    </div>
+  </div>
 
   <h2>How to Talk About Science and Scientists</h2>
   <div class="chapter">
@@ -345,7 +384,7 @@
   </div>
 
   <h1>GAINING INCREASED MOMENTUM</h1>
-  
+
   <h2>How to Talk About Actions</h2>
   <div class="chapter">
     <div class="chapter-title">Session 19</div>
@@ -725,11 +764,12 @@
       </div>
     </div>
   </div>
-          <a href="#" class="back-to-top">↑</a>
-        <a href="#bottom" class="go-to-bottom">↓</a>
-    
-    <script src="assets/js/backToTop.js"></script>
-    
-        <div id="bottom" style="height: 100px;"></div>
+  <a href="#" class="back-to-top">↑</a>
+  <a href="#bottom" class="go-to-bottom">↓</a>
+
+  <script src="assets/js/backToTop.js"></script>
+
+  <div id="bottom" style="height: 100px;"></div>
 </body>
+
 </html>
